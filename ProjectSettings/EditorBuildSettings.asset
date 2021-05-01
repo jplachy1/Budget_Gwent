@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CardMenu.unity
+    path: Assets/Scenes/DeckBuilder.unity
     guid: 49b505d765333834aadebecdb14e1b92
   - enabled: 1
     path: Assets/Scenes/MainGame.unity

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class Loader
 {
-    public enum Scene {MainGame, CardMenu};
+    public enum Scene {MainGame, DeckView, DeckBuilder};
 
     public static void Load(Scene scene)
     {
