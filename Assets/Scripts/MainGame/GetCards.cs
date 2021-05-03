@@ -6,19 +6,18 @@ using UnityEngine.UI;
 
 public class GetCards : MonoBehaviour
 {
-    // List<Card> allCards = new List<Card>();
-
     public GameObject cardPrefab;
     GameObject cardGO;
     public GameObject cardHolder;
     public ShowCardCount showCardCount;
-    static List<Card> deck = LoadScene.deck;
+    static List<Card> deck;
     [HideInInspector]
     public List<Card> holderCards = new List<Card>();
     
 
     void Start()
     {
+        deck = GetDeck();
         deck = Shuffle(deck);
         for (int i=0; i < 10; i++)
         {
@@ -93,5 +92,19 @@ public class GetCards : MonoBehaviour
 
         return shuffledCards;
         
+    }
+
+    List<Card> GetDeck()
+    {
+        if (gameObject.name == "CardHolder P")
+        {
+            return PickDecksPlayButton.playerDeck;
+        }
+        else if (gameObject.name == "CardHolder En")
+        {
+            return PickDecksPlayButton.enemyDeck;
+        }
+
+        return null;
     }
 }

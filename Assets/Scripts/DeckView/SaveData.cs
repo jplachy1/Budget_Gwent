@@ -5,18 +5,12 @@ using UnityEngine;
 
 public class SaveData
 {
-    
-    public void Save(List<Card> data)
+    static List<List<string>> decks = DeckLoader.decks;
+    public void Save(List<string> data)
     {
-        List<List<string>> decks = new List<List<string>>();
-        List<string> cardNames = new List<string>();
-        foreach (Card card in data)
-        {
-            cardNames.Add(card.name);
-        }
-        decks.Add(cardNames);
-        decks.Add(cardNames);
-        using (Stream stream = File.Open("save.bin", FileMode.Create))
+        decks.Add(data);
+
+        using (Stream stream = File.Open("decks.xd", FileMode.Create))
         {
             var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
@@ -24,30 +18,19 @@ public class SaveData
         }
     }
 
-    public void Load(string filename)
+    public List<List<string>> Load(string filename)
     {
-        List<string> cardNames = new List<string>();
-        List<List<string>> decks = new List<List<string>>();
-        using (Stream stream = File.Open(filename, FileMode.Open))
+        if (File.Exists(filename))
         {
-            var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            using (Stream stream = File.Open(filename, FileMode.Open))
+            {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-            decks = bformatter.Deserialize(stream) as List<List<string>>;
+                return bformatter.Deserialize(stream) as List<List<string>>;
+            }
         }
-
-        foreach (string card in cardNames)
-        {
-            Debug.Log(card);
-        }
+        return null;
     }
 
-    private string ListToText(List<Card> list)
-    {
-        string result = "";
-        foreach(Card card in list)
-        {
-            Debug.Log(card.artwork);
-        }
-        return result;
-    }
+
 }

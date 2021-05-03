@@ -6,7 +6,7 @@ using UnityEngine;
 public class CardManager : MonoBehaviour
 {
     [HideInInspector]
-    public List<Card> cardList;
+    static List<Card> cardList = DeckLoader.cardList;
     public FactionButton noButton;
     public FactionButton niButton;
     public FactionButton moButton;

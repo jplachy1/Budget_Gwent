@@ -65,7 +65,7 @@ public class CardScrollList : MonoBehaviour
         }
     }
 
-    void RemoveCardButtons()
+    public void RemoveCardButtons()
     {
         while (transform.childCount > 0) 
         {

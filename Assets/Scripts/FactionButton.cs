@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FactionButton : MonoBehaviour
 {
     public CardScrollList cardScrollList;
+    public CardScrollList otherScrollList;
     List<Card> allFactionCards = new List<Card>();
 
     void Start()
@@ -20,6 +21,7 @@ public class FactionButton : MonoBehaviour
 
     public void HandleClick()
     {
-        cardScrollList.GetFactionCards(allFactionCards);        
+        cardScrollList.GetFactionCards(allFactionCards);
+        otherScrollList.RemoveCardButtons();
     } 
 }
