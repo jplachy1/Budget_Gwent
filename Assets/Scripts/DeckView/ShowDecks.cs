@@ -13,21 +13,23 @@ public class ShowDecks : MonoBehaviour
     void Start()
     {
         List<Card> deck = new List<Card>();
-        foreach(List<string> cardNames in decks)
+        if (decks != null)
         {
-            deck = GetDeck(cardNames);
-            GameObject deckGO = Instantiate(deckPrefab, gameObject.transform);
-            deckGO.transform.GetChild(1).gameObject.GetComponent<Text>().text = cardNames[0];
-            if (isShowable)
+            foreach(List<string> cardNames in decks)
             {
-                deckGO.GetComponent<DeckButton>().GetDeck(deck);
-            }
-            else
-            {
-                deckGO.GetComponent<DeckToPlay>().GetDeck(deck);
+                deck = GetDeck(cardNames);
+                GameObject deckGO = Instantiate(deckPrefab, gameObject.transform);
+                deckGO.transform.GetChild(1).gameObject.GetComponent<Text>().text = cardNames[0];
+                if (isShowable)
+                {
+                    deckGO.GetComponent<DeckButton>().GetDeck(deck);
+                }
+                else
+                {
+                    deckGO.GetComponent<DeckToPlay>().GetDeck(deck);
+                }
             }
         }
-        
     }
 
     List<Card> GetDeck(List<string> deckNames)

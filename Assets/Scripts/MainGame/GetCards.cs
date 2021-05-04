@@ -27,10 +27,9 @@ public class GetCards : MonoBehaviour
 
         holderCards = holderCards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
 
-
-        foreach(Card card in holderCards)
-        {
-            DrawCard(card);
+        for (int i = 0; i < holderCards.Count; i++)
+        {   
+            DrawCard(holderCards[i], i);
         }
 
 
@@ -54,12 +53,14 @@ public class GetCards : MonoBehaviour
         return _newCard;
     }
 
-    public void DrawCard(Card _card)
-    {
+    public void DrawCard(Card _card, int position)
+    {     
         cardGO = Instantiate(cardPrefab, gameObject.transform);
+        cardGO.transform.SetSiblingIndex(position);
         cardGO.name = _card.name;
         if (_card.rank == Rank.Weather)
         {
+            // Special cards don't need the damage text
             cardGO.transform.GetChild(1).gameObject.SetActive(false);
             cardGO.transform.GetChild(2).gameObject.SetActive(false);
         }
@@ -106,5 +107,37 @@ public class GetCards : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void DrawSpyCard()
+    {
+        Card _card;
+        for (int i = 0; i < 2; i++)
+        {
+            _card = deck[Random.Range(0,deck.Count)];
+            holderCards.Add(_card);
+            deck.Remove(_card);
+            holderCards = holderCards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+            
+
+            DrawCard(_card, holderCards.IndexOf(_card));
+        }
+    }
+
+    public void RemoveCard(Card _card)
+    {
+        holderCards.RemoveAll(c => c.name == _card.name);
+        Debug.Log(gameObject.name + " "  + holderCards.Count.ToString());
+    }
+
+    public void ResizeDeck()
+    {
+        if(holderCards.Count > 10)
+        {
+            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+            GridLayoutGroup gridLayoutGroup = gameObject.GetComponent<GridLayoutGroup>();
+            float width = rectTransform.sizeDelta.x;
+            gridLayoutGroup.cellSize = new Vector2(width / holderCards.Count, gridLayoutGroup.cellSize.y);
+        }
     }
 }

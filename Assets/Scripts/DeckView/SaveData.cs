@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class SaveData
 {
-    static List<List<string>> decks = DeckLoader.decks;
+    
     public void Save(List<string> data)
     {
-        decks.Add(data);
+        DeckLoader.decks.Add(data);
 
         using (Stream stream = File.Open("decks.xd", FileMode.Create))
         {
             var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-            bformatter.Serialize(stream, decks);
+            bformatter.Serialize(stream, DeckLoader.decks);
         }
     }
 

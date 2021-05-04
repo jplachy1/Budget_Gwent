@@ -59,9 +59,18 @@ public class CardBehaviour : MonoBehaviour,IPointerEnterHandler,IPointerDownHand
 
     public void PlaceCard(RankBehaviour rank)
     {
+        GetCards getCards = gameObject.transform.parent.gameObject.GetComponent<GetCards>();
+        if (card.ability == Ability.Spy)
+        {
+            getCards.DrawSpyCard();
+        }
+        
+        getCards.RemoveCard(card);
+        getCards.ResizeDeck();
         gh.turn = !gh.turn;
         gameObject.transform.SetParent(rank.transform);
         isMovable = false;
+
 
         if (card.rank != Rank.Weather)
         {
