@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using UnityEngine.UI;
 
 public class ShowDecks : MonoBehaviour
 {
     public bool isShowable;
-    static List<List<string>> decks = DeckLoader.decks;
-    static List<Card> cardList = DeckLoader.cardList;
+    SaveData save = new SaveData();
+    static List<List<string>> decks = new List<List<string>>();
+    static List<Card> cardList = new List<Card>();
     public GameObject deckPrefab;
 
     void Start()
     {
+        decks = save.Load("decks.xd");
+        cardList = Resources.LoadAll<Card>("Cards").ToList();
         List<Card> deck = new List<Card>();
         if (decks != null)
         {

@@ -8,13 +8,13 @@ public class SaveData
     
     public void Save(List<string> data)
     {
-        DeckLoader.decks.Add(data);
-
+        List<List<string>> decks = Load("decks.xd");
+        decks.Add(data);
         using (Stream stream = File.Open("decks.xd", FileMode.Create))
         {
             var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-            bformatter.Serialize(stream, DeckLoader.decks);
+            bformatter.Serialize(stream, decks);
         }
     }
 
@@ -29,8 +29,6 @@ public class SaveData
                 return bformatter.Deserialize(stream) as List<List<string>>;
             }
         }
-        return null;
+        return new List<List<string>>();
     }
-
-
 }
