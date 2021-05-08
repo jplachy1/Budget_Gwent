@@ -15,11 +15,11 @@ public class Card : ScriptableObject
     public new string name;
     public Sprite artwork;
     public int baseDmg;
+    [HideInInspector]
+    public int rankDmg;
     public Rank rank;
     public bool isHero;
     public Faction faction;
     public Ability ability;
-    [HideInInspector]
-    public int rankDmg;
 }
 

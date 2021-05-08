@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Sabrina Glevissig
   artwork: {fileID: 21300000, guid: ef11a45784d0ade40be8302912a9147f, type: 3}
   baseDmg: 4
+  rankDmg: 4
   rank: 1
   isHero: 0
   faction: 2
   ability: 0
-  rankDmg: 0

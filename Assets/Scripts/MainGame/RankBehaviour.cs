@@ -11,14 +11,11 @@ public class RankBehaviour : MonoBehaviour
     public BoardBehaviour boardBehaviour;
     int rankDamage;
     bool horned = false;
-    bool weathered = false;
+    public bool weathered = false;
 
     void Start()
     {
-        if (gameObject.name != "RankWeather")
-        {
-            rankDamageText.text = "0";
-        }
+        rankDamageText.text = "0";
     }
 
     void DisplayDamage()
@@ -231,24 +228,6 @@ public class RankBehaviour : MonoBehaviour
                 card.rankDmg += _moralers - 1;
             }
         }
-    }
-
-    public void Clear()
-    {
-        Card weatherCard = new Card();
-        foreach (Card card in cardsInRank)
-        {
-            if (card.rank == Rank.Weather)
-            {
-                weatherCard = card;
-            }
-        }
-
-        if (weatherCard != null)
-        {
-            cardsInRank.Remove(weatherCard);
-            weathered = false;
-        }       
     }
 
     public int RankScore()

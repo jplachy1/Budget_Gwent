@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Kaedweni Siege Expert
   artwork: {fileID: 21300000, guid: f6549cac1e21eae4e8bbbf8795cef08b, type: 3}
   baseDmg: 1
+  rankDmg: 1
   rank: 2
   isHero: 0
   faction: 2
   ability: 2
-  rankDmg: 0

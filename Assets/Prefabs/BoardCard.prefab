@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5241832183896416112}
   - component: {fileID: 1349994433970599484}
   - component: {fileID: 4631232474006963842}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
-  getCards: {fileID: 0}
 --- !u!61 &4459032012750564928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +177,7 @@ GameObject:
   - component: {fileID: 4277259487781021197}
   - component: {fileID: 4277259487781021199}
   - component: {fileID: 4277259487781021198}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +251,7 @@ GameObject:
   - component: {fileID: 77923793616678266}
   - component: {fileID: 7184120026554019960}
   - component: {fileID: 8722603865824227622}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}

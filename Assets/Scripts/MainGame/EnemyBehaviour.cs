@@ -5,13 +5,12 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public GameHandler gh;
-    public GetCards  gc;
+    public CardHolder cardHolder;
     Card cardToPlay;
-    List<Card> cards = new List<Card>();
 
     void Start()
     {
-        cards = GetDeck();
+        
     }
 
     void Update()
@@ -24,8 +23,10 @@ public class EnemyBehaviour : MonoBehaviour
         if (gh.turn == false)
         {
             cardToPlay = PickCard();
-            cards.Remove(cardToPlay);
-            PlaceCard(cardToPlay);
+
+            GameObject cardObject = GameObject.Find("CardHolder En/" + cardToPlay.name);
+            cardHolder.cards.Remove(cardToPlay);
+            gh.PlaceCard(GetRank(cardToPlay), cardObject);
         }
     }
 
@@ -33,18 +34,13 @@ public class EnemyBehaviour : MonoBehaviour
     {
         Card candidate;
         
-        candidate = cards[Random.Range(0, cards.Count)];
+        candidate = cardHolder.cards[Random.Range(0, cardHolder.cards.Count)];
         return candidate;
     }
 
-    List<Card> GetDeck()
-    {
-        return gc.holderCards;
-    }
 
-    void PlaceCard(Card _card)
+    GameObject GetRank(Card _card)
     {
-        Debug.Log("Placing " + _card.name);
         GameObject cardGO = GameObject.Find("CardHolder En/" + _card.name);
         string cardRank = _card.rank.ToString();
         if (_card.rank != Rank.Weather & _card.ability != Ability.Spy)
@@ -60,8 +56,7 @@ public class EnemyBehaviour : MonoBehaviour
             cardRank = "Rank" + cardRank + " P";
         }
 
-        RankBehaviour rank = GameObject.Find(cardRank).GetComponent<RankBehaviour>();
-        cardGO.GetComponent<CardBehaviour>().PlaceCard(rank);
+        return GameObject.Find(cardRank);
     }
 
 
