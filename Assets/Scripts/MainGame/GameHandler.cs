@@ -6,6 +6,8 @@ public class GameHandler : MonoBehaviour
 {
     [HideInInspector]
     public bool turn;
+    public CardHolder playerHolder;
+    public CardHolder enemyHolder;
     void Start()
     {
         turn = true;
@@ -20,7 +22,14 @@ public class GameHandler : MonoBehaviour
 
         if (card.ability == Ability.Spy)
         {
-            //cardHolder.DrawSpyCard();
+            if (turn)
+            {
+                playerHolder.DrawSpyCard();
+            }
+            else
+            {
+                enemyHolder.DrawSpyCard();
+            }
         }
 
         //cardHolder.RemoveCard(card);

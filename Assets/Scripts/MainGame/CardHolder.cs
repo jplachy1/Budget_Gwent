@@ -38,6 +38,7 @@ public class CardHolder : MonoBehaviour
             cardGO.transform.GetChild(2).gameObject.SetActive(false);
         }
         cardGO.GetComponent<CardBehaviour>().card = SetCard(_card);
+        ResizeDeck();
     }
 
     Card SetCard(Card _card)
@@ -56,17 +57,16 @@ public class CardHolder : MonoBehaviour
 
     public void DrawSpyCard()
     {
-        // Card _card;
-        // for (int i = 0; i < 2; i++)
-        // {
-        //     _card = deck[Random.Range(0,deck.Count)];
-        //     holderCards.Add(_card);
-        //     deck.Remove(_card);
-        //     holderCards = holderCards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+        Card _card;
+        for (int i = 0; i < 2; i++)
+        {
+            _card = deck.DrawCard();
+            cards.Add(_card);
+            cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
             
 
-        //     DrawCard(_card, holderCards.IndexOf(_card));
-        // }
+            MakeCard(_card, cards.IndexOf(_card));
+        }
     }
 
     public void RemoveCard(Card _card)
@@ -74,14 +74,14 @@ public class CardHolder : MonoBehaviour
         //holderCards.RemoveAll(c => c.name == _card.name);
     }
 
-    public void ResizeDeck()
+    void ResizeDeck()
     {
-        // if(holderCards.Count > 10)
-        // {
-        //     RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-        //     GridLayoutGroup gridLayoutGroup = gameObject.GetComponent<GridLayoutGroup>();
-        //     float width = rectTransform.sizeDelta.x;
-        //     gridLayoutGroup.cellSize = new Vector2(width / holderCards.Count, gridLayoutGroup.cellSize.y);
-        // }
+        if(cards.Count > 10)
+        {
+            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+            GridLayoutGroup gridLayoutGroup = gameObject.GetComponent<GridLayoutGroup>();
+            float width = rectTransform.sizeDelta.x;
+            gridLayoutGroup.cellSize = new Vector2(width / cards.Count, gridLayoutGroup.cellSize.y);
+        }
     }
 }

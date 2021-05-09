@@ -2587,6 +2587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 0
+  playerHolder: {fileID: 2105855379}
+  enemyHolder: {fileID: 1049617862}
 --- !u!1 &2091054939
 GameObject:
   m_ObjectHideFlags: 0

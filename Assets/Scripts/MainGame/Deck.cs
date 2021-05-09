@@ -24,14 +24,6 @@ public class Deck : MonoBehaviour
         deck = Shuffle();
     }
 
-    void Update()
-    {
-        Debug.Log(gameObject.name);
-        foreach (Card card in deck)
-        {
-            Debug.Log(card);
-        }
-    }
     List<Card> Shuffle()
     {
         int[] shuffledInts = new int[deck.Count];

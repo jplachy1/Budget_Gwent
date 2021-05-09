@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Poor Fcking Infantry 1
   m_EditorClassIdentifier: 
+  ID: 22
   name: Poor F*cking Infantry
   artwork: {fileID: 21300000, guid: 61930e39cdacd0f419b4d4edd728968c, type: 3}
   baseDmg: 1
-  rankDmg: 1
+  rankDmg: 20
   rank: 0
   isHero: 0
   faction: 2
