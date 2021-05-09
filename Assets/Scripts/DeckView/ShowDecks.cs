@@ -41,7 +41,7 @@ public class ShowDecks : MonoBehaviour
         List<Card> _deck = new List<Card>();
         for (int i = 1; i < deckNames.Count; i++)
         {
-            Card card = cardList.Find(x => x.name == deckNames[i]);
+            Card card = cardList.Find(x => x.ID == deckNames[i]);
             _deck.Add(card);
         }
         return _deck;

@@ -8,7 +8,6 @@ public class CardHolder : MonoBehaviour
 {
     public GameObject cardPrefab;
     GameObject cardGO;
-    [HideInInspector]
     public List<Card> cards;
     public Deck deck;
     
@@ -25,11 +24,9 @@ public class CardHolder : MonoBehaviour
         {
             MakeCard(cards[i], i);
         }
-
-        Debug.Log(gameObject.name + cards.Count);
     }
 
-    public void MakeCard(Card _card, int position)
+    void MakeCard(Card _card, int position)
     {     
         cardGO = Instantiate(cardPrefab, gameObject.transform);
         cardGO.transform.SetSiblingIndex(position);
@@ -40,21 +37,21 @@ public class CardHolder : MonoBehaviour
             cardGO.transform.GetChild(1).gameObject.SetActive(false);
             cardGO.transform.GetChild(2).gameObject.SetActive(false);
         }
-        cardGO.GetComponent<CardBehaviour>().card = _card;
+        cardGO.GetComponent<CardBehaviour>().card = SetCard(_card);
     }
 
-    List<Card> GetDeck()
+    Card SetCard(Card _card)
     {
-        if (gameObject.name == "CardHolder P")
-        {
-            return PickDecksPlayButton.playerDeck;
-        }
-        else if (gameObject.name == "CardHolder En")
-        {
-            return PickDecksPlayButton.enemyDeck;
-        }
-
-        return null;
+        Card newCard = Card.CreateInstance<Card>();
+        newCard.name = _card.name;
+        newCard.artwork = _card.artwork;
+        newCard.baseDmg = _card.baseDmg;
+        newCard.rankDmg = _card.baseDmg;
+        newCard.rank = _card.rank;
+        newCard.isHero = _card.isHero;
+        newCard.faction = _card.faction;
+        newCard.ability = _card.ability;
+        return newCard;
     }
 
     public void DrawSpyCard()

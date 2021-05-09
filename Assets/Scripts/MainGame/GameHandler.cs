@@ -13,7 +13,6 @@ public class GameHandler : MonoBehaviour
 
     void PlaceCard(RankBehaviour rank, GameObject CardGO)
     {
-        //GetCards cardHolder = GetCardHolder();
         Card card = CardGO.GetComponent<CardBehaviour>().card;
 
         rank.cardsInRank.Add(card);
@@ -30,7 +29,6 @@ public class GameHandler : MonoBehaviour
 
     void PlaceCard(WeatherBehaviour weather, GameObject CardGO)
     {
-        //GetCards cardHolder = GetCardHolder();
         Card card = CardGO.GetComponent<CardBehaviour>().card;
 
         if (card.ability == Ability.Close)

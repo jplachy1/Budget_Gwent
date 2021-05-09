@@ -11,7 +11,7 @@ public enum Rank {Close, Ranged, Siege, Agile, Horn, Weather};
 [System.Serializable]
 public class Card : ScriptableObject
 {
-    
+    public string ID;
     public new string name;
     public Sprite artwork;
     public int baseDmg;

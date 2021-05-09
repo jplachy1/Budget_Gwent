@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Deck : MonoBehaviour
 {
@@ -11,16 +12,26 @@ public class Deck : MonoBehaviour
         if (isPlayer)
         {
             deck = PickDecksPlayButton.playerDeck;
+            //deck = Resources.LoadAll<Card>("Cards").ToList();
         }
         else
         {
             deck = PickDecksPlayButton.enemyDeck;
+            //deck = Resources.LoadAll<Card>("Cards").ToList();
         }
 
         SetCards();
         deck = Shuffle();
     }
 
+    void Update()
+    {
+        Debug.Log(gameObject.name);
+        foreach (Card card in deck)
+        {
+            Debug.Log(card);
+        }
+    }
     List<Card> Shuffle()
     {
         int[] shuffledInts = new int[deck.Count];
@@ -59,7 +70,7 @@ public class Deck : MonoBehaviour
     {
         foreach (Card card in deck)
         {
-            card.rankDmg = card.baseDmg;
+            //card.rankDmg = card.baseDmg;
         }
     }
 }

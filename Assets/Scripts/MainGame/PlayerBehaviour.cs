@@ -65,11 +65,15 @@ public class PlayerBehaviour : MonoBehaviour
                         if (clickedCard.isMovable && isCardPlaceable(clickedCard.card, rank))
                         {
                             List<Card> c = CardHolder.GetComponent<CardHolder>().cards;
-                            CardHolder.GetComponent<CardHolder>().cards.Remove(clickedCard.card);
+                            CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.name == clickedCard.card.name);
                             gh.PlaceCard(rank, CardGO);
                             CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                         }
-                        
+                        else
+                        {
+                            CardGO.transform.SetSiblingIndex(siblingIndex);
+                            CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
+                        }
                     }
                     else if (clickedCard.isMovable)
                     {

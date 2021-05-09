@@ -15,15 +15,15 @@ public class SaveDeck : MonoBehaviour
     void HandleClick()
     {
         SaveData sd = new SaveData();
-        List<string> cardNames = new List<string>();
+        List<string> cardIDs = new List<string>();
         List<Card> deck = cardScrollList.cardList;
 
-        cardNames.Add(deckName.text);
+        cardIDs.Add(deckName.text);
         foreach(Card card in deck)
         {
-            cardNames.Add(card.name);
+            cardIDs.Add(card.ID);
         }
 
-        sd.Save(cardNames);
+        sd.Save(cardIDs);
     }
 }
