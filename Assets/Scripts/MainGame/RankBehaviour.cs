@@ -6,9 +6,9 @@ using System.Linq;
 
 public class RankBehaviour : MonoBehaviour
 {
-    public List<Card> cardsInRank = new List<Card>();
+    public List<Card> cards = new List<Card>();
     public Text rankDamageText;
-    public BoardBehaviour boardBehaviour;
+    //public BoardBehaviour boardBehaviour;
     int rankDamage;
     bool horned = false;
     public bool weathered = false;
@@ -21,7 +21,7 @@ public class RankBehaviour : MonoBehaviour
     void DisplayDamage()
     {
         rankDamage = 0;
-        foreach (Card card in cardsInRank)
+        foreach (Card card in cards)
         {
             rankDamage += card.rankDmg;   
         }
@@ -34,12 +34,12 @@ public class RankBehaviour : MonoBehaviour
         List<Card> bonders = new List<Card>();
         int moralers = 0;
 
-        foreach(Card card in cardsInRank)
+        foreach(Card card in cards)
         {
             card.rankDmg = card.baseDmg;
         }
 
-        foreach (Card card in cardsInRank)
+        foreach (Card card in cards)
         {
             if (card.ability == Ability.Bond)
             {
@@ -61,7 +61,7 @@ public class RankBehaviour : MonoBehaviour
 
         if (weathered)
         {
-            foreach(Card card in cardsInRank)
+            foreach(Card card in cards)
             {
                 if (card.isHero == false & card.rank != Rank.Weather)
                 {
@@ -88,7 +88,7 @@ public class RankBehaviour : MonoBehaviour
 
         if (horned)
         {
-            foreach (Card card in cardsInRank)
+            foreach (Card card in cards)
             {
                 if (card.ability != Ability.Morale & card.isHero == false & card.ability != Ability.Bond & card.ability != Ability.Horn)
                 {
@@ -217,7 +217,7 @@ public class RankBehaviour : MonoBehaviour
 
     void Morale(int _moralers)
     {
-        foreach(Card card in cardsInRank)
+        foreach(Card card in cards)
         {
             if (!card.isHero && card.ability != Ability.Morale && card.rank != Rank.Weather)
             {

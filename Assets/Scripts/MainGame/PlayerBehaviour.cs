@@ -62,18 +62,33 @@ public class PlayerBehaviour : MonoBehaviour
                     GameObject rank = AboveRank();
                     if (rank != null)
                     {
-                        if (clickedCard.isMovable && isCardPlaceable(clickedCard.card, rank))
+                        if (clickedCard.card.rank == Rank.Decoy && clickedCard.isMovable && !rank.name.Contains("En"))
                         {
-                            List<Card> c = CardHolder.GetComponent<CardHolder>().cards;
-                            CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.name == clickedCard.card.name);
-                            gh.PlaceCard(rank, CardGO);
-                            CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
+                            GameObject decoyableCard = DecoyableCard();
+                            if (decoyableCard != null)
+                            {
+                                CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.ID == clickedCard.card.ID);
+                                gh.DecoyCard(CardGO, decoyableCard, rank);
+                                CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
+                            }
                         }
                         else
+                        {
+                            if (clickedCard.isMovable && isCardPlaceable(clickedCard.card, rank))
+                            {
+                                CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.ID == clickedCard.card.ID);
+                                gh.PlaceCard(rank, CardGO);
+                                CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
+                            }
+
+
+                        }
+                        if (clickedCard.isMovable)
                         {
                             CardGO.transform.SetSiblingIndex(siblingIndex);
                             CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                         }
+                        
                     }
                     else if (clickedCard.isMovable)
                     {
@@ -111,6 +126,28 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
         return null;
+    }
+
+    GameObject DecoyableCard()
+    {
+        m_PointerEventData = new PointerEventData(m_EventSystem);
+        m_PointerEventData.position = Input.mousePosition;
+        List<RaycastResult> results = new List<RaycastResult>();
+        m_Raycaster.Raycast(m_PointerEventData, results);
+
+        foreach (RaycastResult result in results)
+        {
+            GameObject hitGO = result.gameObject.transform.parent.gameObject;
+
+            if (hitGO.TryGetComponent(out CardBehaviour cardBehaviour))
+            {
+                if (hitGO.GetComponent<CardBehaviour>().card.rank != Rank.Decoy)
+                {
+                    return hitGO;
+                }
+            }
+        }
+        return null;  
     }
 
     GameObject AboveRank()

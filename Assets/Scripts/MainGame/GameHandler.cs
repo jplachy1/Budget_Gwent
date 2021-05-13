@@ -6,8 +6,20 @@ public class GameHandler : MonoBehaviour
 {
     [HideInInspector]
     public bool turn;
+
     public CardHolder playerHolder;
     public CardHolder enemyHolder;
+
+    public GraveyardBehaviour playerGraveyard;
+    public GraveyardBehaviour enemyGraveyard;
+
+    public RankBehaviour RankCloseP;
+    public RankBehaviour RankRangedP;
+    public RankBehaviour RankSiegeP;
+    public RankBehaviour RankCloseEn;
+    public RankBehaviour RankRangedEn;
+    public RankBehaviour RankSiegeEn;
+
     void Start()
     {
         turn = true;
@@ -17,7 +29,7 @@ public class GameHandler : MonoBehaviour
     {
         Card card = CardGO.GetComponent<CardBehaviour>().card;
 
-        rank.cardsInRank.Add(card);
+        rank.cards.Add(card);
         rank.RankSum();
 
         if (card.ability == Ability.Spy)
@@ -40,40 +52,92 @@ public class GameHandler : MonoBehaviour
     {
         Card card = CardGO.GetComponent<CardBehaviour>().card;
 
-        if (card.ability == Ability.Close)
+        if (weather.cards.Find(c => c.name == card.name))
         {
-            weather.Close(card);
+            if (turn)
+            {
+                playerGraveyard.MoveToGraveyard(CardGO, weather.gameObject);
+            }
+            else
+            {
+                enemyGraveyard.MoveToGraveyard(CardGO, weather.gameObject);
+            }
         }
-        else if (card.ability == Ability.Ranged)
+        else
         {
-            weather.Ranged(card);
-        }
-        else if (card.ability == Ability.Siege)
-        {
-            weather.Siege(card);
-        }
-        else if (card.ability == Ability.Clear)
-        {
-            weather.Clear();
-        }
+           if (card.ability == Ability.Close)
+            {
+                weather.Close(card);
+            }
+            else if (card.ability == Ability.Ranged)
+            {
+                weather.Ranged(card);
+            }
+            else if (card.ability == Ability.Siege)
+            {
+                weather.Siege(card);
+            }
+            else if (card.ability == Ability.Clear)
+            {
+                while(weather.transform.childCount > 0)
+                {
+                    playerGraveyard.MoveToGraveyard(weather.transform.GetChild(0).gameObject, weather.gameObject); 
+                }
+                weather.Clear();
+            }
+            else if (card.ability == Ability.Scorch)
+            {
+                if (turn)
+                {
+                    playerGraveyard.MoveToGraveyard(CardGO, weather.gameObject);
+                }
+                else
+                {
+                    enemyGraveyard.MoveToGraveyard(CardGO, weather.gameObject);
+                }
 
+                weather.Scorch();
+            }      
+        }
         //cardHolder.RemoveCard(card);
     }
 
-    public void PlaceCard(GameObject rankGO, GameObject cardGO)
+    public void PlaceCard(GameObject RankGO, GameObject cardGO)
     {
-        turn = !turn;
-        cardGO.transform.SetParent(rankGO.transform);
+        cardGO.transform.SetParent(RankGO.transform);
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
         if (cardGO.GetComponent<CardBehaviour>().card.rank != Rank.Weather)
         {
-            PlaceCard(rankGO.GetComponent<RankBehaviour>(), cardGO);
+            PlaceCard(RankGO.GetComponent<RankBehaviour>(), cardGO);
         }
         else
         {
-            PlaceCard(rankGO.GetComponent<WeatherBehaviour>(), cardGO);
+            PlaceCard(RankGO.GetComponent<WeatherBehaviour>(), cardGO);
         }
+
+        turn = !turn;
+    }
+
+    public void DecoyCard(GameObject DecoyGO,GameObject CardGO, GameObject RankGO)
+    {
+        CardBehaviour cardBehaviour = CardGO.GetComponent<CardBehaviour>();
+        RankBehaviour rankBehaviour = RankGO.GetComponent<RankBehaviour>();
+        if (turn)
+        {
+            playerHolder.GetCard(CardGO);
+        }
+        else
+        {
+            enemyHolder.GetCard(CardGO);
+        }
+
+        DecoyGO.GetComponent<CardBehaviour>().isMovable = false;
+        rankBehaviour.cards.RemoveAll(x => x.ID == cardBehaviour.card.ID);
+        rankBehaviour.RankSum();
+        DecoyGO.transform.SetParent(RankGO.transform);
+
+        turn = !turn;
     }
 
     // GetCards GetCardHolder()

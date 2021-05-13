@@ -31,7 +31,7 @@ public class CardHolder : MonoBehaviour
         cardGO = Instantiate(cardPrefab, gameObject.transform);
         cardGO.transform.SetSiblingIndex(position);
         cardGO.name = _card.name;
-        if (_card.rank == Rank.Weather)
+        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy)
         {
             // Special cards don't need the damage text
             cardGO.transform.GetChild(1).gameObject.SetActive(false);
@@ -44,6 +44,7 @@ public class CardHolder : MonoBehaviour
     Card SetCard(Card _card)
     {
         Card newCard = Card.CreateInstance<Card>();
+        newCard.ID = _card.ID;
         newCard.name = _card.name;
         newCard.artwork = _card.artwork;
         newCard.baseDmg = _card.baseDmg;
@@ -61,17 +62,31 @@ public class CardHolder : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             _card = deck.DrawCard();
-            cards.Add(_card);
-            cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+            if(_card != null)
+            {
+                cards.Add(_card);
+                cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+                MakeCard(_card, cards.IndexOf(_card));
+            }
             
-
-            MakeCard(_card, cards.IndexOf(_card));
         }
     }
 
     public void RemoveCard(Card _card)
     {
         //holderCards.RemoveAll(c => c.name == _card.name);
+    }
+
+    public void GetCard(GameObject CardGO)
+    {
+        Card _card = CardGO.GetComponent<CardBehaviour>().card;
+        cards.Add(_card);
+        cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+
+        CardGO.transform.SetParent(gameObject.transform);
+        CardGO.transform.SetSiblingIndex(cards.IndexOf(_card));
+        CardGO.GetComponent<CardBehaviour>().card.rankDmg = CardGO.GetComponent<CardBehaviour>().card.baseDmg;
+        cards.Add(CardGO.GetComponent<CardBehaviour>().card);
     }
 
     void ResizeDeck()

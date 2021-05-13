@@ -53,9 +53,13 @@ public class Deck : MonoBehaviour
 
     public Card DrawCard()
     {
-        Card cardToRemove = deck[0];
-        deck.RemoveAt(0);
-        return cardToRemove;
+        if (deck.Count > 0)
+        {
+            Card cardToRemove = deck[0];
+            deck.RemoveAt(0);
+            return cardToRemove;
+        }
+        return null;
     }
 
     void SetCards()
