@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Filavandrel aen Fidhail
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 315
   name: Filavandrel aen Fidhail
   artwork: {fileID: 21300000, guid: 68610a3ec469d414b8ca4b08825c301f, type: 3}
   baseDmg: 6

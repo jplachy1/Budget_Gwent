@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Redanian Foot Soldier
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 225
   name: Redanian Foot Soldier
   artwork: {fileID: 21300000, guid: 46fa2d66ab680d34698484842f799b2a, type: 3}
   baseDmg: 1

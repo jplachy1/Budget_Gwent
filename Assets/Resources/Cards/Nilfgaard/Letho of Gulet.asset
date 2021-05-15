@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Letho of Gulet
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 115
   name: Letho of Gulet
   artwork: {fileID: 21300000, guid: 18ef9ec9f3ad36b4abe6d58e4e7e72e8, type: 3}
   baseDmg: 10

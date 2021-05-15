@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Vampire Bruxa
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 34
   name: Vampire Bruxa
   artwork: {fileID: 21300000, guid: 9c8d834fc11a269408c451f84343606f, type: 3}
   baseDmg: 4

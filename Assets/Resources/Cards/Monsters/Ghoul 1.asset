@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Ghoul 1
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 20
   name: Ghoul
-  artwork: {fileID: 21300000, guid: 25d44df00118c2b4799ec852c1680875, type: 3}
+  artwork: {fileID: 21300000, guid: 7357801ba8ce8674aac8d058a994e544, type: 3}
   baseDmg: 1
   rankDmg: 0
   rank: 0

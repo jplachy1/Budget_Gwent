@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Sabrina Glevissig
   m_EditorClassIdentifier: 
-  ID: 25
+  ID: 226
   name: Sabrina Glevissig
   artwork: {fileID: 21300000, guid: ef11a45784d0ade40be8302912a9147f, type: 3}
   baseDmg: 4

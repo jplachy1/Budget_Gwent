@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Nekker
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 32
   name: Nekker
   artwork: {fileID: 21300000, guid: 98381a83394c85f44b9eeb7501ef1c9f, type: 3}
   baseDmg: 2

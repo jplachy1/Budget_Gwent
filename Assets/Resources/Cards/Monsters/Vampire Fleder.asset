@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Vampire Fleder
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 36
   name: Vampire Fleder
   artwork: {fileID: 21300000, guid: 03da01bc5bf3a0a4e9738b3f20c09908, type: 3}
   baseDmg: 4

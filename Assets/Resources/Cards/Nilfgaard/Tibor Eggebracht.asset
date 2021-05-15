@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Tibor Eggebracht
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 131
   name: Tibor Eggebracht
   artwork: {fileID: 21300000, guid: 9c650256a5acce846862d4d8f82e38f0, type: 3}
   baseDmg: 10

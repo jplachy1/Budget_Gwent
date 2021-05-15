@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Sheldon Skaggs
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 227
   name: Sheldon Skaggs
   artwork: {fileID: 21300000, guid: f446ba055f1ac3b4e9dc0931b64d3f6d, type: 3}
   baseDmg: 4

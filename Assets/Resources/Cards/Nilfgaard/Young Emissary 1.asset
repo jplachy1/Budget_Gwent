@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Young Emissary 1
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 135
   name: Young Emissary
   artwork: {fileID: 21300000, guid: c60672dca50461340acd794a5f526d4b, type: 3}
   baseDmg: 5

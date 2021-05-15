@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Rotten Mangonel
   m_EditorClassIdentifier: 
-  ID: 
+  ID: 125
   name: Rotten Mangonel
   artwork: {fileID: 21300000, guid: 47561f03ca5d8c74a87a2925d5d57206, type: 3}
   baseDmg: 3
