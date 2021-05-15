@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
-  m_Name: Earth Elemental
+  m_Name: Plague Maiden
   m_EditorClassIdentifier: 
-  ID: 31
-  name: Earth Elemental
-  artwork: {fileID: 21300000, guid: 046a183104df72d4db9ac58639a63f33, type: 3}
-  baseDmg: 6
+  ID: 
+  name: Plague Maiden
+  artwork: {fileID: 21300000, guid: 21cb81084910f444187404a37d38e27f, type: 3}
+  baseDmg: 5
   rankDmg: 0
-  rank: 2
+  rank: 0
   isHero: 0
   faction: 4
   ability: 0

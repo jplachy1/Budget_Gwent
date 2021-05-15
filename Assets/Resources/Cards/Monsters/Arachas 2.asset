@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
-  m_Name: Geralt
+  m_Name: Arachas 2
   m_EditorClassIdentifier: 
-  ID: 4
-  name: Geralt
-  artwork: {fileID: 21300000, guid: fc0face77648f9548bb4e973d3708a3b, type: 3}
-  baseDmg: 15
+  ID: 
+  name: Arachas
+  artwork: {fileID: 21300000, guid: f3e1b0fbc401bb04c8741af2970aefa9, type: 3}
+  baseDmg: 4
   rankDmg: 0
   rank: 0
-  isHero: 1
-  faction: 0
-  ability: 0
+  isHero: 0
+  faction: 4
+  ability: 7

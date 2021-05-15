@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Torrential Rain
   m_EditorClassIdentifier: 
-  ID: 6
+  ID: 26
   name: Torrential Rain
   artwork: {fileID: 21300000, guid: dbab1bc963d5630429f5fb61f995faf9, type: 3}
   baseDmg: 0
