@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Triss Merigold
   m_EditorClassIdentifier: 
-  ID: 027
+  ID: NE27
   name: Triss Merigold
   artwork: {fileID: 21300000, guid: 76d84de630c78d14e9b9bb16fb019336, type: 3}
   baseDmg: 7

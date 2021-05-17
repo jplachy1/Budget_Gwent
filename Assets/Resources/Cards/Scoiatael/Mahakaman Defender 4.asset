@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Mahakaman Defender 4
   m_EditorClassIdentifier: 
-  ID: 328
+  ID: S28
   name: Mahakaman Defender
   artwork: {fileID: 21300000, guid: ddcbd9ec81094f84c8dbecf2efb1e628, type: 3}
   baseDmg: 5

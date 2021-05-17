@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Nausicaa Cavalry Brigade 1
   m_EditorClassIdentifier: 
-  ID: 119
+  ID: NI19
   name: Nausicaa Cavalry Brigade
   artwork: {fileID: 21300000, guid: 669998bfa84428342aeb88ff5bec9603, type: 3}
   baseDmg: 2

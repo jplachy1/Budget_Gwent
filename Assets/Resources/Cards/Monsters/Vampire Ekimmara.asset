@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Vampire Ekimmara
   m_EditorClassIdentifier: 
-  ID: 35
+  ID: M35
   name: Vampire Ekimmara
   artwork: {fileID: 21300000, guid: 9e96660d368adff4e8f137e7dd921f00, type: 3}
   baseDmg: 4

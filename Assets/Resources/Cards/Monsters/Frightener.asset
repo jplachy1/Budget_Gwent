@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Frightener
   m_EditorClassIdentifier: 
-  ID: 18
+  ID: M18
   name: Frightener
   artwork: {fileID: 21300000, guid: f663c6a5d9e939648912d68e9c5291f2, type: 3}
   baseDmg: 5

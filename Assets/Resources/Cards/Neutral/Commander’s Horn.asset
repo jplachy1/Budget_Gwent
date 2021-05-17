@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: "Commander\u2019s Horn"
   m_EditorClassIdentifier: 
-  ID: 011
+  ID: NE11
   name: "Commander\u2019s Horn"
   artwork: {fileID: 21300000, guid: e87c19c6b6cf4524fad8d935ec3efbf1, type: 3}
   baseDmg: -1

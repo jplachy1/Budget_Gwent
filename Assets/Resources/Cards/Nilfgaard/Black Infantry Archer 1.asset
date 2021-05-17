@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Black Infantry Archer 1
   m_EditorClassIdentifier: 
-  ID: 13
+  ID: NI3
   name: Black Infantry Archer
   artwork: {fileID: 21300000, guid: 36ba2de1e61ed5949a35e546948cac2a, type: 3}
   baseDmg: 10

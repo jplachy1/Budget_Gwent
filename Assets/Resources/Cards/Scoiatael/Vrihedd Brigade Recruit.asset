@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Vrihedd Brigade Recruit
   m_EditorClassIdentifier: 
-  ID: 334
+  ID: S34
   name: Vrihedd Brigade Recruit
   artwork: {fileID: 21300000, guid: 07586dbd7a32b4341aa7f68c94f2c395, type: 3}
   baseDmg: 4

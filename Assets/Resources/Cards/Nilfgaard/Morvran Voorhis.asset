@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Morvran Voorhis
   m_EditorClassIdentifier: 
-  ID: 118
+  ID: NI18
   name: Morvran Voorhis
   artwork: {fileID: 21300000, guid: 53fccedc8f5eb77429e1b0e4008a5c4c, type: 3}
   baseDmg: 10
