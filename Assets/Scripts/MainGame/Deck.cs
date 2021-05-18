@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Deck : MonoBehaviour
 {
-    List<Card> deck = new List<Card>();
+    public List<Card> deck = new List<Card>();
     public bool isPlayer;
     void Start()
     {
@@ -69,4 +69,27 @@ public class Deck : MonoBehaviour
             //card.rankDmg = card.baseDmg;
         }
     }
+
+    public List<Card> GetMusterCards(string[] _group)
+    {
+        List<Card> musters = new List<Card>();
+
+        foreach (Card card in deck)
+        {
+            foreach (string musterID in _group)
+            {
+                if (card.ID == musterID)
+                {
+                    musters.Add(card);
+                }
+            }
+        }
+        return musters;
+    }
+
+
+    // public GameObject GetMusterCards()
+    // {
+
+    // }
 }

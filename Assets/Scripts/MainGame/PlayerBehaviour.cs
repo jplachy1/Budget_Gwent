@@ -76,7 +76,7 @@ public class PlayerBehaviour : MonoBehaviour
                         {
                             if (clickedCard.isMovable && isCardPlaceable(clickedCard.card, rank))
                             {
-                                CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.ID == clickedCard.card.ID);
+                                //CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.ID == clickedCard.card.ID);
                                 gh.PlaceCard(rank, CardGO);
                                 CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                             }

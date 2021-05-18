@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class CardHolder : MonoBehaviour
 {
-    public GameObject cardPrefab;
-    GameObject cardGO;
+    public GameHandler gh;
     public List<Card> cards;
     public Deck deck;
     
@@ -22,38 +21,8 @@ public class CardHolder : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            MakeCard(cards[i], i);
+            gh.SpawnCard(cards[i], gameObject, i);
         }
-    }
-
-    void MakeCard(Card _card, int position)
-    {     
-        cardGO = Instantiate(cardPrefab, gameObject.transform);
-        cardGO.transform.SetSiblingIndex(position);
-        cardGO.name = _card.name;
-        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy)
-        {
-            // Special cards don't need the damage text
-            cardGO.transform.GetChild(1).gameObject.SetActive(false);
-            cardGO.transform.GetChild(2).gameObject.SetActive(false);
-        }
-        cardGO.GetComponent<CardBehaviour>().card = SetCard(_card);
-        ResizeDeck();
-    }
-
-    Card SetCard(Card _card)
-    {
-        Card newCard = Card.CreateInstance<Card>();
-        newCard.ID = _card.ID;
-        newCard.name = _card.name;
-        newCard.artwork = _card.artwork;
-        newCard.baseDmg = _card.baseDmg;
-        newCard.rankDmg = _card.baseDmg;
-        newCard.rank = _card.rank;
-        newCard.isHero = _card.isHero;
-        newCard.faction = _card.faction;
-        newCard.ability = _card.ability;
-        return newCard;
     }
 
     public void DrawSpyCard()
@@ -66,15 +35,10 @@ public class CardHolder : MonoBehaviour
             {
                 cards.Add(_card);
                 cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
-                MakeCard(_card, cards.IndexOf(_card));
+                gh.SpawnCard(_card, gameObject, cards.IndexOf(_card));
             }
             
         }
-    }
-
-    public void RemoveCard(Card _card)
-    {
-        //holderCards.RemoveAll(c => c.name == _card.name);
     }
 
     public void GetCard(GameObject CardGO)
@@ -99,4 +63,26 @@ public class CardHolder : MonoBehaviour
             gridLayoutGroup.cellSize = new Vector2(width / cards.Count, gridLayoutGroup.cellSize.y);
         }
     }
+
+    public List<GameObject> GetMusterCards(string[] _group)
+    {
+        List<GameObject> musters = new List<GameObject>();
+
+        foreach (Transform CardGO in transform)
+        {
+            Card card = CardGO.GetComponent<CardBehaviour>().card;
+            foreach (string musterID in _group)
+            {
+                if (card.ID == musterID)
+                {
+                    musters.Add(CardGO.gameObject);
+                }
+            }
+        }
+        return musters;
+    }
+
+    
+
+
 }

@@ -984,7 +984,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 695228355}
-  boardBehaviour: {fileID: 0}
   weathered: 0
 --- !u!114 &645693047
 MonoBehaviour:
@@ -1209,7 +1208,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 579528968}
-  boardBehaviour: {fileID: 614490966}
   weathered: 0
 --- !u!114 &668421960
 MonoBehaviour:
@@ -1489,8 +1487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc0f834e9e93ef4f95fd7d8402cb0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 4277259487457991490, guid: 616fb118070930247b8d2496511bdc04,
-    type: 3}
+  gh: {fileID: 1972577252}
   cards: []
   deck: {fileID: 1393005538}
 --- !u!114 &1049617863
@@ -2238,7 +2235,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 1341899282}
-  boardBehaviour: {fileID: 614490966}
   weathered: 0
 --- !u!114 &1504556742
 MonoBehaviour:
@@ -2343,7 +2339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 1103639615}
-  boardBehaviour: {fileID: 0}
   weathered: 0
 --- !u!114 &1630730070
 MonoBehaviour:
@@ -2568,7 +2563,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 1005851599}
-  boardBehaviour: {fileID: 614490966}
   weathered: 0
 --- !u!114 &1747475713
 MonoBehaviour:
@@ -2788,6 +2782,8 @@ MonoBehaviour:
   turn: 0
   playerHolder: {fileID: 2105855379}
   enemyHolder: {fileID: 1049617862}
+  playerDeck: {fileID: 969635459}
+  enemyDeck: {fileID: 1393005538}
   playerGraveyard: {fileID: 1504397690}
   enemyGraveyard: {fileID: 150461984}
   RankCloseP: {fileID: 668421959}
@@ -2796,6 +2792,8 @@ MonoBehaviour:
   RankCloseEn: {fileID: 645693046}
   RankRangedEn: {fileID: 1630730069}
   RankSiegeEn: {fileID: 2091054942}
+  cardPrefab: {fileID: 4277259487457991490, guid: 616fb118070930247b8d2496511bdc04,
+    type: 3}
 --- !u!1 &2085109212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2951,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 297576976}
-  boardBehaviour: {fileID: 0}
   weathered: 0
 --- !u!114 &2091054943
 MonoBehaviour:
@@ -3088,8 +3085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc0f834e9e93ef4f95fd7d8402cb0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 4277259487457991490, guid: 616fb118070930247b8d2496511bdc04,
-    type: 3}
+  gh: {fileID: 1972577252}
   cards: []
   deck: {fileID: 969635459}
 --- !u!114 &2105855380

@@ -8,7 +8,6 @@ public class RankBehaviour : MonoBehaviour
 {
     public List<Card> cards = new List<Card>();
     public Text rankDamageText;
-    //public BoardBehaviour boardBehaviour;
     int rankDamage;
     bool horned = false;
     public bool weathered = false;

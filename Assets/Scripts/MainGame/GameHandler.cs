@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameHandler : MonoBehaviour
@@ -9,6 +10,9 @@ public class GameHandler : MonoBehaviour
 
     public CardHolder playerHolder;
     public CardHolder enemyHolder;
+
+    public Deck playerDeck;
+    public Deck enemyDeck;
 
     public GraveyardBehaviour playerGraveyard;
     public GraveyardBehaviour enemyGraveyard;
@@ -20,6 +24,21 @@ public class GameHandler : MonoBehaviour
     public RankBehaviour RankRangedEn;
     public RankBehaviour RankSiegeEn;
 
+    public GameObject cardPrefab;
+
+    public string[][] musters = new string[][]
+    {
+        new string[] {"S8", "S9", "S10"},
+        new string[] {"S12", "S13", "S14"},
+        new string[] {"S19", "S20", "S21"},
+        new string[] {"M01", "M02", "M03", "M04"},
+        new string[] {"M30", "M31", "M32"},
+        new string[] {"M34", "M35", "M36", "M37", "M38"},
+        new string[] {"M20", "M21", "M22"},
+        new string[] {"M08", "M09", "M10"},
+    };
+
+
     void Start()
     {
         turn = true;
@@ -30,7 +49,6 @@ public class GameHandler : MonoBehaviour
         Card card = CardGO.GetComponent<CardBehaviour>().card;
 
         rank.cards.Add(card);
-        rank.RankSum();
 
         if (card.ability == Ability.Spy)
         {
@@ -43,9 +61,81 @@ public class GameHandler : MonoBehaviour
                 enemyHolder.DrawSpyCard();
             }
         }
+        else if (card.ability == Ability.Muster)
+        {
+            List<Card> musterCards = new List<Card>();
+            List<GameObject> musterCardGOs = new List<GameObject>();
+            string[] musterGroup = GetMusterGroup(card);
 
-        //cardHolder.RemoveCard(card);
-        //cardHolder.ResizeDeck();
+            if (turn)
+            {
+                musterCardGOs = playerHolder.GetMusterCards(musterGroup);
+                if (musterCardGOs.Count > 0)
+                {
+                    foreach(GameObject _cardGO in musterCardGOs)
+                    {
+                        Card _card = _cardGO.GetComponent<CardBehaviour>().card;
+
+                        playerHolder.cards.RemoveAll(x => x.ID == _card.ID);
+                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " P");
+                        cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
+                        _cardGO.transform.SetParent(cardRank.transform);
+
+                    }
+                }
+
+                musterCards = playerDeck.GetMusterCards(musterGroup);
+                if (musterCards.Count > 0)
+                {
+                    foreach(Card _card in musterCards)
+                    {
+                        playerDeck.deck.RemoveAll(x => x.ID == _card.ID);
+                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " P");
+                        cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
+                        SpawnCard(_card, cardRank, 0);
+                    }
+                }
+                
+            }
+            else
+            {
+                musterCardGOs = enemyHolder.GetMusterCards(musterGroup);
+                if (musterCardGOs.Count > 0)
+                {
+                    foreach(GameObject _cardGO in musterCardGOs)
+                    {
+                        Card _card = _cardGO.GetComponent<CardBehaviour>().card;
+
+                        enemyHolder.cards.RemoveAll(x => x.ID == _card.ID);
+                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " En");
+                        cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
+                        _cardGO.transform.SetParent(cardRank.transform);
+                    }
+                }
+
+                musterCards = enemyDeck.GetMusterCards(musterGroup);
+                if (musterCards.Count > 0)
+                {
+                    foreach(Card _card in musterCards)
+                    {
+                        enemyDeck.deck.RemoveAll(x => x.ID == _card.ID);
+                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " En");
+                        cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
+                        SpawnCard(_card, cardRank, 0);
+                    }
+                }
+            }
+
+            if (musterCards.Count > 0)
+            {
+                foreach (Card _card in musterCards)
+                {
+                    
+                }
+            }
+        }
+
+        rank.RankSum();
     }
 
     void PlaceCard(WeatherBehaviour weather, GameObject CardGO)
@@ -107,6 +197,15 @@ public class GameHandler : MonoBehaviour
         cardGO.transform.SetParent(RankGO.transform);
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
+        if (turn)
+        {
+            playerHolder.cards.RemoveAll(x => x.ID == cardGO.GetComponent<CardBehaviour>().card.ID);
+        }
+        else
+        {
+            enemyHolder.cards.RemoveAll(x => x.ID == cardGO.GetComponent<CardBehaviour>().card.ID);
+        }
+
         if (cardGO.GetComponent<CardBehaviour>().card.rank != Rank.Weather)
         {
             PlaceCard(RankGO.GetComponent<RankBehaviour>(), cardGO);
@@ -140,15 +239,46 @@ public class GameHandler : MonoBehaviour
         turn = !turn;
     }
 
-    // GetCards GetCardHolder()
-    // {
-    //     if (turn)
-    //     {
-    //         return GameObject.Find("CardHolder P").GetComponent<GetCards>();
-    //     }
-    //     else
-    //     {
-    //         return GameObject.Find("CardHolder En").GetComponent<GetCards>();
-    //     }
-    // }
+    public void SpawnCard(Card _card, GameObject parent, int position)
+    {
+        GameObject cardGO = Instantiate(cardPrefab, parent.transform);
+        cardGO.transform.SetSiblingIndex(position);
+        cardGO.name = _card.name;
+        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy)
+        {
+            // Special cards don't need the damage text
+            cardGO.transform.GetChild(1).gameObject.SetActive(false);
+            cardGO.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        cardGO.GetComponent<CardBehaviour>().card = SetCard(_card);
+    }
+
+    Card SetCard(Card _card)
+    {
+        Card newCard = Card.CreateInstance<Card>();
+        newCard.ID = _card.ID;
+        newCard.name = _card.name;
+        newCard.artwork = _card.artwork;
+        newCard.baseDmg = _card.baseDmg;
+        newCard.rankDmg = _card.baseDmg;
+        newCard.rank = _card.rank;
+        newCard.isHero = _card.isHero;
+        newCard.faction = _card.faction;
+        newCard.ability = _card.ability;
+        return newCard;
+    }
+
+    public string[] GetMusterGroup(Card _card)
+    {
+        List<string> group = new List<string>();
+
+        foreach(string[] musterGroup in musters)
+        {
+            if (musterGroup.Contains<string>(_card.ID))
+            {
+                return musterGroup;
+            }
+        }
+        return null;
+    }
 }
