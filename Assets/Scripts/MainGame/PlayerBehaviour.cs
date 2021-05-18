@@ -76,7 +76,6 @@ public class PlayerBehaviour : MonoBehaviour
                         {
                             if (clickedCard.isMovable && isCardPlaceable(clickedCard.card, rank))
                             {
-                                //CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.ID == clickedCard.card.ID);
                                 gh.PlaceCard(rank, CardGO);
                                 CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                             }
@@ -172,7 +171,7 @@ public class PlayerBehaviour : MonoBehaviour
         string rankName = _rank.name.ToString();
         string cardRankName = _card.rank.ToString();
 
-        if (_card.ability != Ability.Spy && _card.rank != Rank.Agile && _card.rank != Rank.Weather)
+        if (_card.rank == Rank.Close | _card.rank == Rank.Ranged | _card.rank == Rank.Siege)
         {
             if (rankName.Contains(cardRankName) && rankName.Contains("P"))
             {
@@ -196,6 +195,13 @@ public class PlayerBehaviour : MonoBehaviour
         else if (_card.rank == Rank.Weather)
         {
             if (rankName.Contains("Weather"))
+            {
+                return true;
+            }
+        }
+        else if (_card.rank == Rank.Horn)
+        {
+            if (rankName.Contains("Horn") & _rank.transform.childCount == 0)
             {
                 return true;
             }

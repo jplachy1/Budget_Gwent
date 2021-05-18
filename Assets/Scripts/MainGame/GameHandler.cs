@@ -203,26 +203,33 @@ public class GameHandler : MonoBehaviour
 
     public void PlaceCard(GameObject RankGO, GameObject cardGO)
     {
+        Card cardToPlace = cardGO.GetComponent<CardBehaviour>().card;
+
         cardGO.transform.SetParent(RankGO.transform);
-        cardGO.transform.SetSiblingIndex(GetCardPosition(RankGO.GetComponent<RankBehaviour>().cards, cardGO.GetComponent<CardBehaviour>().card));
+        if (cardToPlace.rank != Rank.Horn)
+            cardGO.transform.SetSiblingIndex(GetCardPosition(RankGO.GetComponent<RankBehaviour>().cards, cardGO.GetComponent<CardBehaviour>().card));
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
         if (turn)
         {
-            playerHolder.cards.RemoveAll(x => x.ID == cardGO.GetComponent<CardBehaviour>().card.ID);
+            playerHolder.cards.RemoveAll(x => x.ID == cardToPlace.ID);
         }
         else
         {
-            enemyHolder.cards.RemoveAll(x => x.ID == cardGO.GetComponent<CardBehaviour>().card.ID);
+            enemyHolder.cards.RemoveAll(x => x.ID == cardToPlace.ID);
         }
 
-        if (cardGO.GetComponent<CardBehaviour>().card.rank != Rank.Weather)
+        if (cardToPlace.rank != Rank.Weather & cardToPlace.rank != Rank.Horn)
         {
             PlaceCard(RankGO.GetComponent<RankBehaviour>(), cardGO);
         }
-        else
+        else if (cardToPlace.rank == Rank.Weather)
         {
             PlaceCard(RankGO.GetComponent<WeatherBehaviour>(), cardGO);
+        }
+        else if(cardToPlace.rank == Rank.Horn)
+        {
+            RankGO.GetComponent<HornBehaviour>().Horn();
         }
 
         turn = !turn;
@@ -264,7 +271,7 @@ public class GameHandler : MonoBehaviour
         GameObject cardGO = Instantiate(cardPrefab, parent.transform);
         cardGO.transform.SetSiblingIndex(position);
         cardGO.name = _card.name;
-        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy)
+        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy | _card.rank == Rank.Horn)
         {
             // Special cards don't need the damage text
             cardGO.transform.GetChild(1).gameObject.SetActive(false);

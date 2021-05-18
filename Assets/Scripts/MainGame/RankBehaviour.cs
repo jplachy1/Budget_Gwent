@@ -10,6 +10,7 @@ public class RankBehaviour : MonoBehaviour
     public Text rankDamageText;
     int rankDamage;
     bool horned = false;
+    public bool globalHorned = false;
     public bool weathered = false;
 
     void Start()
@@ -85,11 +86,21 @@ public class RankBehaviour : MonoBehaviour
             Morale(moralers);
         }
 
-        if (horned)
+        if ((horned & !globalHorned) || (!horned & globalHorned))
         {
             foreach (Card card in cards)
             {
                 if (card.ability != Ability.Morale & card.isHero == false & card.ability != Ability.Bond & card.ability != Ability.Horn)
+                {
+                    card.rankDmg = card.baseDmg * 2;
+                }
+            }
+        }
+        if (horned & globalHorned)
+        {
+            foreach (Card card in cards)
+            {
+                if (card.ability == Ability.Horn)
                 {
                     card.rankDmg = card.baseDmg * 2;
                 }

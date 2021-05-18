@@ -218,13 +218,13 @@ RectTransform:
   - {fileID: 614490967}
   - {fileID: 361960930}
   - {fileID: 668421954}
-  - {fileID: 579528967}
-  - {fileID: 1851120974}
-  - {fileID: 1504556736}
-  - {fileID: 1341899281}
-  - {fileID: 1304808401}
-  - {fileID: 1747475707}
   - {fileID: 527711301}
+  - {fileID: 579528967}
+  - {fileID: 1504556736}
+  - {fileID: 1304808401}
+  - {fileID: 1341899281}
+  - {fileID: 1747475707}
+  - {fileID: 1851120974}
   - {fileID: 1005851598}
   - {fileID: 1504397689}
   - {fileID: 1427046689}
@@ -698,9 +698,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 527711301}
+  - component: {fileID: 527711304}
+  - component: {fileID: 527711303}
+  - component: {fileID: 527711302}
+  - component: {fileID: 527711305}
   m_Layer: 5
-  m_Name: Horn2
-  m_TagString: Untagged
+  m_Name: HornCloseP
+  m_TagString: Rank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,13 +721,87 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 11510767}
-  m_RootOrder: 12
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -458.39996, y: -70.729996}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &527711302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527711300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606f7f71c8c3a2d438f8a643e520e59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rank: {fileID: 668421959}
+--- !u!114 &527711303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527711300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &527711304
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527711300}
+  m_CullTransparentMesh: 0
+--- !u!114 &527711305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527711300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &557250100
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,7 +882,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 11510767}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -984,6 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 695228355}
+  globalHorned: 0
   weathered: 0
 --- !u!114 &645693047
 MonoBehaviour:
@@ -1208,6 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 579528968}
+  globalHorned: 0
   weathered: 0
 --- !u!114 &668421960
 MonoBehaviour:
@@ -1340,6 +1420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb789749b05af394b8ddebfcaa42a701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
   isPlayer: 1
 --- !u!224 &969635460
 RectTransform:
@@ -1837,9 +1918,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1304808401}
+  - component: {fileID: 1304808404}
+  - component: {fileID: 1304808403}
+  - component: {fileID: 1304808402}
+  - component: {fileID: 1304808405}
   m_Layer: 5
-  m_Name: Horn1
-  m_TagString: Untagged
+  m_Name: HornRanged P
+  m_TagString: Rank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1856,13 +1941,87 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 11510767}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -458.39996, y: -205.72997}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1304808402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304808400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606f7f71c8c3a2d438f8a643e520e59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rank: {fileID: 1504556741}
+--- !u!114 &1304808403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304808400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1304808404
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304808400}
+  m_CullTransparentMesh: 0
+--- !u!114 &1304808405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304808400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1341899280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +2052,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 11510767}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1970,6 +2129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb789749b05af394b8ddebfcaa42a701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
   isPlayer: 0
 --- !u!224 &1393005539
 RectTransform:
@@ -2235,6 +2395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 1341899282}
+  globalHorned: 0
   weathered: 0
 --- !u!114 &1504556742
 MonoBehaviour:
@@ -2339,6 +2500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 1103639615}
+  globalHorned: 0
   weathered: 0
 --- !u!114 &1630730070
 MonoBehaviour:
@@ -2563,6 +2725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 1005851599}
+  globalHorned: 0
   weathered: 0
 --- !u!114 &1747475713
 MonoBehaviour:
@@ -2597,9 +2760,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1851120974}
+  - component: {fileID: 1851120977}
+  - component: {fileID: 1851120976}
+  - component: {fileID: 1851120975}
+  - component: {fileID: 1851120978}
   m_Layer: 5
-  m_Name: Horn0
-  m_TagString: Untagged
+  m_Name: HornSiege P
+  m_TagString: Rank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2616,13 +2783,87 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 11510767}
-  m_RootOrder: 7
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -458.4, y: -340.73}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1851120975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851120973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606f7f71c8c3a2d438f8a643e520e59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rank: {fileID: 1747475712}
+--- !u!114 &1851120976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851120973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1851120977
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851120973}
+  m_CullTransparentMesh: 0
+--- !u!114 &1851120978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851120973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1921738250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,6 +3192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   rankDamageText: {fileID: 297576976}
+  globalHorned: 0
   weathered: 0
 --- !u!114 &2091054943
 MonoBehaviour:
