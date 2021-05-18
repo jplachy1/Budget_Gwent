@@ -15,13 +15,9 @@ public class CardHolder : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            cards.Add(deck.DrawCard());
-        }
-        cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
-
-        for (int i = 0; i < 10; i++)
-        {
-            gh.SpawnCard(cards[i], gameObject, i);
+            Card card = deck.DrawCard();
+            cards.Add(card);
+            gh.SpawnCard(card, gameObject);
         }
     }
 
@@ -34,8 +30,7 @@ public class CardHolder : MonoBehaviour
             if(_card != null)
             {
                 cards.Add(_card);
-                cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
-                gh.SpawnCard(_card, gameObject, cards.IndexOf(_card));
+                gh.SpawnCard(_card, gameObject);
             }
             
         }

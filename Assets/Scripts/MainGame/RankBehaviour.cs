@@ -97,6 +97,7 @@ public class RankBehaviour : MonoBehaviour
         }
 
         DisplayDamage();
+        ResizeDeck();
     }
 
     void Bond(List<Card> _bonders)
@@ -232,5 +233,16 @@ public class RankBehaviour : MonoBehaviour
     public int RankScore()
     {
        return rankDamage;
+    }
+
+    void ResizeDeck()
+    {
+        if(cards.Count > 10)
+        {
+            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+            GridLayoutGroup gridLayoutGroup = gameObject.GetComponent<GridLayoutGroup>();
+            float width = rectTransform.sizeDelta.x;
+            gridLayoutGroup.cellSize = new Vector2(width / cards.Count, gridLayoutGroup.cellSize.y);
+        }
     }
 }

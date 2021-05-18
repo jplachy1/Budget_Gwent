@@ -66,6 +66,7 @@ public class GameHandler : MonoBehaviour
             List<Card> musterCards = new List<Card>();
             List<GameObject> musterCardGOs = new List<GameObject>();
             string[] musterGroup = GetMusterGroup(card);
+            int position = 0;
 
             if (turn)
             {
@@ -79,7 +80,11 @@ public class GameHandler : MonoBehaviour
                         playerHolder.cards.RemoveAll(x => x.ID == _card.ID);
                         GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " P");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
+                        
+                        position = GetCardPosition(cardRank.GetComponent<RankBehaviour>().cards, card);
+                        _cardGO.GetComponent<CardBehaviour>().isMovable = false;
                         _cardGO.transform.SetParent(cardRank.transform);
+                        _cardGO.transform.SetSiblingIndex(position);
 
                     }
                 }
@@ -92,7 +97,7 @@ public class GameHandler : MonoBehaviour
                         playerDeck.deck.RemoveAll(x => x.ID == _card.ID);
                         GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " P");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
-                        SpawnCard(_card, cardRank, 0);
+                        SpawnCard(_card, cardRank, false);
                     }
                 }
                 
@@ -109,7 +114,11 @@ public class GameHandler : MonoBehaviour
                         enemyHolder.cards.RemoveAll(x => x.ID == _card.ID);
                         GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " En");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
+
+                        position = GetCardPosition(cardRank.GetComponent<RankBehaviour>().cards, card);
+                        _cardGO.GetComponent<CardBehaviour>().isMovable = false;
                         _cardGO.transform.SetParent(cardRank.transform);
+                        _cardGO.transform.SetSiblingIndex(position);
                     }
                 }
 
@@ -121,7 +130,7 @@ public class GameHandler : MonoBehaviour
                         enemyDeck.deck.RemoveAll(x => x.ID == _card.ID);
                         GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " En");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
-                        SpawnCard(_card, cardRank, 0);
+                        SpawnCard(_card, cardRank, false);
                     }
                 }
             }
@@ -195,6 +204,7 @@ public class GameHandler : MonoBehaviour
     public void PlaceCard(GameObject RankGO, GameObject cardGO)
     {
         cardGO.transform.SetParent(RankGO.transform);
+        cardGO.transform.SetSiblingIndex(GetCardPosition(RankGO.GetComponent<RankBehaviour>().cards, cardGO.GetComponent<CardBehaviour>().card));
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
         if (turn)
@@ -239,8 +249,18 @@ public class GameHandler : MonoBehaviour
         turn = !turn;
     }
 
-    public void SpawnCard(Card _card, GameObject parent, int position)
+    public void SpawnCard(Card _card, GameObject parent, bool movable = true)
     {
+        int position = 0;
+        if (parent.TryGetComponent<CardHolder>(out CardHolder cardHolder))
+        {
+            position = GetCardPosition(cardHolder.cards, _card);
+        }
+        else if (parent.TryGetComponent<RankBehaviour>(out RankBehaviour rankBehaviour))
+        {
+            position = GetCardPosition(rankBehaviour.cards, _card);
+        }
+
         GameObject cardGO = Instantiate(cardPrefab, parent.transform);
         cardGO.transform.SetSiblingIndex(position);
         cardGO.name = _card.name;
@@ -251,6 +271,11 @@ public class GameHandler : MonoBehaviour
             cardGO.transform.GetChild(2).gameObject.SetActive(false);
         }
         cardGO.GetComponent<CardBehaviour>().card = SetCard(_card);
+
+        if (!movable)
+        {
+            cardGO.GetComponent<CardBehaviour>().isMovable = false;
+        }
     }
 
     Card SetCard(Card _card)
@@ -281,4 +306,20 @@ public class GameHandler : MonoBehaviour
         }
         return null;
     }
+
+    int GetCardPosition(List<Card> _cards, Card _card)
+    {
+        _cards = _cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+        for (int i = 0; i < _cards.Count; i++)
+        {
+            if (_cards[i].ID == _card.ID)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+
 }
+
