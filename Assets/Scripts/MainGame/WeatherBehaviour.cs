@@ -19,8 +19,8 @@ public class WeatherBehaviour : MonoBehaviour
     {
         cards.Add(_card);
 
-        RankCloseP.cards.Add(_card);
-        RankCloseEn.cards.Add(_card);
+        RankCloseP.weathered = true;
+        RankCloseEn.weathered = true;
 
         RankCloseP.RankSum();
         RankCloseEn.RankSum();
@@ -30,8 +30,8 @@ public class WeatherBehaviour : MonoBehaviour
     {
         cards.Add(_card);
         
-        RankRangedP.cards.Add(_card);
-        RankRangedEn.cards.Add(_card);
+        RankRangedP.weathered = true;
+        RankRangedEn.weathered = true;
 
         RankRangedP.RankSum();
         RankRangedEn.RankSum();
@@ -41,8 +41,8 @@ public class WeatherBehaviour : MonoBehaviour
     {
         cards.Add(_card);
 
-        RankSiegeP.cards.Add(_card);
-        RankSiegeEn.cards.Add(_card);
+        RankSiegeP.weathered = true;
+        RankSiegeEn.weathered = true;
 
         RankSiegeP.RankSum();
         RankSiegeEn.RankSum();
@@ -50,15 +50,6 @@ public class WeatherBehaviour : MonoBehaviour
 
     public void Clear()
     {
-        foreach (Card card in cards)
-        {
-            RankCloseP.cards.Remove(card);
-            RankCloseEn.cards.Remove(card);
-            RankRangedP.cards.Remove(card);
-            RankRangedEn.cards.Remove(card);
-            RankSiegeP.cards.Remove(card);
-            RankSiegeEn.cards.Remove(card);
-        }
         
         RankCloseP.weathered = false;
         RankCloseEn.weathered = false;
