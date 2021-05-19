@@ -206,7 +206,7 @@ public class GameHandler : MonoBehaviour
         Card cardToPlace = cardGO.GetComponent<CardBehaviour>().card;
 
         cardGO.transform.SetParent(RankGO.transform);
-        if (cardToPlace.rank != Rank.Horn)
+        if (cardToPlace.rank == Rank.Close & cardToPlace.rank == Rank.Ranged & cardToPlace.rank == Rank.Siege)
             cardGO.transform.SetSiblingIndex(GetCardPosition(RankGO.GetComponent<RankBehaviour>().cards, cardGO.GetComponent<CardBehaviour>().card));
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 

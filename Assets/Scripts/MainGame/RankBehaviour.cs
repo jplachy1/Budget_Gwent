@@ -23,6 +23,7 @@ public class RankBehaviour : MonoBehaviour
         rankDamage = 0;
         foreach (Card card in cards)
         {
+            if (card.rank != Rank.Weather)
             rankDamage += card.rankDmg;   
         }
 
@@ -90,9 +91,9 @@ public class RankBehaviour : MonoBehaviour
         {
             foreach (Card card in cards)
             {
-                if (card.ability != Ability.Morale & card.isHero == false & card.ability != Ability.Bond & card.ability != Ability.Horn)
+                if (card.isHero == false & card.ability != Ability.Horn)
                 {
-                    card.rankDmg = card.baseDmg * 2;
+                    card.rankDmg = card.rankDmg * 2;
                 }
             }
         }
