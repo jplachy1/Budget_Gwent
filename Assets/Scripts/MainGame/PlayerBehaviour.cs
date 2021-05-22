@@ -171,7 +171,7 @@ public class PlayerBehaviour : MonoBehaviour
         string rankName = _rank.name.ToString();
         string cardRankName = _card.rank.ToString();
 
-        if (_card.rank == Rank.Close | _card.rank == Rank.Ranged | _card.rank == Rank.Siege)
+        if ((_card.rank == Rank.Close | _card.rank == Rank.Ranged | _card.rank == Rank.Siege) & _card.ability != Ability.Spy)
         {
             if (rankName == "Rank" + cardRankName + " P")
             {
