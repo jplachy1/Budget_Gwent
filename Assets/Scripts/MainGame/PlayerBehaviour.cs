@@ -173,7 +173,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (_card.rank == Rank.Close | _card.rank == Rank.Ranged | _card.rank == Rank.Siege)
         {
-            if (rankName.Contains(cardRankName) && rankName.Contains("P"))
+            if (rankName == "Rank" + cardRankName + " P")
             {
                 return true;
             }
