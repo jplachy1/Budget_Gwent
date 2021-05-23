@@ -9,6 +9,8 @@ public class PlayerBehaviour : MonoBehaviour
 {
     public GameHandler gh;
     public GameObject CardHolder;
+    public GameObject cardView;
+
     Vector3 dist = new Vector3();
     GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
@@ -16,7 +18,7 @@ public class PlayerBehaviour : MonoBehaviour
     bool mouseClicked;
     int siblingIndex;
     CardBehaviour clickedCard;
-    GameObject CardGO;
+    GameObject holdingCardGO;
 
     void Start()
     {
@@ -35,30 +37,29 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                CardGO = SelectedCard();
+                holdingCardGO = SelectedCard();
                 
-                if (CardGO != null)
+                if (holdingCardGO != null)
                 {
-                    clickedCard = CardGO.GetComponent<CardBehaviour>();
+                    clickedCard = holdingCardGO.GetComponent<CardBehaviour>();
                     mouseClicked = true;
-                    dist = Input.mousePosition - CardGO.transform.position;
+                    dist = Input.mousePosition - holdingCardGO.transform.position;
 
                     if (clickedCard.isMovable)
                     {
                         CardHolder.GetComponent<GridLayoutGroup>().enabled = false;
-                        siblingIndex = CardGO.transform.GetSiblingIndex();
-                        CardGO.transform.SetAsLastSibling();
+                        siblingIndex = holdingCardGO.transform.GetSiblingIndex();
+                        holdingCardGO.transform.SetAsLastSibling();
                     }
                 }
             }
 
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
-                CardGO = SelectedCard();
-                if (mouseClicked & CardGO != null)
+                if (mouseClicked & holdingCardGO != null)
                 {
                     mouseClicked = false;
-                    clickedCard = CardGO.GetComponent<CardBehaviour>();
+                    clickedCard = holdingCardGO.GetComponent<CardBehaviour>();
                     GameObject rank = AboveRank();
                     if (rank != null)
                     {
@@ -68,30 +69,26 @@ public class PlayerBehaviour : MonoBehaviour
                             if (decoyableCard != null)
                             {
                                 CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.ID == clickedCard.card.ID);
-                                gh.DecoyCard(CardGO, decoyableCard, rank);
+                                gh.DecoyCard(holdingCardGO, decoyableCard, rank);
                                 CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                             }
                         }
-                        else
+                        else if (clickedCard.isMovable && isCardPlaceable(clickedCard.card, rank))
                         {
-                            if (clickedCard.isMovable && isCardPlaceable(clickedCard.card, rank))
-                            {
-                                gh.PlaceCard(rank, CardGO);
-                                CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
-                            }
-
-
+                            gh.PlaceCard(rank, holdingCardGO);
+                            CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                         }
+
                         if (clickedCard.isMovable)
                         {
-                            CardGO.transform.SetSiblingIndex(siblingIndex);
+                            holdingCardGO.transform.SetSiblingIndex(siblingIndex);
                             CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                         }
                         
                     }
                     else if (clickedCard.isMovable)
                     {
-                        CardGO.transform.SetSiblingIndex(siblingIndex);
+                        holdingCardGO.transform.SetSiblingIndex(siblingIndex);
                         CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                     }
                 }
@@ -99,9 +96,9 @@ public class PlayerBehaviour : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                if (CardGO != null && CardGO.GetComponent<CardBehaviour>().isMovable)
+                if (holdingCardGO != null && holdingCardGO.GetComponent<CardBehaviour>().isMovable)
                 {
-                    CardGO.transform.position = Input.mousePosition - dist;
+                    holdingCardGO.transform.position = Input.mousePosition - dist;
                 }
             }
         }
