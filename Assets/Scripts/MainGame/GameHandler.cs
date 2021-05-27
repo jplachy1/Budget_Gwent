@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
 {
-    [HideInInspector]
     public bool turn;
 
     public CardHolder playerHolder;
@@ -143,7 +143,20 @@ public class GameHandler : MonoBehaviour
                 }
             }
         }
+        else if (card.ability == Ability.Medic)
+        {
+            if (turn)
+            {
+                //List<Card> cardsToSave = playerGraveyard.cardCountText;
+            }
+            else
+            {
 
+            }
+        }
+
+        ResizeField(rank.gameObject, rank.cards.Count);
+        ResizeField(playerHolder.gameObject, playerHolder.cards.Count);
         rank.RankSum();
     }
 
@@ -204,11 +217,7 @@ public class GameHandler : MonoBehaviour
     public void PlaceCard(GameObject RankGO, GameObject cardGO)
     {
         Card cardToPlace = cardGO.GetComponent<CardBehaviour>().card;
-
-        cardGO.transform.SetParent(RankGO.transform);
-        if (cardToPlace.rank == Rank.Close & cardToPlace.rank == Rank.Ranged & cardToPlace.rank == Rank.Siege)
-            cardGO.transform.SetSiblingIndex(GetCardPosition(RankGO.GetComponent<RankBehaviour>().cards, cardGO.GetComponent<CardBehaviour>().card));
-        cardGO.GetComponent<CardBehaviour>().isMovable = false;
+        RankBehaviour rankBehaviour = RankGO.GetComponent<RankBehaviour>();
 
         if (turn)
         {
@@ -221,7 +230,7 @@ public class GameHandler : MonoBehaviour
 
         if (cardToPlace.rank != Rank.Weather & cardToPlace.rank != Rank.Horn)
         {
-            PlaceCard(RankGO.GetComponent<RankBehaviour>(), cardGO);
+            PlaceCard(rankBehaviour, cardGO);
         }
         else if (cardToPlace.rank == Rank.Weather)
         {
@@ -231,6 +240,10 @@ public class GameHandler : MonoBehaviour
         {
             RankGO.GetComponent<HornBehaviour>().Horn();
         }
+        
+        cardGO.transform.SetParent(RankGO.transform);
+        cardGO.transform.SetSiblingIndex(GetCardPosition(rankBehaviour.cards, cardToPlace));
+        cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
         turn = !turn;
     }
@@ -267,6 +280,7 @@ public class GameHandler : MonoBehaviour
         {
             position = GetCardPosition(rankBehaviour.cards, _card);
         }
+        
 
         GameObject cardGO = Instantiate(cardPrefab, parent.transform);
         cardGO.transform.SetSiblingIndex(position);
@@ -285,7 +299,39 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    Card SetCard(Card _card)
+    public GameObject InitialSpawn(Card _card, GameObject parent)
+    {
+        int position = 0;
+        if (parent.TryGetComponent<CardHolder>(out CardHolder cardHolder))
+        {
+            position = GetCardPosition(cardHolder.cards, _card);
+        }
+        else if (parent.TryGetComponent<RankBehaviour>(out RankBehaviour rankBehaviour))
+        {
+            position = GetCardPosition(rankBehaviour.cards, _card);
+        }
+
+        GameObject cardGO = Instantiate(cardPrefab, parent.transform);
+        cardGO.transform.SetSiblingIndex(position);
+        cardGO.name = _card.name;
+        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy | _card.rank == Rank.Horn)
+        {
+            // Special cards don't need the damage text
+            cardGO.transform.GetChild(1).gameObject.SetActive(false);
+            cardGO.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        cardGO.GetComponent<CardBehaviour>().card = SetCard(_card);
+        cardGO.GetComponent<CardBehaviour>().isMovable = false;
+
+        return cardGO;
+
+        // if (!movable)
+        // {
+        //     cardGO.GetComponent<CardBehaviour>().isMovable = false;
+        // }
+    }
+
+    public Card SetCard(Card _card)
     {
         Card newCard = Card.CreateInstance<Card>();
         newCard.ID = _card.ID;
@@ -314,7 +360,7 @@ public class GameHandler : MonoBehaviour
         return null;
     }
 
-    int GetCardPosition(List<Card> _cards, Card _card)
+    public int GetCardPosition(List<Card> _cards, Card _card)
     {
         _cards = _cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
         for (int i = 0; i < _cards.Count; i++)
@@ -325,6 +371,21 @@ public class GameHandler : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    public void ResizeField(GameObject field, int cardCount)
+    {
+        GridLayoutGroup gridLayoutGroup = field.GetComponent<GridLayoutGroup>();
+        if(cardCount > 10)
+        {
+            RectTransform rectTransform = field.GetComponent<RectTransform>();
+            float width = rectTransform.sizeDelta.x;
+            gridLayoutGroup.cellSize = new Vector2(width / (cardCount + (cardCount-10)/9f), gridLayoutGroup.cellSize.y);
+        }
+        else
+        {
+            gridLayoutGroup.cellSize = new Vector2(90, gridLayoutGroup.cellSize.y);
+        }
     }
 
 

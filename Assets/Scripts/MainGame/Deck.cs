@@ -62,6 +62,12 @@ public class Deck : MonoBehaviour
         return null;
     }
 
+    public void GetCardBack(Card _card)
+    {
+        deck.Add(_card);
+        deck = Shuffle();
+    }
+
     void SetCards()
     {
         foreach (Card card in deck)

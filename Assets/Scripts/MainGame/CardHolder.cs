@@ -13,12 +13,12 @@ public class CardHolder : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 10; i++)
-        {
-            Card card = deck.DrawCard();
-            cards.Add(card);
-            gh.SpawnCard(card, gameObject);
-        }
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     Card card = deck.DrawCard();
+        //     cards.Add(card);
+        //     gh.SpawnCard(card, gameObject);
+        // }
     }
 
     public void DrawSpyCard()
@@ -32,7 +32,6 @@ public class CardHolder : MonoBehaviour
                 cards.Add(_card);
                 gh.SpawnCard(_card, gameObject);
             }
-            
         }
     }
 
@@ -46,17 +45,6 @@ public class CardHolder : MonoBehaviour
         CardGO.transform.SetSiblingIndex(cards.IndexOf(_card));
         CardGO.GetComponent<CardBehaviour>().card.rankDmg = CardGO.GetComponent<CardBehaviour>().card.baseDmg;
         cards.Add(CardGO.GetComponent<CardBehaviour>().card);
-    }
-
-    void ResizeDeck()
-    {
-        if(cards.Count > 10)
-        {
-            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-            GridLayoutGroup gridLayoutGroup = gameObject.GetComponent<GridLayoutGroup>();
-            float width = rectTransform.sizeDelta.x;
-            gridLayoutGroup.cellSize = new Vector2(width / cards.Count, gridLayoutGroup.cellSize.y);
-        }
     }
 
     public List<GameObject> GetMusterCards(string[] _group)

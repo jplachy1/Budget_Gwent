@@ -76,10 +76,6 @@ public class RankBehaviour : MonoBehaviour
         {
             Bond(bonders);
         }
-        else if (bonders.Count == 1 & horned)
-        {
-            bonders[0].rankDmg = bonders[0].baseDmg * 2;
-        }
 
 
         if (moralers > 0)
