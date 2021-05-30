@@ -37,11 +37,27 @@ public class GameHandler : MonoBehaviour
         new string[] {"M20", "M21", "M22"},
         new string[] {"M08", "M09", "M10"},
     };
+    [HideInInspector]
+    public GameObject medicCard;
+    [HideInInspector]
+    public bool medicCardChosen = false;
 
+    public const bool UNITS = true;
+    
+    bool medicBreak = false;
 
     void Start()
     {
         turn = true;
+    }
+
+    void Update()
+    {
+        if (medicCardChosen)
+        {
+            PlaceCard(GetRank(medicCard.GetComponent<CardBehaviour>().card),medicCard);
+            medicCardChosen = false;
+        }
     }
 
     void PlaceCard(RankBehaviour rank, GameObject CardGO)
@@ -147,7 +163,9 @@ public class GameHandler : MonoBehaviour
         {
             if (turn)
             {
-                //List<Card> cardsToSave = playerGraveyard.cardCountText;
+                playerGraveyard.GetMedicCard();
+                medicBreak = true;
+                return;
             }
             else
             {
@@ -217,7 +235,7 @@ public class GameHandler : MonoBehaviour
     public void PlaceCard(GameObject RankGO, GameObject cardGO)
     {
         Card cardToPlace = cardGO.GetComponent<CardBehaviour>().card;
-        RankBehaviour rankBehaviour = RankGO.GetComponent<RankBehaviour>();
+        cardGO.transform.SetParent(RankGO.transform);
 
         if (turn)
         {
@@ -230,7 +248,7 @@ public class GameHandler : MonoBehaviour
 
         if (cardToPlace.rank != Rank.Weather & cardToPlace.rank != Rank.Horn)
         {
-            PlaceCard(rankBehaviour, cardGO);
+            PlaceCard(RankGO.GetComponent<RankBehaviour>(), cardGO);
         }
         else if (cardToPlace.rank == Rank.Weather)
         {
@@ -240,9 +258,15 @@ public class GameHandler : MonoBehaviour
         {
             RankGO.GetComponent<HornBehaviour>().Horn();
         }
+
+        if (medicBreak)
+        {
+            medicBreak = false;
+            return;
+        }
+
         
-        cardGO.transform.SetParent(RankGO.transform);
-        cardGO.transform.SetSiblingIndex(GetCardPosition(rankBehaviour.cards, cardToPlace));
+        //cardGO.transform.SetSiblingIndex(GetCardPosition(rankBehaviour.cards, cardToPlace));
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
         turn = !turn;
@@ -386,6 +410,44 @@ public class GameHandler : MonoBehaviour
         {
             gridLayoutGroup.cellSize = new Vector2(90, gridLayoutGroup.cellSize.y);
         }
+    }
+
+    public GameObject GetRank(Card _card)
+    {
+        string cardRank = _card.rank.ToString();
+        if (turn)
+        {
+            if (_card.rank != Rank.Weather & _card.ability != Ability.Spy)
+            {
+                cardRank = "Rank" + cardRank + " P";
+            }
+            else if (_card.rank == Rank.Weather)
+            {
+                cardRank = "Rank" + cardRank;
+            }
+            else if (_card.ability == Ability.Spy)
+            {
+                cardRank = "Rank" + cardRank + " En";
+            }
+        }
+        else
+        {
+            if (_card.rank != Rank.Weather & _card.ability != Ability.Spy)
+            {
+                cardRank = "Rank" + cardRank + " En";
+            }
+            else if (_card.rank == Rank.Weather)
+            {
+                cardRank = "Rank" + cardRank;
+            }
+            else if (_card.ability == Ability.Spy)
+            {
+                cardRank = "Rank" + cardRank + " P";
+            }
+        }
+        
+
+        return GameObject.Find(cardRank);
     }
 
 

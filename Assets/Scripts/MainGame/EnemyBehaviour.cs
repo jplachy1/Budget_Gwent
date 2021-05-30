@@ -27,7 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
             GameObject cardObject = GameObject.Find("CardHolder En/" + cardToPlay.name);
             //cardHolder.cards.RemoveAll(c => c.ID == cardToPlay.ID);
             Debug.Log("Placing Card " + cardToPlay.name);
-            gh.PlaceCard(GetRank(cardToPlay), cardObject);
+            gh.PlaceCard(gh.GetRank(cardToPlay), cardObject);
         }
     }
 
@@ -38,28 +38,4 @@ public class EnemyBehaviour : MonoBehaviour
         candidate = cardHolder.cards[Random.Range(0, cardHolder.cards.Count)];
         return candidate;
     }
-
-
-    GameObject GetRank(Card _card)
-    {
-        GameObject cardGO = GameObject.Find("CardHolder En/" + _card.name);
-        string cardRank = _card.rank.ToString();
-        if (_card.rank != Rank.Weather & _card.ability != Ability.Spy)
-        {
-            cardRank = "Rank" + cardRank + " En";
-        }
-        else if (_card.rank == Rank.Weather)
-        {
-            cardRank = "Rank" + cardRank;
-        }
-        else if (_card.ability == Ability.Spy)
-        {
-            cardRank = "Rank" + cardRank + " P";
-        }
-
-        return GameObject.Find(cardRank);
-    }
-
-
-
 }
