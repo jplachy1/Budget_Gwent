@@ -43,7 +43,7 @@ public class GameHandler : MonoBehaviour
     public bool medicCardChosen = false;
 
     public const bool UNITS = true;
-    
+
     bool medicBreak = false;
 
     void Start()
@@ -55,7 +55,7 @@ public class GameHandler : MonoBehaviour
     {
         if (medicCardChosen)
         {
-            PlaceCard(GetRank(medicCard.GetComponent<CardBehaviour>().card),medicCard);
+            PlaceCard(GetRank(medicCard.GetComponent<CardBehaviour>().card), medicCard);
             medicCardChosen = false;
         }
     }
@@ -89,14 +89,14 @@ public class GameHandler : MonoBehaviour
                 musterCardGOs = playerHolder.GetMusterCards(musterGroup);
                 if (musterCardGOs.Count > 0)
                 {
-                    foreach(GameObject _cardGO in musterCardGOs)
+                    foreach (GameObject _cardGO in musterCardGOs)
                     {
                         Card _card = _cardGO.GetComponent<CardBehaviour>().card;
 
                         playerHolder.cards.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " P");
+                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " P");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
-                        
+
                         position = GetCardPosition(cardRank.GetComponent<RankBehaviour>().cards, card);
                         _cardGO.GetComponent<CardBehaviour>().isMovable = false;
                         _cardGO.transform.SetParent(cardRank.transform);
@@ -108,27 +108,27 @@ public class GameHandler : MonoBehaviour
                 musterCards = playerDeck.GetMusterCards(musterGroup);
                 if (musterCards.Count > 0)
                 {
-                    foreach(Card _card in musterCards)
+                    foreach (Card _card in musterCards)
                     {
                         playerDeck.deck.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " P");
+                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " P");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
                         SpawnCard(_card, cardRank, false);
                     }
                 }
-                
+
             }
             else
             {
                 musterCardGOs = enemyHolder.GetMusterCards(musterGroup);
                 if (musterCardGOs.Count > 0)
                 {
-                    foreach(GameObject _cardGO in musterCardGOs)
+                    foreach (GameObject _cardGO in musterCardGOs)
                     {
                         Card _card = _cardGO.GetComponent<CardBehaviour>().card;
 
                         enemyHolder.cards.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " En");
+                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " En");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
 
                         position = GetCardPosition(cardRank.GetComponent<RankBehaviour>().cards, card);
@@ -141,10 +141,10 @@ public class GameHandler : MonoBehaviour
                 musterCards = enemyDeck.GetMusterCards(musterGroup);
                 if (musterCards.Count > 0)
                 {
-                    foreach(Card _card in musterCards)
+                    foreach (Card _card in musterCards)
                     {
                         enemyDeck.deck.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" +  _card.rank.ToString() + " En");
+                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " En");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
                         SpawnCard(_card, cardRank, false);
                     }
@@ -155,7 +155,7 @@ public class GameHandler : MonoBehaviour
             {
                 foreach (Card _card in musterCards)
                 {
-                    
+
                 }
             }
         }
@@ -169,7 +169,7 @@ public class GameHandler : MonoBehaviour
             }
             else
             {
-
+                //enemy code ...
             }
         }
 
@@ -195,7 +195,7 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
-           if (card.ability == Ability.Close)
+            if (card.ability == Ability.Close)
             {
                 weather.Close(card);
             }
@@ -209,9 +209,9 @@ public class GameHandler : MonoBehaviour
             }
             else if (card.ability == Ability.Clear)
             {
-                while(weather.transform.childCount > 0)
+                while (weather.transform.childCount > 0)
                 {
-                    playerGraveyard.MoveToGraveyard(weather.transform.GetChild(0).gameObject, weather.gameObject); 
+                    playerGraveyard.MoveToGraveyard(weather.transform.GetChild(0).gameObject, weather.gameObject);
                 }
                 weather.Clear();
             }
@@ -227,7 +227,7 @@ public class GameHandler : MonoBehaviour
                 }
 
                 weather.Scorch();
-            }      
+            }
         }
         //cardHolder.RemoveCard(card);
     }
@@ -236,6 +236,7 @@ public class GameHandler : MonoBehaviour
     {
         Card cardToPlace = cardGO.GetComponent<CardBehaviour>().card;
         cardGO.transform.SetParent(RankGO.transform);
+        cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
         if (turn)
         {
@@ -254,7 +255,7 @@ public class GameHandler : MonoBehaviour
         {
             PlaceCard(RankGO.GetComponent<WeatherBehaviour>(), cardGO);
         }
-        else if(cardToPlace.rank == Rank.Horn)
+        else if (cardToPlace.rank == Rank.Horn)
         {
             RankGO.GetComponent<HornBehaviour>().Horn();
         }
@@ -265,14 +266,14 @@ public class GameHandler : MonoBehaviour
             return;
         }
 
-        
+
         //cardGO.transform.SetSiblingIndex(GetCardPosition(rankBehaviour.cards, cardToPlace));
-        cardGO.GetComponent<CardBehaviour>().isMovable = false;
+
 
         turn = !turn;
     }
 
-    public void DecoyCard(GameObject DecoyGO,GameObject CardGO, GameObject RankGO)
+    public void DecoyCard(GameObject DecoyGO, GameObject CardGO, GameObject RankGO)
     {
         CardBehaviour cardBehaviour = CardGO.GetComponent<CardBehaviour>();
         RankBehaviour rankBehaviour = RankGO.GetComponent<RankBehaviour>();
@@ -304,7 +305,7 @@ public class GameHandler : MonoBehaviour
         {
             position = GetCardPosition(rankBehaviour.cards, _card);
         }
-        
+
 
         GameObject cardGO = Instantiate(cardPrefab, parent.transform);
         cardGO.transform.SetSiblingIndex(position);
@@ -374,7 +375,7 @@ public class GameHandler : MonoBehaviour
     {
         List<string> group = new List<string>();
 
-        foreach(string[] musterGroup in musters)
+        foreach (string[] musterGroup in musters)
         {
             if (musterGroup.Contains<string>(_card.ID))
             {
@@ -400,11 +401,11 @@ public class GameHandler : MonoBehaviour
     public void ResizeField(GameObject field, int cardCount)
     {
         GridLayoutGroup gridLayoutGroup = field.GetComponent<GridLayoutGroup>();
-        if(cardCount > 10)
+        if (cardCount > 10)
         {
             RectTransform rectTransform = field.GetComponent<RectTransform>();
             float width = rectTransform.sizeDelta.x;
-            gridLayoutGroup.cellSize = new Vector2(width / (cardCount + (cardCount-10)/9f), gridLayoutGroup.cellSize.y);
+            gridLayoutGroup.cellSize = new Vector2(width / (cardCount + (cardCount - 10) / 9f), gridLayoutGroup.cellSize.y);
         }
         else
         {
@@ -445,7 +446,7 @@ public class GameHandler : MonoBehaviour
                 cardRank = "Rank" + cardRank + " P";
             }
         }
-        
+
 
         return GameObject.Find(cardRank);
     }

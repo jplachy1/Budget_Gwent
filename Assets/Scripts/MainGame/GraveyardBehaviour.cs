@@ -28,19 +28,19 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
 
         cardView.SetActive(true);
         for (int i = 0; i < 10; i++)
-        {                   
+        {
             Card card = deck.DrawCard();
             GameObject cardGO = SpawnGraveyardCard(card, gh.GetCardPosition(cards, card));
-            cardGO.GetComponent<Button>().onClick.AddListener(delegate{SwapCards(cardGO);});
+            cardGO.GetComponent<Button>().onClick.AddListener(delegate { SwapCards(cardGO); });
         }
-        
+
     }
 
     void Update()
     {
         if (swapped > 1 & !swap)
         {
-            foreach(Card card in cards)
+            foreach (Card card in cards)
             {
                 gh.SpawnCard(card, cardHolder.gameObject);
                 cardHolder.cards.Add(card);
@@ -58,7 +58,8 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
 
 
             cardView.SetActive(false);
-            
+            cards.Clear();
+
             swap = true;
         }
     }
@@ -71,7 +72,7 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
         Destroy(_cardGO);
         Card _card = deck.DrawCard();
         GameObject cardGO = SpawnGraveyardCard(_card, position);
-        cardGO.GetComponent<Button>().onClick.AddListener(delegate{SwapCards(cardGO);});
+        cardGO.GetComponent<Button>().onClick.AddListener(delegate { SwapCards(cardGO); });
         swapped++;
     }
 
@@ -97,7 +98,7 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
         _cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
         return _cardGO;
-    }   
+    }
 
     public void MoveToGraveyard(GameObject CardGO, GameObject RankGO)
     {
@@ -130,7 +131,7 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
                 }
                 else
                 {
-                    child.GetComponent<Button>().onClick.AddListener(delegate{MedicClick(child.gameObject);});
+                    child.GetComponent<Button>().onClick.AddListener(delegate { MedicClick(child.gameObject); });
                 }
             }
         }
@@ -140,7 +141,7 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
     void MedicClick(GameObject Button)
     {
         Card _card = Button.GetComponent<CardBehaviour>().card;
-        GameObject cardGO = Instantiate(gh.cardPrefab,GameObject.Find("WaitingRank").transform);
+        GameObject cardGO = Instantiate(gh.cardPrefab, GameObject.Find("WaitingRank").transform);
         cardGO.name = _card.name;
         if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy | _card.rank == Rank.Horn)
         {
@@ -161,12 +162,25 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
     {
         if (cardView.activeInHierarchy == false)
         {
-            ShowCards();    
+            ShowCards();
         }
     }
 
     public void GetMedicCard()
     {
-        ShowCards(GameHandler.UNITS);
+        if (AreUnitsInGraveyard())
+        {
+            ShowCards(GameHandler.UNITS);
+        }
+    }
+
+    private bool AreUnitsInGraveyard()
+    {
+        foreach (Card card in cards)
+        {
+            if (card.IsUnit()) return true;
+        }
+
+        return false;
     }
 }

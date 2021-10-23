@@ -9,7 +9,7 @@ public class CardHolder : MonoBehaviour
     public GameHandler gh;
     public List<Card> cards;
     public Deck deck;
-    
+
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class CardHolder : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             _card = deck.DrawCard();
-            if(_card != null)
+            if (_card != null)
             {
                 cards.Add(_card);
                 gh.SpawnCard(_card, gameObject);
@@ -64,8 +64,4 @@ public class CardHolder : MonoBehaviour
         }
         return musters;
     }
-
-    
-
-
 }

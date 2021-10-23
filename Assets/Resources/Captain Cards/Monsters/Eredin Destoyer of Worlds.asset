@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cea89d857153d4ab0341b2a1500d13, type: 3}
+  m_Name: Eredin Destoyer of Worlds
+  m_EditorClassIdentifier: 
+  ID: CM2
+  name: Eredin
+  surname: Destoyer of Worlds
+  artwork: {fileID: 21300000, guid: 11c8741b62a34f8439a0c981a78729a5, type: 3}
+  descrption: Discard 2 cards and draw 1 card of your choice from you deck
+  faction: 4

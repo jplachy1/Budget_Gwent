@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cea89d857153d4ab0341b2a1500d13, type: 3}
+  m_Name: Francesca Findabair The Beatiful
+  m_EditorClassIdentifier: 
+  ID: CS4
+  name: Francesca Findabair
+  surname: The Beatiful
+  artwork: {fileID: 21300000, guid: fbeb1068e1f51a347b534fc5e4b7d589, type: 3}
+  descrption: Doubles the strength of all your Ranged combat units (unless a Commander's
+    Horn is also present on the row)
+  faction: 3
