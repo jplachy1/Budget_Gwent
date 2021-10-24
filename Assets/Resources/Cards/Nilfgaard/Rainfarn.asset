@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NI23
   name: Rainfarn
   artwork: {fileID: 21300000, guid: c2eea22fef9fc9c408693690334b6c30, type: 3}
+  largeArtwork: {fileID: 21300000, guid: db9758a442c21654f9a1fcf05044e3b8, type: 3}
   baseDmg: 4
   rankDmg: 0
   rank: 0

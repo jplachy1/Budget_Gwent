@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NR13
   name: Esterad Thyssen
   artwork: {fileID: 21300000, guid: b532f9e994b775945b33d8616567b3a1, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 201da2cdd4088ef40b1ccd9a963f8a1f, type: 3}
   baseDmg: 10
   rankDmg: 0
   rank: 0

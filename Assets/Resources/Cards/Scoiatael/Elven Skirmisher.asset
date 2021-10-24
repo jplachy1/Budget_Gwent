@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S14
   name: Elven Skirmisher
   artwork: {fileID: 21300000, guid: 19d3c468cccd3d64bada7ee676a4d317, type: 3}
+  largeArtwork: {fileID: 21300000, guid: ac332bc521fe23747aae5d990796cb52, type: 3}
   baseDmg: 2
   rankDmg: 0
   rank: 1

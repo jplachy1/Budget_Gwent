@@ -368,6 +368,7 @@ public class GameHandler : MonoBehaviour
         newCard.isHero = _card.isHero;
         newCard.faction = _card.faction;
         newCard.ability = _card.ability;
+        newCard.largeArtwork = _card.largeArtwork;
         return newCard;
     }
 

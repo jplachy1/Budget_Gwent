@@ -7,6 +7,7 @@ public class ShowDeckCards : MonoBehaviour
 {
     public SimpleObjectPool cardObjectPool;
     List<Card> cards;
+
     void AddCards()
     {
         foreach (Card card in cards)
@@ -14,13 +15,14 @@ public class ShowDeckCards : MonoBehaviour
             GameObject cardGO = cardObjectPool.GetObject();
             cardGO.transform.SetParent(gameObject.transform);
             cardGO.GetComponent<Image>().sprite = card.artwork;
-            cardGO.GetComponent<RectTransform>().localScale = new Vector3(1f,1f,1f);
+            cardGO.GetComponent<CardPreview>().card = card;
+            cardGO.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
     void RemoveCards()
     {
-        while (transform.childCount > 0) 
+        while (transform.childCount > 0)
         {
             GameObject toRemove = transform.GetChild(0).gameObject;
             cardObjectPool.ReturnObject(toRemove);

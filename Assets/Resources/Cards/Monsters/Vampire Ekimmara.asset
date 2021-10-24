@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M35
   name: Vampire Ekimmara
   artwork: {fileID: 21300000, guid: 9e96660d368adff4e8f137e7dd921f00, type: 3}
+  largeArtwork: {fileID: 21300000, guid: bfd7902589de4374b9c25136d6621cad, type: 3}
   baseDmg: 4
   rankDmg: 0
   rank: 0

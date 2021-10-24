@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M19
   name: Gargoyle
   artwork: {fileID: 21300000, guid: 75c870c061b0833428d9e41edd0751ba, type: 3}
+  largeArtwork: {fileID: 21300000, guid: f9291d73032a8d340a4b768db655c33d, type: 3}
   baseDmg: 2
   rankDmg: 0
   rank: 1

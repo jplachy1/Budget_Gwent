@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NR28
   name: Siege Tower
   artwork: {fileID: 21300000, guid: b1494fceb7b8d4a4a91b705c0b2e920e, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 05df001fbf93ef140bc5f893c56235c2, type: 3}
   baseDmg: 6
   rankDmg: 0
   rank: 2

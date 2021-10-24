@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NR14
   name: John Natalis
   artwork: {fileID: 21300000, guid: 628a13f1e50bb604dac746f25e193351, type: 3}
+  largeArtwork: {fileID: 21300000, guid: ef59e1bb3eb821046b2e89a22e86578b, type: 3}
   baseDmg: 10
   rankDmg: 0
   rank: 0

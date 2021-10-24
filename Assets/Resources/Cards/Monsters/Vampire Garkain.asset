@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M37
   name: Vampire Garkain
   artwork: {fileID: 21300000, guid: bd2ef65853f6a1149849075a415bfa1a, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 8dd3c5a760f471347a15088dfc5f958f, type: 3}
   baseDmg: 4
   rankDmg: 0
   rank: 0

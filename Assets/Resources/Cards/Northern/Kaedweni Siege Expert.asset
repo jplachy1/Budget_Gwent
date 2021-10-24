@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NR17
   name: Kaedweni Siege Expert
   artwork: {fileID: 21300000, guid: f6549cac1e21eae4e8bbbf8795cef08b, type: 3}
+  largeArtwork: {fileID: 21300000, guid: c9428b2b4747c7545bf2a829d2cbcb75, type: 3}
   baseDmg: 1
   rankDmg: 1
   rank: 2

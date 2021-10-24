@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M14
   name: Fiend
   artwork: {fileID: 21300000, guid: d6acff2861fe00144b101dfdbdcc5a3b, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 7b7bcf34102d2de4fb8b79ad0476b851, type: 3}
   baseDmg: 6
   rankDmg: 0
   rank: 0

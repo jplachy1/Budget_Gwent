@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S8
   name: Dwarven Skirmisher
   artwork: {fileID: 21300000, guid: 644a8ca4bce883d4cb70297023541de3, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 44c86d144d3a36a4998fa6ed519a11f1, type: 3}
   baseDmg: 3
   rankDmg: 0
   rank: 0

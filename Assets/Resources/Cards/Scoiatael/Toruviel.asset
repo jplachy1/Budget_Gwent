@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S33
   name: Toruviel
   artwork: {fileID: 21300000, guid: 860849962050b814d9d5dccc339decdd, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 7ecfcf239e1a3c34abb9e96226bad2dd, type: 3}
   baseDmg: 2
   rankDmg: 0
   rank: 1

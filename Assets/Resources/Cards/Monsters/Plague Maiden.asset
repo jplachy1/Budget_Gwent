@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M33
   name: Plague Maiden
   artwork: {fileID: 21300000, guid: 21cb81084910f444187404a37d38e27f, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 5f15c1c83a4df48479c300be02179dd1, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 0

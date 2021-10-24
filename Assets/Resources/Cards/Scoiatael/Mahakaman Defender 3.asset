@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S27
   name: Mahakaman Defender
   artwork: {fileID: 21300000, guid: 73270cc12aba38b42bbee98af2404218, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 1e6ea63aa99e32c4fb237362e2690050, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NI3
   name: Black Infantry Archer
   artwork: {fileID: 21300000, guid: 36ba2de1e61ed5949a35e546948cac2a, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 86f1ae76d35b44646ad9766ed1ca91cb, type: 3}
   baseDmg: 10
   rankDmg: 0
   rank: 1

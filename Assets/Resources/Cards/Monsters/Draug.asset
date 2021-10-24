@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M11
   name: Draug
   artwork: {fileID: 21300000, guid: 330deea94f12e1a4f86ea217c54695db, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 4df563733596dd54581b839d6cfb6e66, type: 3}
   baseDmg: 10
   rankDmg: 0
   rank: 0

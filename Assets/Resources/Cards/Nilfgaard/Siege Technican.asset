@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NI28
   name: "Siege Technican\t"
   artwork: {fileID: 21300000, guid: 2028c7f125795994b8bea53c850b2a63, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 9ef151dde3147ef478fd347c65c38a91, type: 3}
   baseDmg: 0
   rankDmg: 0
   rank: 2

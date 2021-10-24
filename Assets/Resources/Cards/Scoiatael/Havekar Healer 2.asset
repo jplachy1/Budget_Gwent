@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S17
   name: Havekar Healer
   artwork: {fileID: 21300000, guid: 1543801fc6a55724c98128182a691a70, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 17387485967ed6e4cb67cad314f30e8b, type: 3}
   baseDmg: 0
   rankDmg: 0
   rank: 1

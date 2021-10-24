@@ -14,6 +14,7 @@ public class Card : ScriptableObject
     public string ID;
     public new string name;
     public Sprite artwork;
+    public Sprite largeArtwork;
     public int baseDmg;
     [HideInInspector]
     public int rankDmg;

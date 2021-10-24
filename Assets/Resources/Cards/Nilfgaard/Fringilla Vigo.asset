@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NI9
   name: Fringilla Vigo
   artwork: {fileID: 21300000, guid: 146d0f15d4b7a1346b753dc61249d0ad, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 7db3c018f97185c45b918ed257842218, type: 3}
   baseDmg: 6
   rankDmg: 0
   rank: 1

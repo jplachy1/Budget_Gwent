@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S31
   name: Riordain
   artwork: {fileID: 21300000, guid: caa8b020dbf22154abecc9945673c2d1, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 59ef283ed75fd5548b0062deb99d5134, type: 3}
   baseDmg: 1
   rankDmg: 0
   rank: 1

@@ -8,7 +8,7 @@ public class CardScrollList : MonoBehaviour
 {
     [HideInInspector] public List<Card> cardList;
     public GameObject cardPrefab;
-    public CardScrollList otherScrollList; 
+    public CardScrollList otherScrollList;
     public bool main;
     public SimpleObjectPool cardObjectPool;
 
@@ -30,27 +30,14 @@ public class CardScrollList : MonoBehaviour
     public void GetFactionCards(List<Card> _cardList)
     {
         cardList = _cardList;
-        SetupHeight();
+        //SetupHeight();
         RefreshDisplay();
-        
+
     }
     public void RefreshDisplay()
     {
         RemoveCardButtons();
         AddCardButtons();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            while(transform.childCount > 0)
-            {
-                GameObject toRemove = transform.GetChild(0).gameObject;
-                Destroy(toRemove);
-            }
-            
-        }
     }
 
     void AddCardButtons()
@@ -61,27 +48,28 @@ public class CardScrollList : MonoBehaviour
             cardGO.transform.SetParent(gameObject.transform);
             cardGO.GetComponent<Image>().sprite = card.artwork;
             cardGO.GetComponent<CardButton>().Setup(card, this);
-            cardGO.GetComponent<RectTransform>().localScale = new Vector3(1f,1f,1f);
+            cardGO.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
         }
     }
 
     public void RemoveCardButtons()
     {
-        while (transform.childCount > 0) 
+        while (transform.childCount > 0)
         {
             GameObject toRemove = transform.GetChild(0).gameObject;
             cardObjectPool.ReturnObject(toRemove);
         }
     }
-    
+
     void AddCard(Card cardToAdd, CardScrollList cardList)
     {
         cardList.cardList.Add(cardToAdd);
+        cardList.cardList = cardList.cardList.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
     }
 
     void RemoveCard(Card cardToRemove, CardScrollList cardList)
     {
-        for (int i = cardList.cardList.Count - 1; i >= 0; i--) 
+        for (int i = cardList.cardList.Count - 1; i >= 0; i--)
         {
             if (cardList.cardList[i] == cardToRemove)
             {

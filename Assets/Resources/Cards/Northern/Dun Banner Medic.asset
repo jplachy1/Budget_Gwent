@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NR12
   name: Dun Banner Medic
   artwork: {fileID: 21300000, guid: fa0fd6e9ca2116b469e743e4cf6febd8, type: 3}
+  largeArtwork: {fileID: 21300000, guid: be11d52458abd3c4fa5146a3f8590570, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 2

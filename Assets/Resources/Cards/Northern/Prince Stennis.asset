@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NR23
   name: Prince Stennis
   artwork: {fileID: 21300000, guid: c635fb5ffaa7aa04fa8b110099c39dfa, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 3ef02de87a243d14eb81d538698786b8, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 0

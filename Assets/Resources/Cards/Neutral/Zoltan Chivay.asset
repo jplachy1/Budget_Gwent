@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NE31
   name: Zoltan Chivay
   artwork: {fileID: 21300000, guid: ceca43687f03e544da30b7190f4633d4, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 4215ca4fc79334a4894f09c660166668, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 0

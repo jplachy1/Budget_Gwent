@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M22
   name: Ghoul
   artwork: {fileID: 21300000, guid: 25d44df00118c2b4799ec852c1680875, type: 3}
+  largeArtwork: {fileID: 21300000, guid: a76ea0cf2e3e035498438537798b705a, type: 3}
   baseDmg: 1
   rankDmg: 0
   rank: 0

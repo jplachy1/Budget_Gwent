@@ -19,8 +19,6 @@ public class Deck : MonoBehaviour
             deck = PickDecksPlayButton.enemyDeck;
             //deck = Resources.LoadAll<Card>("Cards").ToList();
         }
-
-        SetCards();
         deck = Shuffle();
     }
 
@@ -29,15 +27,15 @@ public class Deck : MonoBehaviour
         int[] shuffledInts = new int[deck.Count];
         List<Card> shuffledCards = new List<Card>();
 
-        for (int i=0; i < deck.Count; i++)
+        for (int i = 0; i < deck.Count; i++)
         {
             shuffledInts[i] = i;
         }
-        for (int i=0; i < deck.Count; i++)
+        for (int i = 0; i < deck.Count; i++)
         {
             int temp;
-            int x = shuffledInts[Random.Range(0,deck.Count)];
-            int y = shuffledInts[Random.Range(0,deck.Count)];
+            int x = shuffledInts[Random.Range(0, deck.Count)];
+            int y = shuffledInts[Random.Range(0, deck.Count)];
             temp = shuffledInts[x];
             shuffledInts[x] = shuffledInts[y];
             shuffledInts[y] = temp;
@@ -66,14 +64,6 @@ public class Deck : MonoBehaviour
     {
         deck.Add(_card);
         deck = Shuffle();
-    }
-
-    void SetCards()
-    {
-        foreach (Card card in deck)
-        {
-            //card.rankDmg = card.baseDmg;
-        }
     }
 
     public List<Card> GetMusterCards(string[] _group)

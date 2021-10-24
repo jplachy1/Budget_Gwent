@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S23
   name: Iorveth
   artwork: {fileID: 21300000, guid: 34ce31530f0c73244935608028087f2a, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 5081669542a5261458f48172fc9d73da, type: 3}
   baseDmg: 10
   rankDmg: 0
   rank: 1

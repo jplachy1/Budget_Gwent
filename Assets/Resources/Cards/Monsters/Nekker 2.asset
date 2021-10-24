@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M31
   name: Nekker
   artwork: {fileID: 21300000, guid: 954392b0f1d9eb8438c97e2b2a70a0ba, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 5edf9362cc0fad54e913fb58d6d50768, type: 3}
   baseDmg: 2
   rankDmg: 0
   rank: 0

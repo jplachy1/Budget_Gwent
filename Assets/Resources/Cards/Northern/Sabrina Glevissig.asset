@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NR26
   name: Sabrina Glevissig
   artwork: {fileID: 21300000, guid: ef11a45784d0ade40be8302912a9147f, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 914af704077add047a4fcaf544c33bbf, type: 3}
   baseDmg: 4
   rankDmg: 0
   rank: 1

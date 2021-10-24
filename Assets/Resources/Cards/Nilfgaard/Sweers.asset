@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NI30
   name: Sweers
   artwork: {fileID: 21300000, guid: e162365f27e78d7408d70815482ed5ef, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 981be7a3c6b5dd746bcf39dd29dc8a86, type: 3}
   baseDmg: 2
   rankDmg: 0
   rank: 1

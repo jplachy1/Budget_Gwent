@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M02
   name: Arachas
   artwork: {fileID: 21300000, guid: f3e1b0fbc401bb04c8741af2970aefa9, type: 3}
+  largeArtwork: {fileID: 21300000, guid: a077c0e91141a6842bf4f0eaa1bdef95, type: 3}
   baseDmg: 4
   rankDmg: 0
   rank: 0

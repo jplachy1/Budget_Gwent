@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NI37
   name: Zerrikanian Fire Scorpion
   artwork: {fileID: 21300000, guid: 2494f81c03a35864595b4be6e8fa854f, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 3d9020578bc9ee342bb432e2c84450ac, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 2

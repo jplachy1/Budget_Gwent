@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NE08
   name: Clear Weather
   artwork: {fileID: 21300000, guid: 6600e076a1e5e3340b8ea2d1851be178, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 29e6ee796df51fd4ca6e7991f7fc8751, type: 3}
   baseDmg: -1
   rankDmg: 0
   rank: 5

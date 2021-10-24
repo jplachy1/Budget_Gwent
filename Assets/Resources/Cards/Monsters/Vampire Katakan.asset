@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M38
   name: Vampire Katakan
   artwork: {fileID: 21300000, guid: 15ebb41b382d6164989a7fedd7e4d206, type: 3}
+  largeArtwork: {fileID: 0}
   baseDmg: 5
   rankDmg: 0
   rank: 0

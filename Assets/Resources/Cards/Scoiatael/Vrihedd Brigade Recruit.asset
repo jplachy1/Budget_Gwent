@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S34
   name: Vrihedd Brigade Recruit
   artwork: {fileID: 21300000, guid: 07586dbd7a32b4341aa7f68c94f2c395, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 55c6254cafc19074b816d4d1c2f09a83, type: 3}
   baseDmg: 4
   rankDmg: 0
   rank: 3

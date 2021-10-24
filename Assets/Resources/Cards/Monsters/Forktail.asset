@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: M17
   name: Forktail
   artwork: {fileID: 21300000, guid: 9328e2f71abcf214ca5db944e503660a, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 054f8f16c907323459ab0535b4888429, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: NE03
   name: Biting Frost
   artwork: {fileID: 21300000, guid: da49308c14099104892f9740e6e45341, type: 3}
+  largeArtwork: {fileID: 21300000, guid: ee6cb942fd5c9a040848714dfc068518, type: 3}
   baseDmg: -1
   rankDmg: 0
   rank: 5

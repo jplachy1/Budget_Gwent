@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: S20
   name: Havekar Smuggler
   artwork: {fileID: 21300000, guid: 3d306aa13cc829742ab39847e666335f, type: 3}
+  largeArtwork: {fileID: 21300000, guid: ee4a411eaf365414081449ad45e65a44, type: 3}
   baseDmg: 5
   rankDmg: 0
   rank: 0
