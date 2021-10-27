@@ -43,6 +43,7 @@ public class GameHandler : MonoBehaviour
     public bool medicCardChosen = false;
 
     public const bool UNITS = true;
+    public static bool showingCardDetails = false;
 
     bool medicBreak = false;
 

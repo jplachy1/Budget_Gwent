@@ -1105,6 +1105,7 @@ MonoBehaviour:
     type: 3}
   gh: {fileID: 1972577252}
   cardHolder: {fileID: 2105855379}
+  swap: 0
 --- !u!114 &423014884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1392,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1892933182}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3508,6 +3509,7 @@ MonoBehaviour:
     type: 3}
   gh: {fileID: 1972577252}
   cardHolder: {fileID: 1049617862}
+  swap: 0
 --- !u!114 &1374036808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4259,6 +4261,7 @@ GameObject:
   - component: {fileID: 1718968335}
   - component: {fileID: 1718968334}
   - component: {fileID: 1718968333}
+  - component: {fileID: 1718968336}
   m_Layer: 5
   m_Name: CardView
   m_TagString: Untagged
@@ -4355,6 +4358,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718968331}
   m_CullTransparentMesh: 0
+--- !u!114 &1718968336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718968331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b04625d3bf9a745b63344273c5ee9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graveyardBehaviour: {fileID: 423014883}
 --- !u!1 &1747475706
 GameObject:
   m_ObjectHideFlags: 0

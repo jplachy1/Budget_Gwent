@@ -35,7 +35,7 @@ public class ShowCardDetails : MonoBehaviour, IPointerClickHandler
 
     void ShowCardDets()
     {
-        Debug.Log(card.name);
+        GameHandler.showingCardDetails = true;
         Transform parent = GameObject.Find("Canvas").transform;
         GameObject CardDetailsObject = Instantiate(cardInfoPrefab, parent);
         CardDetailsObject.GetComponentInChildren<Text>().text = CardDetails.GetDetails(card);

@@ -32,6 +32,7 @@ public class CardInfoBehaviour : MonoBehaviour, IPointerExitHandler, IPointerEnt
     {
         if (!mouseOver && Input.GetMouseButtonDown(0))
         {
+            GameHandler.showingCardDetails = false;
             Destroy(transform.parent.gameObject);
         }
     }

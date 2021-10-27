@@ -13,17 +13,17 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
     public GameObject gCardPrefab;
     public GameHandler gh;
     public CardHolder cardHolder;
+    [HideInInspector]
+    public bool swap = false;
 
     GameObject cardViewContent;
     int swapped = 0;
-    bool swap = false;
     bool medicCall = false;
     Card medicCard = null;
 
     void Start()
     {
         cardViewContent = cardView.transform.GetChild(0).GetChild(0).gameObject;
-        Debug.Log(cardViewContent);
         //Vector2 cardSize = cardViewContent.GetComponent<GridLayoutGroup>().cellSize;
 
         cardView.SetActive(true);
