@@ -23,8 +23,8 @@ public class RankBehaviour : MonoBehaviour
         rankDamage = 0;
         foreach (Card card in cards)
         {
-            if (card.rank != Rank.Weather)
-            rankDamage += card.rankDmg;   
+            if (card.Rank != Rank.Weather)
+                rankDamage += card.RankDmg;
         }
 
         rankDamageText.text = rankDamage.ToString();
@@ -35,26 +35,26 @@ public class RankBehaviour : MonoBehaviour
         List<Card> bonders = new List<Card>();
         int moralers = 0;
 
-        foreach(Card card in cards)
+        foreach (Card card in cards)
         {
-            card.rankDmg = card.baseDmg;
+            card.RankDmg = card.BaseDmg;
         }
 
         foreach (Card card in cards)
         {
-            if (card.ability == Ability.Bond)
+            if (card.Ability == Ability.Bond)
             {
                 bonders.Add(card);
             }
-            else if (card.ability == Ability.Morale)
+            else if (card.Ability == Ability.Morale)
             {
                 moralers++;
             }
-            else if (card.ability == Ability.Horn)
+            else if (card.Ability == Ability.Horn)
             {
                 horned = true;
             }
-            else if (card.rank == Rank.Weather)
+            else if (card.Rank == Rank.Weather)
             {
                 weathered = true;
             }
@@ -62,11 +62,11 @@ public class RankBehaviour : MonoBehaviour
 
         if (weathered)
         {
-            foreach(Card card in cards)
+            foreach (Card card in cards)
             {
-                if (card.isHero == false & card.rank != Rank.Weather)
+                if (card.IsHero == false & card.Rank != Rank.Weather)
                 {
-                    card.rankDmg = 1;
+                    card.RankDmg = 1;
                 }
             }
         }
@@ -87,9 +87,9 @@ public class RankBehaviour : MonoBehaviour
         {
             foreach (Card card in cards)
             {
-                if (card.isHero == false & card.ability != Ability.Horn)
+                if (card.IsHero == false & card.Ability != Ability.Horn)
                 {
-                    card.rankDmg = card.rankDmg * 2;
+                    card.RankDmg = card.RankDmg * 2;
                 }
             }
         }
@@ -97,9 +97,9 @@ public class RankBehaviour : MonoBehaviour
         {
             foreach (Card card in cards)
             {
-                if (card.ability == Ability.Horn)
+                if (card.Ability == Ability.Horn)
                 {
-                    card.rankDmg = card.baseDmg * 2;
+                    card.RankDmg = card.BaseDmg * 2;
                 }
             }
         }
@@ -109,14 +109,14 @@ public class RankBehaviour : MonoBehaviour
     }
 
     void Bond(List<Card> _bonders)
-    { 
+    {
         List<Card> toBond = new List<Card>();
-        _bonders = _bonders.OrderBy(o => o.name).ToList();
+        _bonders = _bonders.OrderBy(o => o.Name).ToList();
         Card prev = _bonders[0];
 
-        for (int i=0; i < _bonders.Count; i++)
+        for (int i = 0; i < _bonders.Count; i++)
         {
-            if (_bonders[i].name == prev.name)
+            if (_bonders[i].Name == prev.Name)
             {
                 toBond.Add(_bonders[i]);
                 prev = _bonders[i];
@@ -131,34 +131,34 @@ public class RankBehaviour : MonoBehaviour
                         {
                             foreach (Card _card in toBond)
                             {
-                                _card.rankDmg = (1 * toBond.Count) * 2;
-                            } 
+                                _card.RankDmg = (1 * toBond.Count) * 2;
+                            }
                         }
                         else
                         {
                             foreach (Card _card in toBond)
                             {
-                                _card.rankDmg = (_card.baseDmg * toBond.Count) * 2;
-                            }     
-                        }                     
+                                _card.RankDmg = (_card.BaseDmg * toBond.Count) * 2;
+                            }
+                        }
                     }
-                    else 
+                    else
                     {
                         if (weathered)
                         {
                             foreach (Card _card in toBond)
                             {
-                                _card.rankDmg = 1 * toBond.Count;
+                                _card.RankDmg = 1 * toBond.Count;
                             }
                         }
-                        else 
+                        else
                         {
                             foreach (Card _card in toBond)
                             {
-                                _card.rankDmg = _card.baseDmg * toBond.Count;
+                                _card.RankDmg = _card.BaseDmg * toBond.Count;
                             }
                         }
-   
+
                     }
 
                 }
@@ -166,11 +166,11 @@ public class RankBehaviour : MonoBehaviour
                 {
                     if (weathered)
                     {
-                        toBond[0].rankDmg = 1 * 2;
+                        toBond[0].RankDmg = 1 * 2;
                     }
                     else
                     {
-                        toBond[0].rankDmg = toBond[0].baseDmg * 2;
+                        toBond[0].RankDmg = toBond[0].BaseDmg * 2;
                     }
                 }
                 toBond = new List<Card>();
@@ -187,65 +187,65 @@ public class RankBehaviour : MonoBehaviour
                 {
                     foreach (Card _card in toBond)
                     {
-                        _card.rankDmg = (1 * toBond.Count) * 2;
+                        _card.RankDmg = (1 * toBond.Count) * 2;
                     }
-                }
-                else 
-                {
-                    foreach (Card _card in toBond)
-                    {
-                        _card.rankDmg = (_card.baseDmg * toBond.Count) * 2;
-                    }
-                }
-            }
-            else 
-            {
-                if (weathered)
-                {
-                    foreach (Card _card in toBond)
-                    {
-                        _card.rankDmg = 1 * toBond.Count;
-                    }   
                 }
                 else
                 {
                     foreach (Card _card in toBond)
                     {
-                        _card.rankDmg = _card.baseDmg * toBond.Count;
-                    }   
+                        _card.RankDmg = (_card.BaseDmg * toBond.Count) * 2;
+                    }
+                }
+            }
+            else
+            {
+                if (weathered)
+                {
+                    foreach (Card _card in toBond)
+                    {
+                        _card.RankDmg = 1 * toBond.Count;
+                    }
+                }
+                else
+                {
+                    foreach (Card _card in toBond)
+                    {
+                        _card.RankDmg = _card.BaseDmg * toBond.Count;
+                    }
                 }
             }
 
         }
         else if (toBond.Count == 1 & horned)
         {
-            toBond[0].rankDmg = toBond[0].baseDmg * 2;
+            toBond[0].RankDmg = toBond[0].BaseDmg * 2;
         }
     }
 
     void Morale(int _moralers)
     {
-        foreach(Card card in cards)
+        foreach (Card card in cards)
         {
-            if (!card.isHero && card.ability != Ability.Morale && card.rank != Rank.Weather)
+            if (!card.IsHero && card.Ability != Ability.Morale && card.Rank != Rank.Weather)
             {
-                card.rankDmg += _moralers;
+                card.RankDmg += _moralers;
             }
-            if (card.ability == Ability.Morale)
+            if (card.Ability == Ability.Morale)
             {
-                card.rankDmg += _moralers - 1;
+                card.RankDmg += _moralers - 1;
             }
         }
     }
 
     public int RankScore()
     {
-       return rankDamage;
+        return rankDamage;
     }
 
     void ResizeDeck()
     {
-        if(cards.Count > 10)
+        if (cards.Count > 10)
         {
             RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
             GridLayoutGroup gridLayoutGroup = gameObject.GetComponent<GridLayoutGroup>();

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Crone Whispess
   m_EditorClassIdentifier: 
-  ID: M10
-  name: Crone Whispess
-  artwork: {fileID: 21300000, guid: e8d62ac70f7355e40b1e1e262515eb38, type: 3}
-  largeArtwork: {fileID: 21300000, guid: d30030eeffaeed64591086aac5b3a374, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 4
-  ability: 7
+  Id: M10
+  Name: Crone Whispess
+  Artwork: {fileID: 21300000, guid: e8d62ac70f7355e40b1e1e262515eb38, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: d30030eeffaeed64591086aac5b3a374, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 4
+  Ability: 7

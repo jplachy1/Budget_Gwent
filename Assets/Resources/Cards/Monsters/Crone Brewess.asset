@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Crone Brewess
   m_EditorClassIdentifier: 
-  ID: M08
-  name: Crone Brewess
-  artwork: {fileID: 21300000, guid: 5119931bccf420746b6d6712778d8400, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 222c06ba603712d449704cc5e179938b, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 4
-  ability: 7
+  Id: M08
+  Name: Crone Brewess
+  Artwork: {fileID: 21300000, guid: 5119931bccf420746b6d6712778d8400, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 222c06ba603712d449704cc5e179938b, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 4
+  Ability: 7

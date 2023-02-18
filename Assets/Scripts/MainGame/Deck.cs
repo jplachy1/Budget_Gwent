@@ -74,7 +74,7 @@ public class Deck : MonoBehaviour
         {
             foreach (string musterID in _group)
             {
-                if (card.ID == musterID)
+                if (card.Id == musterID)
                 {
                     musters.Add(card);
                 }

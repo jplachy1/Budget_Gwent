@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Tibor Eggebracht
   m_EditorClassIdentifier: 
-  ID: NI31
-  name: Tibor Eggebracht
-  artwork: {fileID: 21300000, guid: 9c650256a5acce846862d4d8f82e38f0, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 81ffa1af0f2918643ba006fe5fbdbd02, type: 3}
-  baseDmg: 10
-  rankDmg: 0
-  rank: 1
-  isHero: 1
-  faction: 1
-  ability: 0
+  Id: NI31
+  Name: Tibor Eggebracht
+  Artwork: {fileID: 21300000, guid: 9c650256a5acce846862d4d8f82e38f0, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 81ffa1af0f2918643ba006fe5fbdbd02, type: 3}
+  BaseDmg: 10
+  RankDmg: 0
+  Rank: 1
+  IsHero: 1
+  Faction: 1
+  Ability: 0

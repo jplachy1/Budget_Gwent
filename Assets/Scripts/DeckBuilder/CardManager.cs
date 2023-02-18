@@ -43,26 +43,26 @@ public class CardManager : MonoBehaviour
     {
         foreach(Card card in cardList)
         {
-            if (card.faction == Faction.Neutral)
+            if (card.Faction == Faction.Neutral)
             {
                 northern.Add(card);
                 nilfgaard.Add(card);
                 monsters.Add(card);
                 scoiatael.Add(card);
             }
-            else if (card.faction == Faction.Northern)
+            else if (card.Faction == Faction.Northern)
             {
                 northern.Add(card);
             }
-            else if (card.faction == Faction.Nilfgaard)
+            else if (card.Faction == Faction.Nilfgaard)
             {
                 nilfgaard.Add(card);
             }
-            else if (card.faction == Faction.Monsters)
+            else if (card.Faction == Faction.Monsters)
             {
                 monsters.Add(card);
             }
-            else if (card.faction == Faction.Scoiatael)
+            else if (card.Faction == Faction.Scoiatael)
             {
                 scoiatael.Add(card);
             }

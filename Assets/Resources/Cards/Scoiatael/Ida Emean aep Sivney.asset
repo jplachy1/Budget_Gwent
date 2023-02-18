@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Ida Emean aep Sivney
   m_EditorClassIdentifier: 
-  ID: S22
-  name: Ida Emean aep Sivney
-  artwork: {fileID: 21300000, guid: cb64d8330d173324e8f148a33a5e4b40, type: 3}
-  largeArtwork: {fileID: 21300000, guid: c726c4229728e2d4ebd119e5f48a1b08, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 3
-  ability: 0
+  Id: S22
+  Name: Ida Emean aep Sivney
+  Artwork: {fileID: 21300000, guid: cb64d8330d173324e8f148a33a5e4b40, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: c726c4229728e2d4ebd119e5f48a1b08, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 3
+  Ability: 0

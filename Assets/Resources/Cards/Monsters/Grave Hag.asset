@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Grave Hag
   m_EditorClassIdentifier: 
-  ID: M23
-  name: Grave Hag
-  artwork: {fileID: 21300000, guid: ef778449d29130a418987f7673694ba2, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 7b507e8d4532371449a5e6573b17e814, type: 3}
-  baseDmg: 5
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M23
+  Name: Grave Hag
+  Artwork: {fileID: 21300000, guid: ef778449d29130a418987f7673694ba2, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 7b507e8d4532371449a5e6573b17e814, type: 3}
+  BaseDmg: 5
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 4
+  Ability: 0

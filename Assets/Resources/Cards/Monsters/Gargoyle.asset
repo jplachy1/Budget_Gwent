@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Gargoyle
   m_EditorClassIdentifier: 
-  ID: M19
-  name: Gargoyle
-  artwork: {fileID: 21300000, guid: 75c870c061b0833428d9e41edd0751ba, type: 3}
-  largeArtwork: {fileID: 21300000, guid: f9291d73032a8d340a4b768db655c33d, type: 3}
-  baseDmg: 2
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M19
+  Name: Gargoyle
+  Artwork: {fileID: 21300000, guid: 75c870c061b0833428d9e41edd0751ba, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: f9291d73032a8d340a4b768db655c33d, type: 3}
+  BaseDmg: 2
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 4
+  Ability: 0

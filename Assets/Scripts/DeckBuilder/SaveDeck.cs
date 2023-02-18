@@ -23,8 +23,9 @@ public class SaveDeck : MonoBehaviour
         cardIDs.Add(deckName.text);
         foreach (Card card in deck)
         {
-            cardIDs.Add(card.ID);
+            cardIDs.Add(card.Id);
         }
+        cardIDs.Add(GetCaptainCardID());
 
         sd.Save(cardIDs);
     }

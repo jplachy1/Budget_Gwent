@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Fiend
   m_EditorClassIdentifier: 
-  ID: M14
-  name: Fiend
-  artwork: {fileID: 21300000, guid: d6acff2861fe00144b101dfdbdcc5a3b, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 7b7bcf34102d2de4fb8b79ad0476b851, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M14
+  Name: Fiend
+  Artwork: {fileID: 21300000, guid: d6acff2861fe00144b101dfdbdcc5a3b, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 7b7bcf34102d2de4fb8b79ad0476b851, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 4
+  Ability: 0

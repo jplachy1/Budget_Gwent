@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Cahir Mawr Dyffryn aep Ceallach
   m_EditorClassIdentifier: 
-  ID: NI5
-  name: Cahir Mawr Dyffryn aep Ceallach
-  artwork: {fileID: 21300000, guid: 6d3f9fa157d9219448183169f43ba2c7, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 38d20965908e26444acd217414e00bc3, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 1
-  ability: 0
+  Id: NI5
+  Name: Cahir Mawr Dyffryn aep Ceallach
+  Artwork: {fileID: 21300000, guid: 6d3f9fa157d9219448183169f43ba2c7, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 38d20965908e26444acd217414e00bc3, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 1
+  Ability: 0

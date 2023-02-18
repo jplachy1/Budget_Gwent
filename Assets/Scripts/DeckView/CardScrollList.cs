@@ -46,7 +46,7 @@ public class CardScrollList : MonoBehaviour
         {
             GameObject cardGO = cardObjectPool.GetObject();
             cardGO.transform.SetParent(gameObject.transform);
-            cardGO.GetComponent<Image>().sprite = card.artwork;
+            cardGO.GetComponent<Image>().sprite = card.Artwork;
             cardGO.GetComponent<CardButton>().Setup(card, this);
             cardGO.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
         }
@@ -64,7 +64,7 @@ public class CardScrollList : MonoBehaviour
     void AddCard(Card cardToAdd, CardScrollList cardList)
     {
         cardList.cardList.Add(cardToAdd);
-        cardList.cardList = cardList.cardList.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+        cardList.cardList = cardList.cardList.OrderBy(o => o.BaseDmg).ThenBy(o => o.Name).ToList();
     }
 
     void RemoveCard(Card cardToRemove, CardScrollList cardList)

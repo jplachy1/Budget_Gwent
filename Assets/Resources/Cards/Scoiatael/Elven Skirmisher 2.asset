@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Elven Skirmisher 2
   m_EditorClassIdentifier: 
-  ID: S13
-  name: Elven Skirmisher
-  artwork: {fileID: 21300000, guid: 0c9e5b6cef0e6664db1f96ef99366bb9, type: 3}
-  largeArtwork: {fileID: 21300000, guid: ae9f0b1b03b18824e820d329b461280e, type: 3}
-  baseDmg: 2
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 3
-  ability: 7
+  Id: S13
+  Name: Elven Skirmisher
+  Artwork: {fileID: 21300000, guid: 0c9e5b6cef0e6664db1f96ef99366bb9, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: ae9f0b1b03b18824e820d329b461280e, type: 3}
+  BaseDmg: 2
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 3
+  Ability: 7

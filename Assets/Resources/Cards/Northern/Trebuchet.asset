@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Trebuchet
   m_EditorClassIdentifier: 
-  ID: NR34
-  name: Trebuchet
-  artwork: {fileID: 21300000, guid: 3604212383af40c46940d9ad055b9e09, type: 3}
-  largeArtwork: {fileID: 21300000, guid: c36e845e052a3c64e9471a2fc45e6b53, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 2
-  isHero: 0
-  faction: 2
-  ability: 0
+  Id: NR34
+  Name: Trebuchet
+  Artwork: {fileID: 21300000, guid: 3604212383af40c46940d9ad055b9e09, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: c36e845e052a3c64e9471a2fc45e6b53, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 2
+  IsHero: 0
+  Faction: 2
+  Ability: 0

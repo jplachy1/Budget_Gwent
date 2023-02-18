@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Sheldon Skaggs
   m_EditorClassIdentifier: 
-  ID: NR27
-  name: Sheldon Skaggs
-  artwork: {fileID: 21300000, guid: f446ba055f1ac3b4e9dc0931b64d3f6d, type: 3}
-  largeArtwork: {fileID: 21300000, guid: f94f07d7970edb74996090f8b1b9976b, type: 3}
-  baseDmg: 4
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 2
-  ability: 0
+  Id: NR27
+  Name: Sheldon Skaggs
+  Artwork: {fileID: 21300000, guid: f446ba055f1ac3b4e9dc0931b64d3f6d, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: f94f07d7970edb74996090f8b1b9976b, type: 3}
+  BaseDmg: 4
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 2
+  Ability: 0

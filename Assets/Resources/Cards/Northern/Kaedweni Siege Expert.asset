@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Kaedweni Siege Expert
   m_EditorClassIdentifier: 
-  ID: NR17
-  name: Kaedweni Siege Expert
-  artwork: {fileID: 21300000, guid: f6549cac1e21eae4e8bbbf8795cef08b, type: 3}
-  largeArtwork: {fileID: 21300000, guid: c9428b2b4747c7545bf2a829d2cbcb75, type: 3}
-  baseDmg: 1
-  rankDmg: 1
-  rank: 2
-  isHero: 0
-  faction: 2
-  ability: 2
+  Id: NR17
+  Name: Kaedweni Siege Expert
+  Artwork: {fileID: 21300000, guid: f6549cac1e21eae4e8bbbf8795cef08b, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: c9428b2b4747c7545bf2a829d2cbcb75, type: 3}
+  BaseDmg: 1
+  RankDmg: 1
+  Rank: 2
+  IsHero: 0
+  Faction: 2
+  Ability: 2

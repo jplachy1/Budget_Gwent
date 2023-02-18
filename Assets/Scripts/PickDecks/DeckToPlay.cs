@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DeckToPlay : MonoBehaviour
 {
     public List<Card> deck = new List<Card>();
+    public CaptainCard captainCard;
     GameObject output;
 
     void Start()
@@ -22,7 +23,7 @@ public class DeckToPlay : MonoBehaviour
     }
 
     public void GetDeck(List<Card> _deck)
-    {   
+    {
         deck = _deck;
     }
 
@@ -37,6 +38,6 @@ public class DeckToPlay : MonoBehaviour
             Destroy(output.transform.GetChild(0).gameObject);
             Instantiate(gameObject, output.transform);
         }
-        
+
     }
 }

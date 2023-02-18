@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Dwarven Skirmisher 1
   m_EditorClassIdentifier: 
-  ID: S8
-  name: Dwarven Skirmisher
-  artwork: {fileID: 21300000, guid: 644a8ca4bce883d4cb70297023541de3, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 44c86d144d3a36a4998fa6ed519a11f1, type: 3}
-  baseDmg: 3
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 3
-  ability: 7
+  Id: S8
+  Name: Dwarven Skirmisher
+  Artwork: {fileID: 21300000, guid: 644a8ca4bce883d4cb70297023541de3, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 44c86d144d3a36a4998fa6ed519a11f1, type: 3}
+  BaseDmg: 3
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 3
+  Ability: 7

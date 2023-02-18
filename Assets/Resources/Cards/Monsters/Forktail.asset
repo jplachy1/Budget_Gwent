@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Forktail
   m_EditorClassIdentifier: 
-  ID: M17
-  name: Forktail
-  artwork: {fileID: 21300000, guid: 9328e2f71abcf214ca5db944e503660a, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 054f8f16c907323459ab0535b4888429, type: 3}
-  baseDmg: 5
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M17
+  Name: Forktail
+  Artwork: {fileID: 21300000, guid: 9328e2f71abcf214ca5db944e503660a, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 054f8f16c907323459ab0535b4888429, type: 3}
+  BaseDmg: 5
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 4
+  Ability: 0

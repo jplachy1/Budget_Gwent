@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Albrich
   m_EditorClassIdentifier: 
-  ID: NI1
-  name: Albrich
-  artwork: {fileID: 21300000, guid: ba6fc203af6a67b4688231365209f697, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 6127cdfee0dbee9489e0e66b308c3f9e, type: 3}
-  baseDmg: 2
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 1
-  ability: 0
+  Id: NI1
+  Name: Albrich
+  Artwork: {fileID: 21300000, guid: ba6fc203af6a67b4688231365209f697, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 6127cdfee0dbee9489e0e66b308c3f9e, type: 3}
+  BaseDmg: 2
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 1
+  Ability: 0

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Siege Engineer
   m_EditorClassIdentifier: 
-  ID: NI27
-  name: Siege Engineer
-  artwork: {fileID: 21300000, guid: 291d7af075785c04ba833a9302ea5f47, type: 3}
-  largeArtwork: {fileID: 21300000, guid: f4c0a57564c91284b94b18dcec8cf99f, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 2
-  isHero: 0
-  faction: 1
-  ability: 0
+  Id: NI27
+  Name: Siege Engineer
+  Artwork: {fileID: 21300000, guid: 291d7af075785c04ba833a9302ea5f47, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: f4c0a57564c91284b94b18dcec8cf99f, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 2
+  IsHero: 0
+  Faction: 1
+  Ability: 0

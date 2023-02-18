@@ -24,9 +24,9 @@ public class EnemyBehaviour : MonoBehaviour
         {
             cardToPlay = PickCard();
 
-            GameObject cardObject = GameObject.Find("CardHolder En/" + cardToPlay.name);
+            GameObject cardObject = GameObject.Find("CardHolder En/" + cardToPlay.Name);
             //cardHolder.cards.RemoveAll(c => c.ID == cardToPlay.ID);
-            Debug.Log("Placing Card " + cardToPlay.name);
+            Debug.Log("Placing Card " + cardToPlay.Name);
             gh.PlaceCard(gh.GetRank(cardToPlay), cardObject);
         }
     }

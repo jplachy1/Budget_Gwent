@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Isengrim Faoiltiarna
   m_EditorClassIdentifier: 
-  ID: S24
-  name: Isengrim Faoiltiarna
-  artwork: {fileID: 21300000, guid: 19cf4c49f44b32c44960f23c35f4e82a, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 6eb739c83416336498e837eeb3f10e61, type: 3}
-  baseDmg: 10
-  rankDmg: 0
-  rank: 0
-  isHero: 1
-  faction: 3
-  ability: 2
+  Id: S24
+  Name: Isengrim Faoiltiarna
+  Artwork: {fileID: 21300000, guid: 19cf4c49f44b32c44960f23c35f4e82a, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 6eb739c83416336498e837eeb3f10e61, type: 3}
+  BaseDmg: 10
+  RankDmg: 0
+  Rank: 0
+  IsHero: 1
+  Faction: 3
+  Ability: 2

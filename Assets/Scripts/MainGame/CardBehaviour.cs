@@ -22,12 +22,12 @@ public class CardBehaviour : MonoBehaviour
     void SetCardArtwork()
     {
         GameObject childImage = gameObject.transform.GetChild(0).gameObject;
-        childImage.GetComponent<Image>().sprite = card.artwork;
+        childImage.GetComponent<Image>().sprite = card.Artwork;
     }
 
     void ShowDamage()
     {
         GameObject childText = gameObject.transform.GetChild(2).gameObject;
-        childText.GetComponent<Text>().text = card.rankDmg.ToString();
+        childText.GetComponent<Text>().text = card.RankDmg.ToString();
     }
 }

@@ -37,10 +37,10 @@ public class CardButton : MonoBehaviour, IPointerClickHandler
 
     void ShowCardDets()
     {
-        Debug.Log(card.name);
+        Debug.Log(card.Name);
         Transform parent = GameObject.Find("Canvas").transform;
         GameObject CardDetailsObject = Instantiate(cardInfoPrefab, parent);
         CardDetailsObject.GetComponentInChildren<Text>().text = CardDetails.GetDetails(card);
-        CardDetailsObject.transform.GetChild(2).GetComponent<Image>().sprite = card.largeArtwork;
+        CardDetailsObject.transform.GetChild(2).GetComponent<Image>().sprite = card.LargeArtwork;
     }
 }

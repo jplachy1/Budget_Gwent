@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: "Avallac\u2019h"
   m_EditorClassIdentifier: 
-  ID: NE01
-  name: "Avallac\u2019h"
-  artwork: {fileID: 21300000, guid: a93e93455a03a094d9cdc5d21857d3f0, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 6fc017f38ca98784fb7ea69f0402f620, type: 3}
-  baseDmg: 0
-  rankDmg: 0
-  rank: 0
-  isHero: 1
-  faction: 0
-  ability: 4
+  Id: NE01
+  Name: "Avallac\u2019h"
+  Artwork: {fileID: 21300000, guid: a93e93455a03a094d9cdc5d21857d3f0, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 6fc017f38ca98784fb7ea69f0402f620, type: 3}
+  BaseDmg: 0
+  RankDmg: 0
+  Rank: 0
+  IsHero: 1
+  Faction: 0
+  Ability: 4

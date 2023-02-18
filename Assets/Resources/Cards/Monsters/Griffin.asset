@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Griffin
   m_EditorClassIdentifier: 
-  ID: M24
-  name: Griffin
-  artwork: {fileID: 21300000, guid: a923b9bbfffc0974eaf4e12a420006ef, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 52d95edbd1944b64ab37f37f42f88db3, type: 3}
-  baseDmg: 5
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M24
+  Name: Griffin
+  Artwork: {fileID: 21300000, guid: a923b9bbfffc0974eaf4e12a420006ef, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 52d95edbd1944b64ab37f37f42f88db3, type: 3}
+  BaseDmg: 5
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 4
+  Ability: 0

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Prince Stennis
   m_EditorClassIdentifier: 
-  ID: NR23
-  name: Prince Stennis
-  artwork: {fileID: 21300000, guid: c635fb5ffaa7aa04fa8b110099c39dfa, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 3ef02de87a243d14eb81d538698786b8, type: 3}
-  baseDmg: 5
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 2
-  ability: 4
+  Id: NR23
+  Name: Prince Stennis
+  Artwork: {fileID: 21300000, guid: c635fb5ffaa7aa04fa8b110099c39dfa, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 3ef02de87a243d14eb81d538698786b8, type: 3}
+  BaseDmg: 5
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 2
+  Ability: 4

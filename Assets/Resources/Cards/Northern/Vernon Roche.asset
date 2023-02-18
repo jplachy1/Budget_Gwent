@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Vernon Roche
   m_EditorClassIdentifier: 
-  ID: NR35
-  name: Vernon Roche
-  artwork: {fileID: 21300000, guid: 1ff134faa0ad6c646a5608e29d6be677, type: 3}
-  largeArtwork: {fileID: 21300000, guid: c0cd0f0a64eb0ac4b9c567e319778959, type: 3}
-  baseDmg: 10
-  rankDmg: 0
-  rank: 0
-  isHero: 1
-  faction: 2
-  ability: 0
+  Id: NR35
+  Name: Vernon Roche
+  Artwork: {fileID: 21300000, guid: 1ff134faa0ad6c646a5608e29d6be677, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: c0cd0f0a64eb0ac4b9c567e319778959, type: 3}
+  BaseDmg: 10
+  RankDmg: 0
+  Rank: 0
+  IsHero: 1
+  Faction: 2
+  Ability: 0

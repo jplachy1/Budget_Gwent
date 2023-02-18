@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Emiel Regis Rohellec Terzieff
   m_EditorClassIdentifier: 
-  ID: NE16
-  name: Emiel Regis Rohellec Terzieff
-  artwork: {fileID: 21300000, guid: 360a9a4b69e47754bbaa5079a8e1d7eb, type: 3}
-  largeArtwork: {fileID: 21300000, guid: b5ce505cf8d06bb41a5c81a1f4767ace, type: 3}
-  baseDmg: 5
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 0
-  ability: 0
+  Id: NE16
+  Name: Emiel Regis Rohellec Terzieff
+  Artwork: {fileID: 21300000, guid: 360a9a4b69e47754bbaa5079a8e1d7eb, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: b5ce505cf8d06bb41a5c81a1f4767ace, type: 3}
+  BaseDmg: 5
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 0
+  Ability: 0

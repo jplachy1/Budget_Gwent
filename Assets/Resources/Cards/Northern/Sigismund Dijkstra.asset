@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Sigismund Dijkstra
   m_EditorClassIdentifier: 
-  ID: NR30
-  name: Sigismund Dijkstra
-  artwork: {fileID: 21300000, guid: 2ea4b2bc493bfb4499c1c14b8724eba6, type: 3}
-  largeArtwork: {fileID: 21300000, guid: aa5ae1f1b384b2449b835b8e045e0ca3, type: 3}
-  baseDmg: 4
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 2
-  ability: 4
+  Id: NR30
+  Name: Sigismund Dijkstra
+  Artwork: {fileID: 21300000, guid: 2ea4b2bc493bfb4499c1c14b8724eba6, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: aa5ae1f1b384b2449b835b8e045e0ca3, type: 3}
+  BaseDmg: 4
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 2
+  Ability: 4

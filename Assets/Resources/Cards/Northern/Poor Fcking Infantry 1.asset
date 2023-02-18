@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Poor Fcking Infantry 1
   m_EditorClassIdentifier: 
-  ID: NR20
-  name: Poor F*cking Infantry
-  artwork: {fileID: 21300000, guid: 61930e39cdacd0f419b4d4edd728968c, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 06fb2286bc17221469cd545ebf59aafb, type: 3}
-  baseDmg: 1
-  rankDmg: 20
-  rank: 0
-  isHero: 0
-  faction: 2
-  ability: 1
+  Id: NR20
+  Name: Poor F*cking Infantry
+  Artwork: {fileID: 21300000, guid: 61930e39cdacd0f419b4d4edd728968c, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 06fb2286bc17221469cd545ebf59aafb, type: 3}
+  BaseDmg: 1
+  RankDmg: 20
+  Rank: 0
+  IsHero: 0
+  Faction: 2
+  Ability: 1

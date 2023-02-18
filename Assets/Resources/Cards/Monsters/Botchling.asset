@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Botchling
   m_EditorClassIdentifier: 
-  ID: M05
-  name: Botchling
-  artwork: {fileID: 21300000, guid: cc9b8998cc7ae6b4e9249a7da73694a2, type: 3}
-  largeArtwork: {fileID: 21300000, guid: b3001c6d818de6d4ea86a78b1601a515, type: 3}
-  baseDmg: 4
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M05
+  Name: Botchling
+  Artwork: {fileID: 21300000, guid: cc9b8998cc7ae6b4e9249a7da73694a2, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: b3001c6d818de6d4ea86a78b1601a515, type: 3}
+  BaseDmg: 4
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 4
+  Ability: 0

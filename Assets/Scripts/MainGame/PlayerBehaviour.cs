@@ -63,12 +63,12 @@ public class PlayerBehaviour : MonoBehaviour
                     GameObject rank = AboveRank();
                     if (rank != null)
                     {
-                        if (clickedCard.card.rank == Rank.Decoy && clickedCard.isMovable && !rank.name.Contains("En"))
+                        if (clickedCard.card.Rank == Rank.Decoy && clickedCard.isMovable && !rank.name.Contains("En"))
                         {
                             GameObject decoyableCard = DecoyableCard();
                             if (decoyableCard != null)
                             {
-                                CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.ID == clickedCard.card.ID);
+                                CardHolder.GetComponent<CardHolder>().cards.RemoveAll(x => x.Id == clickedCard.card.Id);
                                 gh.DecoyCard(holdingCardGO, decoyableCard, rank);
                                 CardHolder.GetComponent<GridLayoutGroup>().enabled = true;
                             }
@@ -137,7 +137,7 @@ public class PlayerBehaviour : MonoBehaviour
 
             if (hitGO.TryGetComponent(out CardBehaviour cardBehaviour))
             {
-                if (hitGO.GetComponent<CardBehaviour>().card.rank != Rank.Decoy)
+                if (hitGO.GetComponent<CardBehaviour>().card.Rank != Rank.Decoy)
                 {
                     return hitGO;
                 }
@@ -166,37 +166,37 @@ public class PlayerBehaviour : MonoBehaviour
     bool isCardPlaceable(Card _card, GameObject _rank)
     {
         string rankName = _rank.name.ToString();
-        string cardRankName = _card.rank.ToString();
+        string cardRankName = _card.Rank.ToString();
 
-        if ((_card.rank == Rank.Close | _card.rank == Rank.Ranged | _card.rank == Rank.Siege) & _card.ability != Ability.Spy)
+        if ((_card.Rank == Rank.Close | _card.Rank == Rank.Ranged | _card.Rank == Rank.Siege) & _card.Ability != Ability.Spy)
         {
             if (rankName == "Rank" + cardRankName + " P")
             {
                 return true;
             }
         }
-        else if(_card.ability == Ability.Spy)
+        else if(_card.Ability == Ability.Spy)
         {
             if (rankName.Contains(cardRankName) && rankName.Contains("En"))
             {
                 return true;
             }
         }
-        else if (_card.rank == Rank.Agile)
+        else if (_card.Rank == Rank.Agile)
         {
             if ((rankName.Contains("Ranged") || rankName.Contains("Close")) && rankName.Contains("P"))
             {
                 return true;
             }
         }
-        else if (_card.rank == Rank.Weather)
+        else if (_card.Rank == Rank.Weather)
         {
             if (rankName.Contains("Weather"))
             {
                 return true;
             }
         }
-        else if (_card.rank == Rank.Horn)
+        else if (_card.Rank == Rank.Horn)
         {
             if (rankName.Contains("Horn") & _rank.transform.childCount == 0)
             {

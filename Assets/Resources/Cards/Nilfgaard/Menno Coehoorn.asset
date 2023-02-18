@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Menno Coehoorn
   m_EditorClassIdentifier: 
-  ID: NI16
-  name: Menno Coehoorn
-  artwork: {fileID: 21300000, guid: 815ece1f389577e48918c39bd7235d87, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 1887da700438a034cb3d383e6a2f5340, type: 3}
-  baseDmg: 10
-  rankDmg: 0
-  rank: 0
-  isHero: 1
-  faction: 1
-  ability: 5
+  Id: NI16
+  Name: Menno Coehoorn
+  Artwork: {fileID: 21300000, guid: 815ece1f389577e48918c39bd7235d87, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 1887da700438a034cb3d383e6a2f5340, type: 3}
+  BaseDmg: 10
+  RankDmg: 0
+  Rank: 0
+  IsHero: 1
+  Faction: 1
+  Ability: 5

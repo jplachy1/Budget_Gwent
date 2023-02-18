@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Yennefer of Vengerberg
   m_EditorClassIdentifier: 
-  ID: NE30
-  name: Yennefer of Vengerberg
-  artwork: {fileID: 21300000, guid: 966a5e4ed6442e547b719b42a04b9fe2, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 5f973c4529e35ed4984c3c1857f4244d, type: 3}
-  baseDmg: 7
-  rankDmg: 0
-  rank: 1
-  isHero: 1
-  faction: 0
-  ability: 5
+  Id: NE30
+  Name: Yennefer of Vengerberg
+  Artwork: {fileID: 21300000, guid: 966a5e4ed6442e547b719b42a04b9fe2, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 5f973c4529e35ed4984c3c1857f4244d, type: 3}
+  BaseDmg: 7
+  RankDmg: 0
+  Rank: 1
+  IsHero: 1
+  Faction: 0
+  Ability: 5

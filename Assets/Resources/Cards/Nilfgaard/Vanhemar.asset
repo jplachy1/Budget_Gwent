@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Vanhemar
   m_EditorClassIdentifier: 
-  ID: NI32
-  name: Vanhemar
-  artwork: {fileID: 21300000, guid: cb264b896017e30408a359b87972d459, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 63ff31ca152dff844aa56cd54be76952, type: 3}
-  baseDmg: 4
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 1
-  ability: 0
+  Id: NI32
+  Name: Vanhemar
+  Artwork: {fileID: 21300000, guid: cb264b896017e30408a359b87972d459, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 63ff31ca152dff844aa56cd54be76952, type: 3}
+  BaseDmg: 4
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 1
+  Ability: 0

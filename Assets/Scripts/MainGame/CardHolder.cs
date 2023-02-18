@@ -39,11 +39,11 @@ public class CardHolder : MonoBehaviour
     {
         Card _card = CardGO.GetComponent<CardBehaviour>().card;
         cards.Add(_card);
-        cards = cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+        cards = cards.OrderBy(o => o.BaseDmg).ThenBy(o => o.Name).ToList();
 
         CardGO.transform.SetParent(gameObject.transform);
         CardGO.transform.SetSiblingIndex(cards.IndexOf(_card));
-        CardGO.GetComponent<CardBehaviour>().card.rankDmg = CardGO.GetComponent<CardBehaviour>().card.baseDmg;
+        CardGO.GetComponent<CardBehaviour>().card.RankDmg = CardGO.GetComponent<CardBehaviour>().card.BaseDmg;
         cards.Add(CardGO.GetComponent<CardBehaviour>().card);
     }
 
@@ -56,7 +56,7 @@ public class CardHolder : MonoBehaviour
             Card card = CardGO.GetComponent<CardBehaviour>().card;
             foreach (string musterID in _group)
             {
-                if (card.ID == musterID)
+                if (card.Id == musterID)
                 {
                     musters.Add(CardGO.gameObject);
                 }

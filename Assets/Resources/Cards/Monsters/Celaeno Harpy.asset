@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Celaeno Harpy
   m_EditorClassIdentifier: 
-  ID: M06
-  name: Celaeno Harpy
-  artwork: {fileID: 21300000, guid: dbe7b35dc4c7fbd4596a885fe30da9b5, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 95439775f89bb2c45aad934bae1e2bff, type: 3}
-  baseDmg: 2
-  rankDmg: 0
-  rank: 3
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M06
+  Name: Celaeno Harpy
+  Artwork: {fileID: 21300000, guid: dbe7b35dc4c7fbd4596a885fe30da9b5, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 95439775f89bb2c45aad934bae1e2bff, type: 3}
+  BaseDmg: 2
+  RankDmg: 0
+  Rank: 3
+  IsHero: 0
+  Faction: 4
+  Ability: 0

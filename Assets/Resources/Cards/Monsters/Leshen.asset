@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Leshen
   m_EditorClassIdentifier: 
-  ID: M29
-  name: Leshen
-  artwork: {fileID: 21300000, guid: d2a367d68c7a05f4faedb9ef2822aa8c, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 1be2989f8f7deea41ae268ba957a418b, type: 3}
-  baseDmg: 10
-  rankDmg: 0
-  rank: 1
-  isHero: 1
-  faction: 4
-  ability: 0
+  Id: M29
+  Name: Leshen
+  Artwork: {fileID: 21300000, guid: d2a367d68c7a05f4faedb9ef2822aa8c, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 1be2989f8f7deea41ae268ba957a418b, type: 3}
+  BaseDmg: 10
+  RankDmg: 0
+  Rank: 1
+  IsHero: 1
+  Faction: 4
+  Ability: 0

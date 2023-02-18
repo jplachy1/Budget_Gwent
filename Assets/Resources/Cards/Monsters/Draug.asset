@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Draug
   m_EditorClassIdentifier: 
-  ID: M11
-  name: Draug
-  artwork: {fileID: 21300000, guid: 330deea94f12e1a4f86ea217c54695db, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 4df563733596dd54581b839d6cfb6e66, type: 3}
-  baseDmg: 10
-  rankDmg: 0
-  rank: 0
-  isHero: 1
-  faction: 4
-  ability: 0
+  Id: M11
+  Name: Draug
+  Artwork: {fileID: 21300000, guid: 330deea94f12e1a4f86ea217c54695db, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 4df563733596dd54581b839d6cfb6e66, type: 3}
+  BaseDmg: 10
+  RankDmg: 0
+  Rank: 0
+  IsHero: 1
+  Faction: 4
+  Ability: 0

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Havekar Smuggler 2
   m_EditorClassIdentifier: 
-  ID: S20
-  name: Havekar Smuggler
-  artwork: {fileID: 21300000, guid: 3d306aa13cc829742ab39847e666335f, type: 3}
-  largeArtwork: {fileID: 21300000, guid: ee4a411eaf365414081449ad45e65a44, type: 3}
-  baseDmg: 5
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 3
-  ability: 7
+  Id: S20
+  Name: Havekar Smuggler
+  Artwork: {fileID: 21300000, guid: 3d306aa13cc829742ab39847e666335f, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: ee4a411eaf365414081449ad45e65a44, type: 3}
+  BaseDmg: 5
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 3
+  Ability: 7

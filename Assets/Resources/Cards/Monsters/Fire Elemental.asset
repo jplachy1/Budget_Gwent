@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Fire Elemental
   m_EditorClassIdentifier: 
-  ID: M15
-  name: Fire Elemental
-  artwork: {fileID: 21300000, guid: 629411fcd15e1984985e9f9bc9b96d2d, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 4728ddd72bbcb3e49be1c89e987a1b9f, type: 3}
-  baseDmg: 6
-  rankDmg: 0
-  rank: 2
-  isHero: 0
-  faction: 4
-  ability: 0
+  Id: M15
+  Name: Fire Elemental
+  Artwork: {fileID: 21300000, guid: 629411fcd15e1984985e9f9bc9b96d2d, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 4728ddd72bbcb3e49be1c89e987a1b9f, type: 3}
+  BaseDmg: 6
+  RankDmg: 0
+  Rank: 2
+  IsHero: 0
+  Faction: 4
+  Ability: 0

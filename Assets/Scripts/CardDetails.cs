@@ -23,59 +23,59 @@ public static class CardDetails
 
     public static string GetDetails(Card cardForDetails)
     {
-        if (cardForDetails.ability == Ability.Morale)
+        if (cardForDetails.Ability == Ability.Morale)
         {
             return moraleDescription;
         }
-        else if (cardForDetails.ability == Ability.Bond)
+        else if (cardForDetails.Ability == Ability.Bond)
         {
             return bondDescription;
         }
-        else if (cardForDetails.ability == Ability.Spy)
+        else if (cardForDetails.Ability == Ability.Spy)
         {
             return spyDescription;
         }
-        else if (cardForDetails.ability == Ability.Medic)
+        else if (cardForDetails.Ability == Ability.Medic)
         {
             return medicDescription;
         }
-        else if (cardForDetails.ability == Ability.Horn)
+        else if (cardForDetails.Ability == Ability.Horn)
         {
             return hornDescription;
         }
-        else if (cardForDetails.ability == Ability.Muster)
+        else if (cardForDetails.Ability == Ability.Muster)
         {
             return musterDescription;
         }
-        else if (cardForDetails.ability == Ability.Scorch)
+        else if (cardForDetails.Ability == Ability.Scorch)
         {
             return scorchDescription;
         }
-        else if (cardForDetails.ability == Ability.Agile)
+        else if (cardForDetails.Ability == Ability.Agile)
         {
             return agileDescription;
         }
-        else if (cardForDetails.rank == Rank.Decoy)
+        else if (cardForDetails.Rank == Rank.Decoy)
         {
             return decoyDescription;
         }
-        else if (cardForDetails.rank == Rank.Weather && cardForDetails.ability == Ability.Close)
+        else if (cardForDetails.Rank == Rank.Weather && cardForDetails.Ability == Ability.Close)
         {
             return weatherCloseDescription;
         }
-        else if (cardForDetails.rank == Rank.Weather && cardForDetails.ability == Ability.Ranged)
+        else if (cardForDetails.Rank == Rank.Weather && cardForDetails.Ability == Ability.Ranged)
         {
             return weatherRangedDescription;
         }
-        else if (cardForDetails.rank == Rank.Weather && cardForDetails.ability == Ability.Siege)
+        else if (cardForDetails.Rank == Rank.Weather && cardForDetails.Ability == Ability.Siege)
         {
             return weatherSiegeDescription;
         }
-        else if (cardForDetails.rank == Rank.Weather && cardForDetails.ability == Ability.Clear)
+        else if (cardForDetails.Rank == Rank.Weather && cardForDetails.Ability == Ability.Clear)
         {
             return weatherClearDescription;
         }
-        else if (cardForDetails.isHero)
+        else if (cardForDetails.IsHero)
         {
             return heroDescription;
         }

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Kayran
   m_EditorClassIdentifier: 
-  ID: M28
-  name: Kayran
-  artwork: {fileID: 21300000, guid: 77260511df85b95459bccd890580d2f6, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 1f0b6942f548fc346aeb39c80912a101, type: 3}
-  baseDmg: 8
-  rankDmg: 0
-  rank: 3
-  isHero: 0
-  faction: 4
-  ability: 2
+  Id: M28
+  Name: Kayran
+  Artwork: {fileID: 21300000, guid: 77260511df85b95459bccd890580d2f6, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 1f0b6942f548fc346aeb39c80912a101, type: 3}
+  BaseDmg: 8
+  RankDmg: 0
+  Rank: 3
+  IsHero: 0
+  Faction: 4
+  Ability: 2

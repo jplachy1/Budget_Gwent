@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Nekker 1
   m_EditorClassIdentifier: 
-  ID: M30
-  name: Nekker
-  artwork: {fileID: 21300000, guid: 60ac136f6be1f134dbca4e5e4db1c6d0, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 913f6775aa1c6d94f9c56e82a07a227b, type: 3}
-  baseDmg: 2
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 4
-  ability: 7
+  Id: M30
+  Name: Nekker
+  Artwork: {fileID: 21300000, guid: 60ac136f6be1f134dbca4e5e4db1c6d0, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 913f6775aa1c6d94f9c56e82a07a227b, type: 3}
+  BaseDmg: 2
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 4
+  Ability: 7

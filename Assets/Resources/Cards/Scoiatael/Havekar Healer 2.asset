@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Havekar Healer 2
   m_EditorClassIdentifier: 
-  ID: S17
-  name: Havekar Healer
-  artwork: {fileID: 21300000, guid: 1543801fc6a55724c98128182a691a70, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 17387485967ed6e4cb67cad314f30e8b, type: 3}
-  baseDmg: 0
-  rankDmg: 0
-  rank: 1
-  isHero: 0
-  faction: 3
-  ability: 5
+  Id: S17
+  Name: Havekar Healer
+  Artwork: {fileID: 21300000, guid: 1543801fc6a55724c98128182a691a70, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 17387485967ed6e4cb67cad314f30e8b, type: 3}
+  BaseDmg: 0
+  RankDmg: 0
+  Rank: 1
+  IsHero: 0
+  Faction: 3
+  Ability: 5

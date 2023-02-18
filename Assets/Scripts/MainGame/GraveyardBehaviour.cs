@@ -68,7 +68,7 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
     {
         deck.GetCardBack(_cardGO.GetComponent<CardBehaviour>().card);
         int position = _cardGO.transform.GetSiblingIndex();
-        cards.RemoveAll(x => x.ID == _cardGO.GetComponent<CardBehaviour>().card.ID);
+        cards.RemoveAll(x => x.Id == _cardGO.GetComponent<CardBehaviour>().card.Id);
         Destroy(_cardGO);
         Card _card = deck.DrawCard();
         GameObject cardGO = SpawnGraveyardCard(_card, position);
@@ -87,8 +87,8 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
 
         GameObject _cardGO = Instantiate(gCardPrefab, cardViewContent.transform);
         _cardGO.transform.SetSiblingIndex(position);
-        _cardGO.name = _card.name;
-        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy | _card.rank == Rank.Horn)
+        _cardGO.name = _card.Name;
+        if (_card.Rank == Rank.Weather | _card.Rank == Rank.Decoy | _card.Rank == Rank.Horn)
         {
             // Special cards don't need the damage text
             _cardGO.transform.GetChild(1).gameObject.SetActive(false);
@@ -125,7 +125,7 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
             foreach (Transform child in cardViewContent.transform)
             {
                 Card _card = child.gameObject.GetComponent<CardBehaviour>().card;
-                if (_card.rank == Rank.Weather || _card.rank == Rank.Decoy || _card.rank == Rank.Horn)
+                if (_card.Rank == Rank.Weather || _card.Rank == Rank.Decoy || _card.Rank == Rank.Horn)
                 {
                     child.gameObject.SetActive(false);
                 }
@@ -142,8 +142,8 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
     {
         Card _card = Button.GetComponent<CardBehaviour>().card;
         GameObject cardGO = Instantiate(gh.cardPrefab, GameObject.Find("WaitingRank").transform);
-        cardGO.name = _card.name;
-        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy | _card.rank == Rank.Horn)
+        cardGO.name = _card.Name;
+        if (_card.Rank == Rank.Weather | _card.Rank == Rank.Decoy | _card.Rank == Rank.Horn)
         {
             // Special cards don't need the damage text
             cardGO.transform.GetChild(1).gameObject.SetActive(false);
@@ -178,7 +178,7 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
     {
         foreach (Card card in cards)
         {
-            if (card.IsUnit()) return true;
+            if (card.IsUnit) return true;
         }
 
         return false;

@@ -74,37 +74,37 @@ public class WeatherBehaviour : MonoBehaviour
         {
             if (RankCloseP.cards.Contains(_card))
             {
-                GameObject _CardGO = GameObject.Find("RankClose P/" + _card.name); 
+                GameObject _CardGO = GameObject.Find("RankClose P/" + _card.Name); 
                 playerGraveyard.MoveToGraveyard(_CardGO, RankCloseP.gameObject);
                 RankCloseP.RankSum();
             }
             else if (RankRangedP.cards.Contains(_card))
             {
-                GameObject _CardGO = GameObject.Find("RankRanged P/" + _card.name); 
+                GameObject _CardGO = GameObject.Find("RankRanged P/" + _card.Name); 
                 playerGraveyard.MoveToGraveyard(_CardGO, RankRangedP.gameObject);
                 RankRangedP.RankSum();
             }
             else if (RankSiegeP.cards.Contains(_card))
             {
-                GameObject _CardGO = GameObject.Find("RankSiege P/" + _card.name); 
+                GameObject _CardGO = GameObject.Find("RankSiege P/" + _card.Name); 
                 playerGraveyard.MoveToGraveyard(_CardGO, RankSiegeP.gameObject);
                 RankSiegeP.RankSum();
             }
             else if (RankCloseEn.cards.Contains(_card))
             {
-                GameObject _CardGO = GameObject.Find("RankClose En/" + _card.name); 
+                GameObject _CardGO = GameObject.Find("RankClose En/" + _card.Name); 
                 enemyGraveyard.MoveToGraveyard(_CardGO, RankCloseEn.gameObject);
                 RankCloseEn.RankSum();
             }
             else if (RankRangedEn.cards.Contains(_card))
             {
-                GameObject _CardGO = GameObject.Find("RankRanged En/" + _card.name); 
+                GameObject _CardGO = GameObject.Find("RankRanged En/" + _card.Name); 
                 enemyGraveyard.MoveToGraveyard(_CardGO, RankRangedEn.gameObject);
                 RankRangedEn.RankSum();
             }
             else if (RankSiegeEn.cards.Contains(_card))
             {
-                GameObject _CardGO = GameObject.Find("RankSiege En/" + _card.name); 
+                GameObject _CardGO = GameObject.Find("RankSiege En/" + _card.Name); 
                 enemyGraveyard.MoveToGraveyard(_CardGO, RankSiegeEn.gameObject);
                 RankSiegeEn.RankSum();
             }
@@ -142,19 +142,19 @@ public class WeatherBehaviour : MonoBehaviour
             ranksBiggestCards.AddRange(GetRanksBiggestCard(RankSiegeEn));
         }
 
-        max = ranksBiggestCards[0].rankDmg;
+        max = ranksBiggestCards[0].RankDmg;
 
         for (int i = 0; i < ranksBiggestCards.Count; i++)
         {
-            if (ranksBiggestCards[i].rankDmg > max)
+            if (ranksBiggestCards[i].RankDmg > max)
             {
-                max = ranksBiggestCards[i].rankDmg;
+                max = ranksBiggestCards[i].RankDmg;
             }
         }
 
         for (int i = 0; i < ranksBiggestCards.Count; i++)
         {
-            if (ranksBiggestCards[i].rankDmg == max)
+            if (ranksBiggestCards[i].RankDmg == max)
             {
                 boardsBiggestCards.Add(ranksBiggestCards[i]);
             }
@@ -169,18 +169,18 @@ public class WeatherBehaviour : MonoBehaviour
         List<Card> _biggestCards = new List<Card>();
         if (_cards.Count > 0)
         {
-            int max = _cards[0].rankDmg;
+            int max = _cards[0].RankDmg;
             for (int i = 0; i < _cards.Count; i++)
             {
-                if (_cards[i].rankDmg > max)
+                if (_cards[i].RankDmg > max)
                 {
-                    max = _cards[i].rankDmg;
+                    max = _cards[i].RankDmg;
                 }
             }
 
             for (int i = 0; i < _cards.Count; i++)
             {
-                if (_cards[i].rankDmg == max)
+                if (_cards[i].RankDmg == max)
                 {
                     _biggestCards.Add(_cards[i]);
                 }

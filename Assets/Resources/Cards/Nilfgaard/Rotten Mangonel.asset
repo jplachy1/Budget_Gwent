@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Rotten Mangonel
   m_EditorClassIdentifier: 
-  ID: NI25
-  name: Rotten Mangonel
-  artwork: {fileID: 21300000, guid: 47561f03ca5d8c74a87a2925d5d57206, type: 3}
-  largeArtwork: {fileID: 21300000, guid: 799299b3d1cd07e4d9d32ebc4e4f1758, type: 3}
-  baseDmg: 3
-  rankDmg: 0
-  rank: 2
-  isHero: 0
-  faction: 1
-  ability: 0
+  Id: NI25
+  Name: Rotten Mangonel
+  Artwork: {fileID: 21300000, guid: 47561f03ca5d8c74a87a2925d5d57206, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: 799299b3d1cd07e4d9d32ebc4e4f1758, type: 3}
+  BaseDmg: 3
+  RankDmg: 0
+  Rank: 2
+  IsHero: 0
+  Faction: 1
+  Ability: 0

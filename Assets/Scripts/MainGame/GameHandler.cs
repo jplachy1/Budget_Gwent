@@ -67,7 +67,7 @@ public class GameHandler : MonoBehaviour
 
         rank.cards.Add(card);
 
-        if (card.ability == Ability.Spy)
+        if (card.Ability == Ability.Spy)
         {
             if (turn)
             {
@@ -78,7 +78,7 @@ public class GameHandler : MonoBehaviour
                 enemyHolder.DrawSpyCard();
             }
         }
-        else if (card.ability == Ability.Muster)
+        else if (card.Ability == Ability.Muster)
         {
             List<Card> musterCards = new List<Card>();
             List<GameObject> musterCardGOs = new List<GameObject>();
@@ -94,8 +94,8 @@ public class GameHandler : MonoBehaviour
                     {
                         Card _card = _cardGO.GetComponent<CardBehaviour>().card;
 
-                        playerHolder.cards.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " P");
+                        playerHolder.cards.RemoveAll(x => x.Id == _card.Id);
+                        GameObject cardRank = GetRank(_card);
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
 
                         position = GetCardPosition(cardRank.GetComponent<RankBehaviour>().cards, card);
@@ -111,10 +111,11 @@ public class GameHandler : MonoBehaviour
                 {
                     foreach (Card _card in musterCards)
                     {
-                        playerDeck.deck.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " P");
-                        cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
-                        SpawnCard(_card, cardRank, false);
+                        Card cardToSpawn = SetCard(_card);
+                        playerDeck.deck.RemoveAll(x => x.Id == _card.Id);
+                        GameObject cardRank = GetRank(_card);
+                        GameObject _CardGO = InitialSpawn(cardToSpawn, cardRank, false);
+                        cardRank.GetComponent<RankBehaviour>().cards.Add(_CardGO.GetComponent<CardBehaviour>().card);
                     }
                 }
 
@@ -128,8 +129,8 @@ public class GameHandler : MonoBehaviour
                     {
                         Card _card = _cardGO.GetComponent<CardBehaviour>().card;
 
-                        enemyHolder.cards.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " En");
+                        enemyHolder.cards.RemoveAll(x => x.Id == _card.Id);
+                        GameObject cardRank = GameObject.Find("Rank" + _card.Rank.ToString() + " En");
                         cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
 
                         position = GetCardPosition(cardRank.GetComponent<RankBehaviour>().cards, card);
@@ -144,10 +145,11 @@ public class GameHandler : MonoBehaviour
                 {
                     foreach (Card _card in musterCards)
                     {
-                        enemyDeck.deck.RemoveAll(x => x.ID == _card.ID);
-                        GameObject cardRank = GameObject.Find("Rank" + _card.rank.ToString() + " En");
-                        cardRank.GetComponent<RankBehaviour>().cards.Add(_card);
-                        SpawnCard(_card, cardRank, false);
+                        Card cardToSpawn = SetCard(_card);
+                        enemyDeck.deck.RemoveAll(x => x.Id == _card.Id);
+                        GameObject cardRank = GetRank(_card);
+                        cardRank.GetComponent<RankBehaviour>().cards.Add(cardToSpawn);
+                        SpawnCard(cardToSpawn, cardRank, false);
                     }
                 }
             }
@@ -160,7 +162,7 @@ public class GameHandler : MonoBehaviour
                 }
             }
         }
-        else if (card.ability == Ability.Medic)
+        else if (card.Ability == Ability.Medic)
         {
             if (turn)
             {
@@ -183,7 +185,7 @@ public class GameHandler : MonoBehaviour
     {
         Card card = CardGO.GetComponent<CardBehaviour>().card;
 
-        if (weather.cards.Find(c => c.name == card.name))
+        if (weather.cards.Find(c => c.Name == card.Name))
         {
             if (turn)
             {
@@ -196,19 +198,19 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
-            if (card.ability == Ability.Close)
+            if (card.Ability == Ability.Close)
             {
                 weather.Close(card);
             }
-            else if (card.ability == Ability.Ranged)
+            else if (card.Ability == Ability.Ranged)
             {
                 weather.Ranged(card);
             }
-            else if (card.ability == Ability.Siege)
+            else if (card.Ability == Ability.Siege)
             {
                 weather.Siege(card);
             }
-            else if (card.ability == Ability.Clear)
+            else if (card.Ability == Ability.Clear)
             {
                 while (weather.transform.childCount > 0)
                 {
@@ -216,7 +218,7 @@ public class GameHandler : MonoBehaviour
                 }
                 weather.Clear();
             }
-            else if (card.ability == Ability.Scorch)
+            else if (card.Ability == Ability.Scorch)
             {
                 if (turn)
                 {
@@ -241,22 +243,22 @@ public class GameHandler : MonoBehaviour
 
         if (turn)
         {
-            playerHolder.cards.RemoveAll(x => x.ID == cardToPlace.ID);
+            playerHolder.cards.RemoveAll(x => x.Id == cardToPlace.Id);
         }
         else
         {
-            enemyHolder.cards.RemoveAll(x => x.ID == cardToPlace.ID);
+            enemyHolder.cards.RemoveAll(x => x.Id == cardToPlace.Id);
         }
 
-        if (cardToPlace.rank != Rank.Weather & cardToPlace.rank != Rank.Horn)
+        if (cardToPlace.Rank != Rank.Weather & cardToPlace.Rank != Rank.Horn)
         {
             PlaceCard(RankGO.GetComponent<RankBehaviour>(), cardGO);
         }
-        else if (cardToPlace.rank == Rank.Weather)
+        else if (cardToPlace.Rank == Rank.Weather)
         {
             PlaceCard(RankGO.GetComponent<WeatherBehaviour>(), cardGO);
         }
-        else if (cardToPlace.rank == Rank.Horn)
+        else if (cardToPlace.Rank == Rank.Horn)
         {
             RankGO.GetComponent<HornBehaviour>().Horn();
         }
@@ -288,14 +290,14 @@ public class GameHandler : MonoBehaviour
         }
 
         DecoyGO.GetComponent<CardBehaviour>().isMovable = false;
-        rankBehaviour.cards.RemoveAll(x => x.ID == cardBehaviour.card.ID);
+        rankBehaviour.cards.RemoveAll(x => x.Id == cardBehaviour.card.Id);
         rankBehaviour.RankSum();
         DecoyGO.transform.SetParent(RankGO.transform);
 
         turn = !turn;
     }
 
-    public void SpawnCard(Card _card, GameObject parent, bool movable = true)
+    public void SpawnCard(Card _card, GameObject parent, bool movable = true, GameObject _cardPrefab = null)
     {
         int position = 0;
         if (parent.TryGetComponent<CardHolder>(out CardHolder cardHolder))
@@ -306,12 +308,16 @@ public class GameHandler : MonoBehaviour
         {
             position = GetCardPosition(rankBehaviour.cards, _card);
         }
+        else if (parent.TryGetComponent<HornBehaviour>(out HornBehaviour hornBehaviour))
+        {
+            hornBehaviour.Horn();
+        }
 
 
-        GameObject cardGO = Instantiate(cardPrefab, parent.transform);
+        GameObject cardGO = (_cardPrefab == null) ? Instantiate(cardPrefab, parent.transform) : Instantiate(_cardPrefab, parent.transform);
         cardGO.transform.SetSiblingIndex(position);
-        cardGO.name = _card.name;
-        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy | _card.rank == Rank.Horn)
+        cardGO.name = _card.Name;
+        if (_card.Rank == Rank.Weather | _card.Rank == Rank.Decoy | _card.Rank == Rank.Horn)
         {
             // Special cards don't need the damage text
             cardGO.transform.GetChild(1).gameObject.SetActive(false);
@@ -325,7 +331,7 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    public GameObject InitialSpawn(Card _card, GameObject parent)
+    public GameObject InitialSpawn(Card _card, GameObject parent, bool movable)
     {
         int position = 0;
         if (parent.TryGetComponent<CardHolder>(out CardHolder cardHolder))
@@ -339,8 +345,8 @@ public class GameHandler : MonoBehaviour
 
         GameObject cardGO = Instantiate(cardPrefab, parent.transform);
         cardGO.transform.SetSiblingIndex(position);
-        cardGO.name = _card.name;
-        if (_card.rank == Rank.Weather | _card.rank == Rank.Decoy | _card.rank == Rank.Horn)
+        cardGO.name = _card.Name;
+        if (_card.Rank == Rank.Weather | _card.Rank == Rank.Decoy | _card.Rank == Rank.Horn)
         {
             // Special cards don't need the damage text
             cardGO.transform.GetChild(1).gameObject.SetActive(false);
@@ -349,27 +355,29 @@ public class GameHandler : MonoBehaviour
         cardGO.GetComponent<CardBehaviour>().card = SetCard(_card);
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
-        return cardGO;
 
-        // if (!movable)
-        // {
-        //     cardGO.GetComponent<CardBehaviour>().isMovable = false;
-        // }
+
+        if (!movable)
+        {
+            cardGO.GetComponent<CardBehaviour>().isMovable = false;
+        }
+
+        return cardGO;
     }
 
     public Card SetCard(Card _card)
     {
         Card newCard = Card.CreateInstance<Card>();
-        newCard.ID = _card.ID;
-        newCard.name = _card.name;
-        newCard.artwork = _card.artwork;
-        newCard.baseDmg = _card.baseDmg;
-        newCard.rankDmg = _card.baseDmg;
-        newCard.rank = _card.rank;
-        newCard.isHero = _card.isHero;
-        newCard.faction = _card.faction;
-        newCard.ability = _card.ability;
-        newCard.largeArtwork = _card.largeArtwork;
+        newCard.Id = _card.Id;
+        newCard.Name = _card.Name;
+        newCard.Artwork = _card.Artwork;
+        newCard.BaseDmg = _card.BaseDmg;
+        newCard.RankDmg = _card.BaseDmg;
+        newCard.Rank = _card.Rank;
+        newCard.IsHero = _card.IsHero;
+        newCard.Faction = _card.Faction;
+        newCard.Ability = _card.Ability;
+        newCard.LargeArtwork = _card.LargeArtwork;
         return newCard;
     }
 
@@ -379,7 +387,7 @@ public class GameHandler : MonoBehaviour
 
         foreach (string[] musterGroup in musters)
         {
-            if (musterGroup.Contains<string>(_card.ID))
+            if (musterGroup.Contains<string>(_card.Id))
             {
                 return musterGroup;
             }
@@ -389,10 +397,10 @@ public class GameHandler : MonoBehaviour
 
     public int GetCardPosition(List<Card> _cards, Card _card)
     {
-        _cards = _cards.OrderBy(o => o.baseDmg).ThenBy(o => o.name).ToList();
+        _cards = _cards.OrderBy(o => o.BaseDmg).ThenBy(o => o.Name).ToList();
         for (int i = 0; i < _cards.Count; i++)
         {
-            if (_cards[i].ID == _card.ID)
+            if (_cards[i].Id == _card.Id)
             {
                 return i;
             }
@@ -417,33 +425,33 @@ public class GameHandler : MonoBehaviour
 
     public GameObject GetRank(Card _card)
     {
-        string cardRank = _card.rank.ToString();
+        string cardRank = _card.Rank.ToString();
         if (turn)
         {
-            if (_card.rank != Rank.Weather & _card.ability != Ability.Spy)
+            if (_card.Rank != Rank.Weather & _card.Ability != Ability.Spy)
             {
                 cardRank = "Rank" + cardRank + " P";
             }
-            else if (_card.rank == Rank.Weather)
+            else if (_card.Rank == Rank.Weather)
             {
                 cardRank = "Rank" + cardRank;
             }
-            else if (_card.ability == Ability.Spy)
+            else if (_card.Ability == Ability.Spy)
             {
                 cardRank = "Rank" + cardRank + " En";
             }
         }
         else
         {
-            if (_card.rank != Rank.Weather & _card.ability != Ability.Spy)
+            if (_card.Rank != Rank.Weather & _card.Ability != Ability.Spy)
             {
                 cardRank = "Rank" + cardRank + " En";
             }
-            else if (_card.rank == Rank.Weather)
+            else if (_card.Rank == Rank.Weather)
             {
                 cardRank = "Rank" + cardRank;
             }
-            else if (_card.ability == Ability.Spy)
+            else if (_card.Ability == Ability.Spy)
             {
                 cardRank = "Rank" + cardRank + " P";
             }

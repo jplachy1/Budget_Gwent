@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: "Commander\u2019s Horn 2"
   m_EditorClassIdentifier: 
-  ID: NE10
-  name: "Commander\u2019s Horn"
-  artwork: {fileID: 21300000, guid: e87c19c6b6cf4524fad8d935ec3efbf1, type: 3}
-  largeArtwork: {fileID: 21300000, guid: e3c6701914db80a47aa8997a8922f3f2, type: 3}
-  baseDmg: -1
-  rankDmg: 0
-  rank: 4
-  isHero: 0
-  faction: 0
-  ability: 8
+  Id: NE10
+  Name: "Commander\u2019s Horn"
+  Artwork: {fileID: 21300000, guid: e87c19c6b6cf4524fad8d935ec3efbf1, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: e3c6701914db80a47aa8997a8922f3f2, type: 3}
+  BaseDmg: -1
+  RankDmg: 0
+  Rank: 4
+  IsHero: 0
+  Faction: 0
+  Ability: 8

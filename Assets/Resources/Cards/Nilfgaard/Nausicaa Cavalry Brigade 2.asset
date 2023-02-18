@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf85c18f095c6d4f86357ffa1f41d7e, type: 3}
   m_Name: Nausicaa Cavalry Brigade 2
   m_EditorClassIdentifier: 
-  ID: NI20
-  name: Nausicaa Cavalry Brigade
-  artwork: {fileID: 21300000, guid: 669998bfa84428342aeb88ff5bec9603, type: 3}
-  largeArtwork: {fileID: 21300000, guid: fca335bfc6c509b4c861a569ec026943, type: 3}
-  baseDmg: 2
-  rankDmg: 0
-  rank: 0
-  isHero: 0
-  faction: 1
-  ability: 1
+  Id: NI20
+  Name: Nausicaa Cavalry Brigade
+  Artwork: {fileID: 21300000, guid: 669998bfa84428342aeb88ff5bec9603, type: 3}
+  LargeArtwork: {fileID: 21300000, guid: fca335bfc6c509b4c861a569ec026943, type: 3}
+  BaseDmg: 2
+  RankDmg: 0
+  Rank: 0
+  IsHero: 0
+  Faction: 1
+  Ability: 1

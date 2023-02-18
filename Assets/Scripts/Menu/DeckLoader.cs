@@ -12,7 +12,7 @@ public class DeckLoader : MonoBehaviour
     void Start()
     {
         cardList = Resources.LoadAll<Card>("Cards").ToList();
-        cardList = cardList.OrderBy(o => o.baseDmg).ToList();
+        cardList = cardList.OrderBy(o => o.BaseDmg).ToList();
         captainCardList = Resources.LoadAll<CaptainCard>("Captain Cards").ToList();
         decks = saveData.Load("decks.xd");
     }
