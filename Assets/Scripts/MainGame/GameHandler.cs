@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
 {
-    public bool turn;
+    private bool turn;
 
     public CardHolder playerHolder;
     public CardHolder enemyHolder;
@@ -25,6 +25,8 @@ public class GameHandler : MonoBehaviour
     public RankBehaviour RankSiegeEn;
 
     public GameObject cardPrefab;
+
+    
 
     public string[][] musters = new string[][]
     {
@@ -69,7 +71,7 @@ public class GameHandler : MonoBehaviour
 
         if (card.Ability == Ability.Spy)
         {
-            if (turn)
+            if (IsPlayersTurn())
             {
                 playerHolder.DrawSpyCard();
             }
@@ -85,7 +87,7 @@ public class GameHandler : MonoBehaviour
             string[] musterGroup = GetMusterGroup(card);
             int position = 0;
 
-            if (turn)
+            if (IsPlayersTurn())
             {
                 musterCardGOs = playerHolder.GetMusterCards(musterGroup);
                 if (musterCardGOs.Count > 0)
@@ -164,7 +166,7 @@ public class GameHandler : MonoBehaviour
         }
         else if (card.Ability == Ability.Medic)
         {
-            if (turn)
+            if (IsPlayersTurn())
             {
                 playerGraveyard.GetMedicCard();
                 medicBreak = true;
@@ -187,7 +189,7 @@ public class GameHandler : MonoBehaviour
 
         if (weather.cards.Find(c => c.Name == card.Name))
         {
-            if (turn)
+            if (IsPlayersTurn())
             {
                 playerGraveyard.MoveToGraveyard(CardGO, weather.gameObject);
             }
@@ -220,7 +222,7 @@ public class GameHandler : MonoBehaviour
             }
             else if (card.Ability == Ability.Scorch)
             {
-                if (turn)
+                if (IsPlayersTurn())
                 {
                     playerGraveyard.MoveToGraveyard(CardGO, weather.gameObject);
                 }
@@ -241,7 +243,7 @@ public class GameHandler : MonoBehaviour
         cardGO.transform.SetParent(RankGO.transform);
         cardGO.GetComponent<CardBehaviour>().isMovable = false;
 
-        if (turn)
+        if (IsPlayersTurn())
         {
             playerHolder.cards.RemoveAll(x => x.Id == cardToPlace.Id);
         }
@@ -273,14 +275,14 @@ public class GameHandler : MonoBehaviour
         //cardGO.transform.SetSiblingIndex(GetCardPosition(rankBehaviour.cards, cardToPlace));
 
 
-        turn = !turn;
+        SwitchTurns();;
     }
 
     public void DecoyCard(GameObject DecoyGO, GameObject CardGO, GameObject RankGO)
     {
         CardBehaviour cardBehaviour = CardGO.GetComponent<CardBehaviour>();
         RankBehaviour rankBehaviour = RankGO.GetComponent<RankBehaviour>();
-        if (turn)
+        if (IsPlayersTurn())
         {
             playerHolder.GetCard(CardGO);
         }
@@ -294,7 +296,7 @@ public class GameHandler : MonoBehaviour
         rankBehaviour.RankSum();
         DecoyGO.transform.SetParent(RankGO.transform);
 
-        turn = !turn;
+        SwitchTurns();;
     }
 
     public void SpawnCard(Card _card, GameObject parent, bool movable = true, GameObject _cardPrefab = null)
@@ -426,7 +428,7 @@ public class GameHandler : MonoBehaviour
     public GameObject GetRank(Card _card)
     {
         string cardRank = _card.Rank.ToString();
-        if (turn)
+        if (IsPlayersTurn())
         {
             if (_card.Rank != Rank.Weather & _card.Ability != Ability.Spy)
             {
@@ -461,6 +463,20 @@ public class GameHandler : MonoBehaviour
         return GameObject.Find(cardRank);
     }
 
+    public void SwitchTurns()
+    {
+        turn = !turn;
+    }
 
+    public bool IsPlayersTurn()
+    {
+        return turn;
+    }
+
+    public GameObject GetCurrentHornRank(Rank rank)
+    {
+        string player = IsPlayersTurn() ? " P" : " En";
+        return GameObject.Find("Horn" + rank.ToString() + player);
+    }
 }
 

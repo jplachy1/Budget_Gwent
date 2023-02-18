@@ -20,7 +20,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Play()
     {
-        if (gh.turn == false)
+        if (!gh.IsPlayersTurn())
         {
             cardToPlay = PickCard();
 

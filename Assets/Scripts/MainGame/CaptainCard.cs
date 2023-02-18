@@ -11,8 +11,9 @@ public class CaptainCard : ScriptableObject
     public new string name;
     public string surname;
     public Sprite artwork;
-    [TextArea(1,15)]
-    public string descrption;
+    public Sprite largeArtwork;
+    [TextArea(1, 15)]
+    public string description;
     public Faction faction;
 
 }

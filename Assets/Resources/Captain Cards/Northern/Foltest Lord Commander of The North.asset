@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Foltest
   surname: Lord Commander of The North
   artwork: {fileID: 21300000, guid: 1d5c1318d4f60044d9475ad09333f04a, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 9ad9f29e4afff214699eda916da6044d, type: 3}
   descrption: Clear any weather effects
   faction: 2

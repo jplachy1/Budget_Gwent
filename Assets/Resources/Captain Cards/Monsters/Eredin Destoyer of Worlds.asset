@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Eredin
   surname: Destoyer of Worlds
   artwork: {fileID: 21300000, guid: 11c8741b62a34f8439a0c981a78729a5, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 7f241d472ce02744c98f956f7a9388c2, type: 3}
   descrption: Discard 2 cards and draw 1 card of your choice from you deck
   faction: 4

@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 54858960}
   - component: {fileID: 54858959}
   - component: {fileID: 54858962}
+  - component: {fileID: 54858963}
   m_Layer: 5
   m_Name: CaptainCard (2)
   m_TagString: Untagged
@@ -540,6 +541,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &54858963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54858957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &78172533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1103,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1833790966}
   m_HandleRect: {fileID: 1833790965}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1268,6 +1283,7 @@ GameObject:
   - component: {fileID: 217272911}
   - component: {fileID: 217272910}
   - component: {fileID: 217272913}
+  - component: {fileID: 217272914}
   m_Layer: 5
   m_Name: CaptainCard
   m_TagString: Untagged
@@ -1387,6 +1403,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &217272914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217272908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &222880342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1922,7 @@ GameObject:
   - component: {fileID: 287809755}
   - component: {fileID: 287809754}
   - component: {fileID: 287809757}
+  - component: {fileID: 287809758}
   m_Layer: 5
   m_Name: CaptainCard (2)
   m_TagString: Untagged
@@ -2011,6 +2042,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &287809758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287809752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &292267372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,6 +3014,7 @@ GameObject:
   - component: {fileID: 471557129}
   - component: {fileID: 471557128}
   - component: {fileID: 471557131}
+  - component: {fileID: 471557132}
   m_Layer: 5
   m_Name: CaptainCard (3)
   m_TagString: Untagged
@@ -3088,6 +3134,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &471557132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471557126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &473020556
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,8 +3968,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000039101, y: 1868.4}
-  m_SizeDelta: {x: 0, y: 3106.2314}
+  m_AnchoredPosition: {x: 0.00000014239, y: 0}
+  m_SizeDelta: {x: 0, y: 4257.0977}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &695181063
 MonoBehaviour:
@@ -4462,6 +4522,7 @@ GameObject:
   - component: {fileID: 770980745}
   - component: {fileID: 770980744}
   - component: {fileID: 770980747}
+  - component: {fileID: 770980748}
   m_Layer: 5
   m_Name: CaptainCard (3)
   m_TagString: Untagged
@@ -4581,6 +4642,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &770980748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770980742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &778144604
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,6 +5260,7 @@ GameObject:
   - component: {fileID: 858168845}
   - component: {fileID: 858168844}
   - component: {fileID: 858168847}
+  - component: {fileID: 858168848}
   m_Layer: 5
   m_Name: CaptainCard
   m_TagString: Untagged
@@ -5304,6 +5380,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &858168848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858168842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &894274170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,8 +5970,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000039101, y: 412.17517}
-  m_SizeDelta: {x: -0.000030517578, y: 951.34863}
+  m_AnchoredPosition: {x: 0.000039101, y: -0.000061035}
+  m_SizeDelta: {x: -0.000030517578, y: 3578.434}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &969814190
 MonoBehaviour:
@@ -5938,6 +6028,7 @@ GameObject:
   - component: {fileID: 1017088660}
   - component: {fileID: 1017088659}
   - component: {fileID: 1017088662}
+  - component: {fileID: 1017088663}
   m_Layer: 5
   m_Name: CaptainCard (2)
   m_TagString: Untagged
@@ -6057,6 +6148,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1017088663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017088657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1032822643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6335,6 +6440,7 @@ GameObject:
   - component: {fileID: 1079943782}
   - component: {fileID: 1079943781}
   - component: {fileID: 1079943784}
+  - component: {fileID: 1079943785}
   m_Layer: 5
   m_Name: CaptainCard
   m_TagString: Untagged
@@ -6454,6 +6560,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1079943785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079943779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1085419019
 GameObject:
   m_ObjectHideFlags: 0
@@ -6503,6 +6623,7 @@ GameObject:
   - component: {fileID: 1102895538}
   - component: {fileID: 1102895537}
   - component: {fileID: 1102895540}
+  - component: {fileID: 1102895541}
   m_Layer: 5
   m_Name: CaptainCard (2)
   m_TagString: Untagged
@@ -6622,6 +6743,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1102895541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102895535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1122226247
 GameObject:
   m_ObjectHideFlags: 0
@@ -7140,8 +7275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000039101, y: 412.17517}
-  m_SizeDelta: {x: -0.000030517578, y: 951.34863}
+  m_AnchoredPosition: {x: 0.000039101, y: -0.000061035}
+  m_SizeDelta: {x: -0.000030517578, y: 5344.3647}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1262680455
 MonoBehaviour:
@@ -7505,6 +7640,7 @@ GameObject:
   - component: {fileID: 1323490680}
   - component: {fileID: 1323490679}
   - component: {fileID: 1323490682}
+  - component: {fileID: 1323490683}
   m_Layer: 5
   m_Name: CaptainCard (1)
   m_TagString: Untagged
@@ -7624,6 +7760,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1323490683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323490677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1340179303
 GameObject:
   m_ObjectHideFlags: 0
@@ -7885,6 +8035,7 @@ GameObject:
   - component: {fileID: 1408918418}
   - component: {fileID: 1408918417}
   - component: {fileID: 1408918420}
+  - component: {fileID: 1408918421}
   m_Layer: 5
   m_Name: CaptainCard (3)
   m_TagString: Untagged
@@ -8004,6 +8155,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1408918421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408918415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1430211569
 GameObject:
   m_ObjectHideFlags: 0
@@ -8253,6 +8418,7 @@ GameObject:
   - component: {fileID: 1520772780}
   - component: {fileID: 1520772779}
   - component: {fileID: 1520772782}
+  - component: {fileID: 1520772783}
   m_Layer: 5
   m_Name: CaptainCard (1)
   m_TagString: Untagged
@@ -8372,6 +8538,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1520772783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520772777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1573601954
 GameObject:
   m_ObjectHideFlags: 0
@@ -8933,6 +9113,7 @@ GameObject:
   - component: {fileID: 1717368164}
   - component: {fileID: 1717368163}
   - component: {fileID: 1717368166}
+  - component: {fileID: 1717368167}
   m_Layer: 5
   m_Name: CaptainCard
   m_TagString: Untagged
@@ -9052,6 +9233,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1717368167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717368161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1722088024
 GameObject:
   m_ObjectHideFlags: 0
@@ -9431,8 +9626,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1162293997}
   m_HandleRect: {fileID: 1162293996}
   m_Direction: 2
-  m_Value: 0.27216294
-  m_Size: 0.17357802
+  m_Value: 1
+  m_Size: 0.12665284
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9487,6 +9682,7 @@ GameObject:
   - component: {fileID: 1772164253}
   - component: {fileID: 1772164252}
   - component: {fileID: 1772164255}
+  - component: {fileID: 1772164256}
   m_Layer: 5
   m_Name: CaptainCard (1)
   m_TagString: Untagged
@@ -9606,6 +9802,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1772164256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772164250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1776555460
 GameObject:
   m_ObjectHideFlags: 0
@@ -10228,6 +10438,7 @@ GameObject:
   - component: {fileID: 1879261186}
   - component: {fileID: 1879261185}
   - component: {fileID: 1879261188}
+  - component: {fileID: 1879261189}
   m_Layer: 5
   m_Name: CaptainCard (1)
   m_TagString: Untagged
@@ -10347,6 +10558,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &1879261189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879261183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &1889560289
 GameObject:
   m_ObjectHideFlags: 0
@@ -10799,8 +11024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000039101, y: 412.17517}
-  m_SizeDelta: {x: -0.000030517578, y: 951.34863}
+  m_AnchoredPosition: {x: 0.000039101, y: 0}
+  m_SizeDelta: {x: -0.000030517578, y: 3243.849}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1944537549
 MonoBehaviour:
@@ -11405,6 +11630,7 @@ GameObject:
   - component: {fileID: 2090277716}
   - component: {fileID: 2090277715}
   - component: {fileID: 2090277718}
+  - component: {fileID: 2090277719}
   m_Layer: 5
   m_Name: CaptainCard (3)
   m_TagString: Untagged
@@ -11524,6 +11750,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   captainCard: {fileID: 0}
+--- !u!114 &2090277719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090277713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c445b3381aca74b90a88a2c077b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfoPrefab: {fileID: 3377319528932020092, guid: a41f3977018fb864d88f924653fc9590,
+    type: 3}
 --- !u!1 &2091226588
 GameObject:
   m_ObjectHideFlags: 0

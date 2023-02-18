@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Foltest
   surname: The Steel-Forged
   artwork: {fileID: 21300000, guid: 91c0b7526444d79499df5c45b8605677, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 73586dd5806cfa648b0168cea20a0603, type: 3}
   descrption: Destroy your enemy's strongest Siege unit(s) if the combined strength
     of all his or her units is 10 or more
   faction: 2

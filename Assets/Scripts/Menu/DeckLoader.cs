@@ -9,6 +9,7 @@ public class DeckLoader : MonoBehaviour
     public static List<List<string>> decks = new List<List<string>>();
     public static List<Card> cardList;
     public static List<CaptainCard> captainCardList;
+
     void Start()
     {
         cardList = Resources.LoadAll<Card>("Cards").ToList();

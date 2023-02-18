@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Foltest
   surname: The Siegemaster
   artwork: {fileID: 21300000, guid: 0e49f90ff2f0e21419276030e3a7675a, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 7e651c9bc18dbe24a871ec22156c541d, type: 3}
   descrption: Doubles the strength of all your Siege units (unless a Commander's
     Horn is also present on that row)
   faction: 2

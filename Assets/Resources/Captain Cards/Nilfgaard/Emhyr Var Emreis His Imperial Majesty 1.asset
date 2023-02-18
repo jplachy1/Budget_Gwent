@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Emhyr Var Emreis
   surname: His Imperial Majesty
   artwork: {fileID: 21300000, guid: 4bf57a4a640f71640834fb5a9ae8a331, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 98e9302067161f6498b61266bed6f48e, type: 3}
   descrption: Pick a Torrential Rain card from your deck and play it instantly
   faction: 1

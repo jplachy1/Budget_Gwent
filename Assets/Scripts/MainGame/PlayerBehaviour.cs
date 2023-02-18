@@ -33,7 +33,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Controls()
     {
-        if (gh.turn)
+        if (gh.IsPlayersTurn())
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {

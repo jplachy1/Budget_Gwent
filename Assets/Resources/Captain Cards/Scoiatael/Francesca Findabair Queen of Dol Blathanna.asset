@@ -16,6 +16,7 @@ MonoBehaviour:
   name: Francesca Findabair
   surname: Queen of Dol Blathanna
   artwork: {fileID: 21300000, guid: 437b318e5d5d8a24ba14dee32fd35570, type: 3}
+  largeArtwork: {fileID: 21300000, guid: d83a109947fa14d4fba4f8d1c3501391, type: 3}
   descrption: Destroy your enemy's strongest Close Combat unit(s) if the combined
     strength of all his or her Close Combat units is 10 or more
   faction: 3

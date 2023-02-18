@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Emhyr Var Emreis
   surname: Emperor of Nilfgaard
   artwork: {fileID: 21300000, guid: f8d3eb4396c903d4cb821023851f341b, type: 3}
+  largeArtwork: {fileID: 21300000, guid: c4dc1344a61149f499118a9d89f2b7ac, type: 3}
   descrption: Look at 3 random cards from your oponnent's hand
   faction: 1

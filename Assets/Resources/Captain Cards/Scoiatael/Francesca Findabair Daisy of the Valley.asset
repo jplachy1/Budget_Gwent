@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Francesca Findabair
   surname: Daisy of the Valley
   artwork: {fileID: 21300000, guid: 6ca385ce16db5d64298be615c2cd8a54, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 9f3d49e4888b1c845bd6324d1cf0f678, type: 3}
   descrption: Draw an extra card at the beginning of the battle
   faction: 3

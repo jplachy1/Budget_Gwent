@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 public class ShowCardDetails : MonoBehaviour, IPointerClickHandler
 {
     public GameObject cardInfoPrefab;
-    private Card card;
+    private Card card = null;
+    private CaptainCard captainCard = null;
 
     void Start()
     {
@@ -22,6 +23,18 @@ public class ShowCardDetails : MonoBehaviour, IPointerClickHandler
         else if (gameObject.name == "Card(Clone)")
         {
             card = gameObject.GetComponent<CardPreview>().card;
+        }
+        else if (gameObject.GetComponent<CaptainCardPreview>() != null)
+        {
+            captainCard = gameObject.GetComponent<CaptainCardPreview>().captainCard;
+        }
+        else if (gameObject.GetComponent<CaptainCardBehaviour>() != null)
+        {
+            captainCard = gameObject.GetComponent<CaptainCardBehaviour>().captainCard;
+        }
+        else if (gameObject.GetComponent<CaptainCardPick>() != null)
+        {
+            captainCard = gameObject.GetComponent<CaptainCardPick>().captainCard;
         }
     }
 
@@ -38,8 +51,16 @@ public class ShowCardDetails : MonoBehaviour, IPointerClickHandler
         GameHandler.showingCardDetails = true;
         Transform parent = GameObject.Find("Canvas").transform;
         GameObject CardDetailsObject = Instantiate(cardInfoPrefab, parent);
-        CardDetailsObject.GetComponentInChildren<Text>().text = CardDetails.GetDetails(card);
-        CardDetailsObject.transform.GetChild(2).GetComponent<Image>().sprite = card.largeArtwork;
+        if (card != null)
+        {
+            CardDetailsObject.GetComponentInChildren<Text>().text = CardDetails.GetDetails(card);
+            CardDetailsObject.transform.GetChild(2).GetComponent<Image>().sprite = card.LargeArtwork;
+        }
+        else
+        {
+            CardDetailsObject.GetComponentInChildren<Text>().text = captainCard.description;
+            CardDetailsObject.transform.GetChild(2).GetComponent<Image>().sprite = captainCard.largeArtwork;
+        }
     }
 
 

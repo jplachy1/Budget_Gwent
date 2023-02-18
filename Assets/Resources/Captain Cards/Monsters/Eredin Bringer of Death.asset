@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8cea89d857153d4ab0341b2a1500d13, type: 3}
-  m_Name: Eredin King of The Wild Hunt 2
+  m_Name: Eredin Bringer of Death
   m_EditorClassIdentifier: 
-  ID: CM3
+  ID: CM4
   name: Eredin
-  surname: King of The Wild Hunt
-  artwork: {fileID: 21300000, guid: 4751bbf21d54d5342b64a3abe2d9e36e, type: 3}
-  descrption: PIck any weather card from your deck and play it instantly
+  surname: Bringer of Death
+  artwork: {fileID: 21300000, guid: dca0f891505cec9469c8d9004bcecc52, type: 3}
+  largeArtwork: {fileID: 21300000, guid: d56dc8e69e55dbe4d936f5a0e6b506e9, type: 3}
+  descrption: Restore a card from your discard pile to your hand
   faction: 4

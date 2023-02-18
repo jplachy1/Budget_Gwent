@@ -7,7 +7,7 @@
         {
             "name": "Unity Editor",
             "type": "unity",
-            "path": "/d:/programing/Gwentik/Library/EditorInstance.json",
+            "path": "/D:/programing/Budget_Gwent/Library/EditorInstance.json",
             "request": "launch"
         },
         {

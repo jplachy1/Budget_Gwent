@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Francesca Findabair
   surname: Pureblood Elf
   artwork: {fileID: 21300000, guid: 055cc2cdafee7264682502013b6dc996, type: 3}
+  largeArtwork: {fileID: 21300000, guid: f2bf7d7afaa80314c8634913cd69ff29, type: 3}
   descrption: Pick a Biting Frost card and play it instantly
   faction: 3

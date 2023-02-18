@@ -14,7 +14,7 @@ public class ShowDeckCards : MonoBehaviour
         {
             GameObject cardGO = cardObjectPool.GetObject();
             cardGO.transform.SetParent(gameObject.transform);
-            cardGO.GetComponent<Image>().sprite = card.artwork;
+            cardGO.GetComponent<Image>().sprite = card.Artwork;
             cardGO.GetComponent<CardPreview>().card = card;
             cardGO.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
         }

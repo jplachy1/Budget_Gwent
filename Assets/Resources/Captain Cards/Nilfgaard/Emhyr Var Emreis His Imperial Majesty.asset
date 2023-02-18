@@ -16,5 +16,6 @@ MonoBehaviour:
   name: Emhyr Var Emreis
   surname: The White Flame
   artwork: {fileID: 21300000, guid: d891b6024ee68f147bb563eb07713a99, type: 3}
+  largeArtwork: {fileID: 21300000, guid: 2d5726924132d21498ea26d017275aa0, type: 3}
   descrption: Cancel your oponnent's Leader Ability
   faction: 1

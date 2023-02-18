@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +17,7 @@ public class LoadScene : MonoBehaviour
     {
         deck = cardScrollList.cardList;
         // Loader.Load(Loader.Scene.MainGame);
-        save.Load("save.bin");
+        //save.Load("save.bin");
         //save.Save(deck);
     }
 
