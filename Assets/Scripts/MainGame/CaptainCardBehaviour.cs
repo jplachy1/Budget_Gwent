@@ -112,9 +112,7 @@ public class CaptainCardBehaviour : MonoBehaviour
 
     void Monsters1()
     {
-        Card hornCard = DeckLoader.cardList.Find(x => x.Id == HornCardId);
-        GameObject closeRank = gh.GetCurrentHornRank(Rank.Close);
-        gh.SpawnCard(hornCard, closeRank, false);       
+        
     }
 
     void Monsters2()
@@ -124,7 +122,9 @@ public class CaptainCardBehaviour : MonoBehaviour
 
     void Monsters3()
     {
-
+        Card hornCard = DeckLoader.cardList.Find(x => x.Id == HornCardId);
+        GameObject closeRank = gh.GetCurrentHornRank(Rank.Close);
+        gh.SpawnCard(hornCard, closeRank, false);
     }
 
     void Monsters4()
