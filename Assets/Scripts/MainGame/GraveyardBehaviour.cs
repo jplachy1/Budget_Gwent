@@ -13,6 +13,8 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
     public GameObject gCardPrefab;
     public GameHandler gh;
     public CardHolder cardHolder;
+    public bool player;
+
     [HideInInspector]
     public bool swap = false;
 
@@ -26,14 +28,30 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
         cardViewContent = cardView.transform.GetChild(0).GetChild(0).gameObject;
         //Vector2 cardSize = cardViewContent.GetComponent<GridLayoutGroup>().cellSize;
 
-        cardView.SetActive(true);
-        for (int i = 0; i < 10; i++)
-        {
-            Card card = deck.DrawCard();
-            GameObject cardGO = SpawnGraveyardCard(card, gh.GetCardPosition(cards, card));
-            cardGO.GetComponent<Button>().onClick.AddListener(delegate { SwapCards(cardGO); });
-        }
+        InitialCardSpawn();
 
+        if (!player)
+        {
+
+            foreach (Card card in cards)
+            {
+                gh.SpawnCard(card, cardHolder.gameObject);
+                cardHolder.cards.Add(card);
+            }
+
+            foreach (Transform child in cardViewContent.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+
+            cardView.SetActive(false);
+            cards.Clear();
+
+            swap = true;
+
+            return;
+        }
     }
 
     void Update()
@@ -50,17 +68,25 @@ public class GraveyardBehaviour : MonoBehaviour, IPointerClickHandler
             {
                 Destroy(child.gameObject);
             }
-            // while (cardViewContent.transform.childCount > )
-            // {
-            //     GameObject toRemove = cardViewContent.transform.GetChild(0).gameObject;
-            //     Destroy(toRemove);
-            // }
-
 
             cardView.SetActive(false);
             cards.Clear();
 
             swap = true;
+        }
+    }
+
+    /// <summary>
+    /// Draw 10 cards from the deck and put them into the graveyard
+    /// </summary>
+    private void InitialCardSpawn()
+    {
+        cardView.SetActive(true);
+        for (int i = 0; i < 10; i++)
+        {
+            Card card = deck.DrawCard();
+            GameObject cardGO = SpawnGraveyardCard(card, gh.GetCardPosition(cards, card));
+            cardGO.GetComponent<Button>().onClick.AddListener(delegate { SwapCards(cardGO); });
         }
     }
 

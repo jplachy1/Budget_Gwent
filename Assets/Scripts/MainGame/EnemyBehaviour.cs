@@ -20,15 +20,17 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Play()
     {
-        if (!gh.IsPlayersTurn())
+        if (gh.IsPlayersTurn())
         {
-            cardToPlay = PickCard();
-
-            GameObject cardObject = GameObject.Find("CardHolder En/" + cardToPlay.Name);
-            //cardHolder.cards.RemoveAll(c => c.ID == cardToPlay.ID);
-            Debug.Log("Placing Card " + cardToPlay.Name);
-            gh.PlaceCard(gh.GetRank(cardToPlay), cardObject);
+            return;
         }
+
+        cardToPlay = PickCard();
+
+        GameObject cardObject = GameObject.Find("CardHolder En/" + cardToPlay.Name);
+        //cardHolder.cards.RemoveAll(c => c.ID == cardToPlay.ID);
+        Debug.Log("Placing Card " + cardToPlay.Name);
+        gh.PlaceCard(gh.GetRank(cardToPlay), cardObject);
     }
 
     Card PickCard()

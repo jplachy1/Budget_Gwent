@@ -1130,6 +1130,7 @@ MonoBehaviour:
     type: 3}
   gh: {fileID: 1972577252}
   cardHolder: {fileID: 2105855379}
+  player: 1
   swap: 0
 --- !u!114 &423014884
 MonoBehaviour:
@@ -3581,6 +3582,7 @@ MonoBehaviour:
     type: 3}
   gh: {fileID: 1972577252}
   cardHolder: {fileID: 1049617862}
+  player: 0
   swap: 0
 --- !u!114 &1374036808
 MonoBehaviour:
